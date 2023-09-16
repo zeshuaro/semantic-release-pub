@@ -8,9 +8,9 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "test": "vitest run --coverage",
-    "lint": "biome check src",
-    "format": "biome format --write src"
+    "test": "vitest run tests --coverage",
+    "lint": "biome check src tests",
+    "format": "biome format --write src tests"
   },
   "dependencies": {
     "@semantic-release/error": "^4.0.0",
