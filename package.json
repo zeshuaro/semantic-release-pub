@@ -1,0 +1,29 @@
+{
+  "name": "semantic-release-pub",
+  "version": "0.0.0",
+  "description": "semantic-release plugin to publish a package to pub.dev",
+  "main": "dist/index.js",
+  "author": "zeshuaro@gmail.com",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run --coverage",
+    "lint": "biome check src",
+    "format": "biome format --write src"
+  },
+  "dependencies": {
+    "@semantic-release/error": "^4.0.0",
+    "execa": "^8.0.1",
+    "google-auth-library": "^9.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.1.2",
+    "@types/semantic-release": "^20.0.1",
+    "@types/semantic-release__error": "^3.0.0",
+    "@vitest/coverage-v8": "^0.34.4",
+    "typescript": "^5.1.6",
+    "vitest": "^0.34.4",
+    "vitest-mock-extended": "^1.2.1"
+  }
+}
