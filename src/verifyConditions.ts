@@ -2,6 +2,7 @@ import SemanticReleaseError from "@semantic-release/error";
 import { execa } from "execa";
 import { JWT } from "google-auth-library";
 import { PUB_DEV_AUDIENCE } from "./consts.js";
+import { ServiceAccount } from "./schemas.js";
 import { PluginConfig } from "./types.js";
 import { getConfig } from "./utils.js";
 
@@ -27,12 +28,12 @@ const verifyCommand = (command: string) => {
   }
 };
 
-const getGoogleIdentityToken = async (serviceAccountKey: string) => {
-  const jsonKey = JSON.parse(serviceAccountKey);
+const getGoogleIdentityToken = async (serviceAccountStr: string) => {
+  const serviceAccountJson = getServiceAccount(serviceAccountStr);
   const jwtClient = new JWT(
-    jsonKey.client_email,
+    serviceAccountJson.client_email,
     undefined,
-    jsonKey.private_key,
+    serviceAccountJson.private_key,
     PUB_DEV_AUDIENCE,
   );
 
@@ -44,4 +45,12 @@ const getGoogleIdentityToken = async (serviceAccountKey: string) => {
   }
 
   return creds.id_token;
+};
+
+const getServiceAccount = (serviceAccountStr: string) => {
+  try {
+    return ServiceAccount.parse(JSON.parse(serviceAccountStr));
+  } catch (error) {
+    throw new SemanticReleaseError(`Invalid service account key: ${error}`);
+  }
 };

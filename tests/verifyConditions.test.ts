@@ -50,13 +50,23 @@ describe("verifyConditions", () => {
 
   test("error due to execa", async () => {
     stubEnv();
-
     vi.mocked(execa).mockImplementation(() => {
       throw new Error();
     });
 
     await expectSemanticReleaseError();
+
     expect(execa).toBeCalledWith(cli);
+    expect(JWT).toBeCalledTimes(0);
+  });
+
+  test("error due to invalid service account", async () => {
+    vi.stubEnv("GOOGLE_SERVICE_ACCOUNT_KEY", "clearlyInvalid");
+
+    await expectSemanticReleaseError();
+
+    expect(execa).toBeCalledWith(cli);
+    expect(JWT).toBeCalledTimes(0);
   });
 
   test("error due to missing id token", async () => {
