@@ -11,12 +11,13 @@ vi.mock("google-auth-library");
 
 describe("verifyConditions", () => {
   const cli = "dart";
+  const pubspecPath = "pubspecPath";
   const clientEmail = "clientEmail";
   const privateKey = "privateKey";
   const idToken = "idToken";
   const pubDevAudience = "https://pub.dev";
 
-  const config: PluginConfig = { cli };
+  const config: PluginConfig = { cli, pubspecPath };
   const serviceAccount = codeBlock`
     {
       "client_email": "${clientEmail}",
