@@ -233,6 +233,11 @@
   resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.3.6.tgz#7b489e8baf393d5dd1266fb203ddd4ea941259e6"
   integrity sha512-VOVRLM1mBxIRxydiViqPcKn6MIxZytrbMpd6RJLIWKxUNr3zux8no0Oc7kJx0WAPIitgZ0gkrDS+btlqQpubpw==
 
+"@types/common-tags@^1.8.2":
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/@types/common-tags/-/common-tags-1.8.2.tgz#04a2fed0597d18b6eb5eb9d24b62905041c572c9"
+  integrity sha512-Z5UcOnlqxFm0tCCTEhkcVOfSihWOMyKypIWHtQNSYh6fMdPUIVpNdLBYutDpDXVHsMUrYzI2IczUHXIzpUovmQ==
+
 "@types/istanbul-lib-coverage@^2.0.1":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.4.tgz#8467d4b3c087805d63580480890791277ce35c44"
@@ -392,6 +397,11 @@ check-error@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/check-error/-/check-error-1.0.2.tgz#574d312edd88bb5dd8912e9286dd6c0aed4aac82"
   integrity sha512-BrgHpW9NURQgzoNyjfq0Wu6VFO6D7IZEmJNdtgNqpzGG8RuNFHt2jQxWlAs4HMe119chBnv+34syEZtc6IhLtA==
+
+common-tags@^1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/common-tags/-/common-tags-1.8.2.tgz#94ebb3c076d26032745fd54face7f688ef5ac9c6"
+  integrity sha512-gk/Z852D2Wtb//0I+kRFNKKE9dIIVirjoqPoA1wJU+XePVXZfGeBpk45+A1rKO4Q43prqWBNY/MiIeRLbPWUaA==
 
 concat-map@0.0.1:
   version "0.0.1"

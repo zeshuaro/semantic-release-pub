@@ -1,4 +1,5 @@
 import SemanticReleaseError from "@semantic-release/error";
+import { codeBlock } from "common-tags";
 import { execa } from "execa";
 import { Credentials, JWT } from "google-auth-library";
 import { afterEach, describe, expect, test, vi } from "vitest";
@@ -16,8 +17,12 @@ describe("verifyConditions", () => {
   const pubDevAudience = "https://pub.dev";
 
   const config: PluginConfig = { cli };
-  const keyJson = { client_email: clientEmail, private_key: privateKey };
-  const keyStr = JSON.stringify(keyJson);
+  const serviceAccount = codeBlock`
+    {
+      "client_email": "${clientEmail}",
+      "private_key": "${privateKey}"
+    }
+  `;
 
   const creds = mock<Credentials>();
 
@@ -84,7 +89,8 @@ describe("verifyConditions", () => {
     expect(authorize).toBeCalledTimes(1);
   });
 
-  const stubEnv = () => vi.stubEnv("GOOGLE_SERVICE_ACCOUNT_KEY", keyStr);
+  const stubEnv = () =>
+    vi.stubEnv("GOOGLE_SERVICE_ACCOUNT_KEY", serviceAccount);
 
   const expectJwtCalled = () => {
     expect(JWT).toHaveBeenNthCalledWith(
