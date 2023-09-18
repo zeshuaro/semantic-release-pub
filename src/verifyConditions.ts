@@ -6,8 +6,8 @@ import { ServiceAccount } from "./schemas.js";
 import { PluginConfig } from "./types.js";
 import { getConfig } from "./utils.js";
 
-export const verifyConditions = async (config: PluginConfig) => {
-  const { cli } = getConfig(config);
+export const verifyConditions = async (pluginConfig: PluginConfig) => {
+  const { cli } = getConfig(pluginConfig);
   const { GOOGLE_SERVICE_ACCOUNT_KEY } = process.env;
 
   if (!GOOGLE_SERVICE_ACCOUNT_KEY) {
