@@ -1,16 +1,32 @@
 {
   "name": "semantic-release-pub",
   "version": "0.0.0",
-  "description": "semantic-release plugin to publish a package to pub.dev",
+  "description": "semantic-release plugin to publish a Dart or Flutter package",
   "main": "dist/index.js",
   "author": "zeshuaro@gmail.com",
   "license": "MIT",
   "type": "module",
+  "homepage": "https://github.com/zeshuaro/semantic-release-pub",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zeshuaro/semantic-release-pub"
+  },
+  "keywords": [
+    "dart",
+    "flutter",
+    "publish",
+    "registry",
+    "semantic-release",
+    "version"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "vitest run tests --coverage",
     "lint": "biome check src tests",
     "format": "biome format --write src tests"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "dependencies": {
     "@semantic-release/error": "^4.0.0",
