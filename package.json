@@ -19,6 +19,9 @@
     "semantic-release",
     "version"
   ],
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "vitest run tests --coverage",
