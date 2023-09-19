@@ -11,6 +11,10 @@
     "type": "git",
     "url": "https://github.com/zeshuaro/semantic-release-pub"
   },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "keywords": [
     "dart",
     "flutter",
