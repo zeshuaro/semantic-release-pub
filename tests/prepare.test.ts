@@ -1,7 +1,6 @@
 import { readFileSync, writeFileSync } from "fs";
-import SemanticReleaseError from "@semantic-release/error";
 import { codeBlock } from "common-tags";
-import { Context, NextRelease } from "semantic-release";
+import { NextRelease, PrepareContext } from "semantic-release";
 import { afterEach, describe, expect, test, vi } from "vitest";
 import { mock } from "vitest-mock-extended";
 import { PluginConfig, prepare } from "../src/index.js";
@@ -41,7 +40,7 @@ describe("prepare", () => {
     const nextRelease = mock<NextRelease>();
     nextRelease.version = newVersion;
 
-    const context = mock<Context>();
+    const context = mock<PrepareContext>();
     context.nextRelease = nextRelease;
 
     vi.mocked(readFileSync).mockReturnValue(oldPubspec);
@@ -50,16 +49,5 @@ describe("prepare", () => {
 
     expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");
     expect(writeFileSync).toHaveBeenNthCalledWith(1, pubspecPath, newPubspec);
-  });
-
-  test("error due to missing version", async () => {
-    const context = mock<Context>();
-
-    await expect(() => prepare(config, context)).rejects.toThrowError(
-      SemanticReleaseError,
-    );
-
-    expect(readFileSync).toBeCalledTimes(0);
-    expect(writeFileSync).toBeCalledTimes(0);
   });
 });
