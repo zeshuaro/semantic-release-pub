@@ -13,13 +13,13 @@ export const verifyConditions = async (pluginConfig: PluginConfig) => {
     );
   }
 
-  verifyCommand(cli);
+  await verifyCommand(cli);
   await getGoogleIdentityToken(GOOGLE_SERVICE_ACCOUNT_KEY);
 };
 
-const verifyCommand = (command: string) => {
+const verifyCommand = async (command: string) => {
   try {
-    execa(command);
+    await execa(command);
   } catch (error) {
     throw new SemanticReleaseError(`${command} returned an error: ${error}`);
   }

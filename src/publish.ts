@@ -9,13 +9,13 @@ export const publish = async (pluginConfig: PluginConfig) => {
   const { GOOGLE_SERVICE_ACCOUNT_KEY } = process.env;
 
   const idToken = await getGoogleIdentityToken(GOOGLE_SERVICE_ACCOUNT_KEY);
-  setPubToken(cli, idToken);
-  publishToPub(cli);
+  await setPubToken(cli, idToken);
+  await publishToPub(cli);
 };
 
-const setPubToken = (cli: string, idToken: string) => {
+const setPubToken = async (cli: string, idToken: string) => {
   process.env[SEMANTIC_RELEASE_PUB_TOKEN] = idToken;
-  execa(cli, [
+  await execa(cli, [
     "pub",
     "token",
     "add",
@@ -24,6 +24,6 @@ const setPubToken = (cli: string, idToken: string) => {
   ]);
 };
 
-const publishToPub = (cli: string) => {
-  execa(cli, ["pub", "publish", "--force"]);
+const publishToPub = async (cli: string) => {
+  await execa(cli, ["pub", "publish", "--force"]);
 };
