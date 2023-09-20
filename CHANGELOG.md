@@ -1,3 +1,10 @@
+## [0.2.2](https://github.com/zeshuaro/semantic-release-pub/compare/v0.2.1...v0.2.2) (2023-09-20)
+
+
+### Bug Fixes
+
+* **prepare:** find and replace the version in the pubspec file ([#25](https://github.com/zeshuaro/semantic-release-pub/issues/25)) ([94ed591](https://github.com/zeshuaro/semantic-release-pub/commit/94ed591e867bb1cccade02c2ebba0c81f2ed6e38))
+
 ## [0.2.1](https://github.com/zeshuaro/semantic-release-pub/compare/v0.2.0...v0.2.1) (2023-09-20)
 
 
