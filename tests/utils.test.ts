@@ -9,7 +9,10 @@ import { getConfig, getGoogleIdentityToken } from '../src/utils';
 vi.mock('google-auth-library');
 
 describe('getConfig', () => {
-  const config: PluginConfig = { cli: 'flutter', pubspecPath: 'a/pubspec.yml' };
+  const config: PluginConfig = {
+    cli: 'flutter',
+    pubspecPath: 'a/pubspec.yaml'
+  };
 
   test('success', () => {
     expect(getConfig(config)).toEqual(config);
