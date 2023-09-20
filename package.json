@@ -25,8 +25,8 @@
   "scripts": {
     "build": "tsc",
     "test": "vitest run tests --coverage",
-    "lint": "biome check src tests",
-    "format": "biome format --write src tests"
+    "lint": "eslint --ext .ts src tests && prettier --check src/**/*.ts tests/**/*.ts",
+    "format": "eslint --ext .ts --fix src tests && prettier --write src/**/*.ts tests/**/*.ts"
   },
   "engines": {
     "node": ">=18"
@@ -39,15 +39,23 @@
     "zod": "^3.22.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.1.2",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@types/common-tags": "^1.8.2",
     "@types/semantic-release": "^20.0.1",
     "@types/semantic-release__error": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
     "@vitest/coverage-v8": "^0.34.4",
     "common-tags": "^1.8.2",
     "conventional-changelog-conventionalcommits": "^7.0.2",
+    "eslint": "^8.13.0",
+    "eslint-config-semistandard": "^17.0.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "prettier": "^3.0.3",
     "semantic-release": "^21.1.2",
     "typescript": "^5.1.6",
     "vitest": "^0.34.4",
