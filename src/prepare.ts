@@ -15,7 +15,7 @@ export const prepare = async (
   const pubspec = Pubspec.parse(parse(data));
 
   const newData = data.replace(
-    new RegExp(`^version:.*${pubspec.version}`),
+    new RegExp(`version:[ \t]+${pubspec.version}`),
     `version: ${nextRelease.version}`
   );
 

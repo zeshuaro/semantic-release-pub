@@ -12,6 +12,7 @@ describe('prepare', () => {
   const newVersion = '1.2.3';
   const pubspecPath = 'pubspecPath';
   const oldPubspec = codeBlock`
+    name: pub_package
     version: 1.2.0
 
     environment:
@@ -21,6 +22,7 @@ describe('prepare', () => {
       cupertino_icons: 1.0.6
   `;
   const newPubspec = codeBlock`
+    name: pub_package
     version: ${newVersion}
 
     environment:
