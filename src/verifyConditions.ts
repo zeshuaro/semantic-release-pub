@@ -1,7 +1,7 @@
-import SemanticReleaseError from "@semantic-release/error";
-import { execa } from "execa";
-import { PluginConfig } from "./types.js";
-import { getConfig, getGoogleIdentityToken } from "./utils.js";
+import SemanticReleaseError from '@semantic-release/error';
+import { execa } from 'execa';
+import { PluginConfig } from './types.js';
+import { getConfig, getGoogleIdentityToken } from './utils.js';
 
 export const verifyConditions = async (pluginConfig: PluginConfig) => {
   const { cli } = getConfig(pluginConfig);
@@ -9,7 +9,7 @@ export const verifyConditions = async (pluginConfig: PluginConfig) => {
 
   if (!GOOGLE_SERVICE_ACCOUNT_KEY) {
     throw new SemanticReleaseError(
-      "Environment variable not found: GOOGLE_SERVICE_ACCOUNT_KEY",
+      'Environment variable not found: GOOGLE_SERVICE_ACCOUNT_KEY'
     );
   }
 

@@ -1,26 +1,26 @@
-import SemanticReleaseError from "@semantic-release/error";
-import { codeBlock } from "common-tags";
-import { Credentials, JWT } from "google-auth-library";
-import { afterEach, describe, expect, test, vi } from "vitest";
-import { mock } from "vitest-mock-extended";
-import { PluginConfig } from "../src";
-import { getConfig, getGoogleIdentityToken } from "../src/utils";
+import SemanticReleaseError from '@semantic-release/error';
+import { codeBlock } from 'common-tags';
+import { Credentials, JWT } from 'google-auth-library';
+import { afterEach, describe, expect, test, vi } from 'vitest';
+import { mock } from 'vitest-mock-extended';
+import { PluginConfig } from '../src';
+import { getConfig, getGoogleIdentityToken } from '../src/utils';
 
-vi.mock("google-auth-library");
+vi.mock('google-auth-library');
 
-describe("getConfig", () => {
-  const config: PluginConfig = { cli: "flutter", pubspecPath: "a/pubspec.yml" };
+describe('getConfig', () => {
+  const config: PluginConfig = { cli: 'flutter', pubspecPath: 'a/pubspec.yml' };
 
-  test("success", () => {
+  test('success', () => {
     expect(getConfig(config)).toEqual(config);
   });
 });
 
-describe("getGoogleIdentityToken", () => {
-  const idToken = "idToken";
-  const clientEmail = "clientEmail";
-  const privateKey = "privateKey";
-  const pubDevAudience = "https://pub.dev";
+describe('getGoogleIdentityToken', () => {
+  const idToken = 'idToken';
+  const clientEmail = 'clientEmail';
+  const privateKey = 'privateKey';
+  const pubDevAudience = 'https://pub.dev';
 
   const creds = mock<Credentials>();
 
@@ -35,7 +35,7 @@ describe("getGoogleIdentityToken", () => {
     vi.restoreAllMocks();
   });
 
-  test("success", async () => {
+  test('success', async () => {
     creds.id_token = idToken;
     const authorize = vi.fn().mockResolvedValue(creds);
     const jwtClient = mock<JWT>({ authorize });
@@ -48,21 +48,21 @@ describe("getGoogleIdentityToken", () => {
     expect(authorize).toBeCalledTimes(1);
   });
 
-  test("error due to invalid service account", async () => {
+  test('error due to invalid service account', async () => {
     await expect(() =>
-      getGoogleIdentityToken("clearlyInvalid"),
+      getGoogleIdentityToken('clearlyInvalid')
     ).rejects.toThrowError(SemanticReleaseError);
     expect(JWT).toBeCalledTimes(0);
   });
 
-  test("error due to missing id token", async () => {
+  test('error due to missing id token', async () => {
     creds.id_token = null;
     const authorize = vi.fn().mockResolvedValue(creds);
     const jwtClient = mock<JWT>({ authorize });
     vi.mocked(JWT).mockReturnValue(jwtClient);
 
     await expect(() =>
-      getGoogleIdentityToken(serviceAccount),
+      getGoogleIdentityToken(serviceAccount)
     ).rejects.toThrowError(SemanticReleaseError);
 
     expectJwtCalled();
@@ -75,7 +75,7 @@ describe("getGoogleIdentityToken", () => {
       clientEmail,
       undefined,
       privateKey,
-      pubDevAudience,
+      pubDevAudience
     );
   };
 });
