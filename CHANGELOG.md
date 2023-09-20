@@ -1,3 +1,15 @@
+## [0.2.1](https://github.com/zeshuaro/semantic-release-pub/compare/v0.2.0...v0.2.1) (2023-09-20)
+
+
+### Bug Fixes
+
+* default pubspec file path ([#24](https://github.com/zeshuaro/semantic-release-pub/issues/24)) ([a40a353](https://github.com/zeshuaro/semantic-release-pub/commit/a40a353cf37d9a357916a48e425f7bcef8dbedf2))
+
+
+### Documentation
+
+* remove flat square style badge for prettier ([#23](https://github.com/zeshuaro/semantic-release-pub/issues/23)) ([c5a7655](https://github.com/zeshuaro/semantic-release-pub/commit/c5a7655e98f40cc657276a813e2d18369959e9ea))
+
 ## [0.2.0](https://github.com/zeshuaro/semantic-release-pub/compare/v0.1.0...v0.2.0) (2023-09-20)
 
 
