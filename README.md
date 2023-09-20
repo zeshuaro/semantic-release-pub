@@ -7,7 +7,7 @@
 [![GitHub Actions](https://github.com/zeshuaro/semantic-release-pub/actions/workflows/github-actions.yml/badge.svg)](https://github.com/zeshuaro/semantic-release-pub/actions/workflows/github-actions.yml)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=semantic-release-pub&metric=coverage)](https://sonarcloud.io/summary/new_code?id=semantic-release-pub)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=semantic-release-pub&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=semantic-release-pub)
-[![Code Style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![Code Style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 | Step               | Description                                                                                                                                                                         |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
