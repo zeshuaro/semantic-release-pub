@@ -5,7 +5,7 @@ import { PluginConfig } from './types.js';
 
 const DEFAULT_CONFIG: PluginConfig = {
   cli: 'dart',
-  pubspecPath: 'pubspec.yml'
+  pubspecPath: 'pubspec.yaml'
 };
 
 const PUB_DEV_AUDIENCE = 'https://pub.dev';
