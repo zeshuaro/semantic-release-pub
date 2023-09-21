@@ -2,8 +2,8 @@
   "editor.formatOnSave": true,
   "[typescript]": {
     "editor.codeActionsOnSave": {
-      "quickfix.biome": true,
-      "source.organizeImports.biome": true
+      "source.fixAll": true,
+      "source.organizeImports": true
     }
   }
 }
