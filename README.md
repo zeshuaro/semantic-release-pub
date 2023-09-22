@@ -12,7 +12,7 @@
 | Step               | Description                                                                                                                                                                         |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `verifyConditions` | Verify the presence of the `GOOGLE_SERVICE_ACCOUNT_KEY` environment variable, the ability to exchange an identity from the service account, and the `dart` or `flutter` executable. |
-| `prepare`          | Update the `pubspec.yml` version.                                                                                                                                                   |
+| `prepare`          | Update the `pubspec.yaml` version.                                                                                                                                                  |
 | `publish`          | Publish the [Dart](https://dart.dev/tools/pub/publishing) or [Flutter](https://docs.flutter.dev/packages-and-plugins/developing-packages#publish) package to the registry.          |
 
 ## Installation
@@ -39,6 +39,71 @@ The plugin can be configured in the [semantic-release configuration file](https:
     "@semantic-release/commit-analyzer", 
     "@semantic-release/release-notes-generator", 
     "semantic-release-pub"
+  ]
+}
+```
+
+## Configuration
+
+### `pub.dev` authentication
+
+The following instructions are referenced from the [documentation](https://dart.dev/tools/pub/automated-publishing#publish-using-exported-service-account-keys) of Dart. Below are the key steps to allow authentication to `pub.dev`.
+
+1. [Create a Google Cloud project](https://cloud.google.com/resource-manager/docs/creating-managing-projects), if you don’t have an existing project.
+
+2. Create a [service account](https://cloud.google.com/iam/docs/service-account-overview) either through the Google Cloud Console under `IAM and admin > Service accounts` or as follow:
+   
+    ```bash
+    gcloud iam service-accounts create pub-dev \
+        --description='Service account to be impersonated when publishing to pub.dev' \
+        --display-name='pub-dev'
+    ```
+
+3. Grant the service account permission to publish your package.
+
+    > To complete this step, you must have uploader permission on the package or be an admin of the publisher that owns the package.
+
+    1. Navigate to the Admin tab (pub.dev/packages/<package>/admin).
+    2. Click Enable publishing with Google Cloud Service account. 
+    3. Type the email of the service account into the Service account email field.
+        > You created this account in the previous step: `pub-dev@$PROJECT_ID.iam.gserviceaccount.com`
+
+4. Create exported service account keys for the service account either through the Google Cloud Console under `Service account actions > Manage keys > Add key > Create new key > JSON > Create` or as follow:
+
+    ```bash
+    gcloud iam service-accounts keys create key-file.json \
+        PROJECT_ID.iam.gserviceaccount.com
+    ```
+
+5. Copy the content of the JSON key file and set it as an environment variable under `GOOGLE_SERVICE_ACCOUNT_KEY`.
+
+### Environment variables
+
+| Variable                     | Description                                                  |
+| ---------------------------- | ------------------------------------------------------------ |
+| `GOOGLE_SERVICE_ACCOUNT_KEY` | The google service account key created from the above steps. |
+
+### Options
+
+| Option | Description                                                                | Default |
+| ------ | -------------------------------------------------------------------------- | ------- |
+| `cli`  | The `dart` or `flutter` CLI to use to publish the package to the registry. | `dart`  |
+
+### Examples
+
+#### Publishing a Flutter package
+
+```json
+{
+  "plugins": [
+    "@semantic-release/commit-analyzer", 
+    "@semantic-release/release-notes-generator", 
+    [
+      "semantic-release-pub",
+      {
+        "cli": "flutter"
+      }
+    ]
   ]
 }
 ```
