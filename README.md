@@ -85,9 +85,10 @@ The following instructions are referenced from the [documentation](https://dart.
 
 ### Options
 
-| Option | Description                                                                | Default |
-| ------ | -------------------------------------------------------------------------- | ------- |
-| `cli`  | The `dart` or `flutter` CLI to use to publish the package to the registry. | `dart`  |
+| Option       | Description                                                                                                          | Default |
+| ------------ | -------------------------------------------------------------------------------------------------------------------- | ------- |
+| `cli`        | The `dart` or `flutter` CLI to use to publish the package to the registry.                                           | `dart`  |
+| `publishPub` | Whether to publish the package to the registry. If set to `false`, the `pubspec.yaml` version will still be updated. | `true`  |
 
 ### Examples
 

@@ -16,7 +16,7 @@ describe('publish', () => {
   const version = '1.2.3';
   const semanticReleasePubToken = 'SEMANTIC_RELEASE_PUB_TOKEN';
 
-  const config: PluginConfig = { cli };
+  const config: PluginConfig = { cli, publishPub: true };
   const nextRelease = mock<NextRelease>();
   const logger = mock<Signale>();
   const context = mock<PublishContext>();
@@ -41,6 +41,7 @@ describe('publish', () => {
     await publish(config, context);
 
     expect(process.env[semanticReleasePubToken]).toEqual(idToken);
+    expect(getGoogleIdentityToken).toHaveBeenNthCalledWith(1, serviceAccount);
     expect(execa).toHaveBeenNthCalledWith(1, cli, [
       'pub',
       'token',
@@ -53,6 +54,16 @@ describe('publish', () => {
       'publish',
       '--force'
     ]);
+  });
+
+  test('skip publish', async () => {
+    const newConfig = { ...config, publishPub: false };
+    vi.mocked(getConfig).mockReturnValue(newConfig);
+
+    await publish(newConfig, context);
+
+    expect(getGoogleIdentityToken).toBeCalledTimes(0);
+    expect(execa).toBeCalledTimes(0);
   });
 
   const stubEnv = () =>

@@ -9,7 +9,12 @@ export const publish = async (
   pluginConfig: PluginConfig,
   { nextRelease: { version }, logger }: PublishContext
 ) => {
-  const { cli } = getConfig(pluginConfig);
+  const { cli, publishPub } = getConfig(pluginConfig);
+  if (!publishPub) {
+    logger.log(`Skipping publishing to pub.dev as publishPub is ${publishPub}`);
+    return;
+  }
+
   const { GOOGLE_SERVICE_ACCOUNT_KEY } = process.env;
 
   const idToken = await getGoogleIdentityToken(GOOGLE_SERVICE_ACCOUNT_KEY);
