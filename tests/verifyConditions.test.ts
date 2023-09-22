@@ -10,11 +10,10 @@ vi.mock('../src/utils');
 
 describe('verifyConditions', () => {
   const cli = 'dart';
-  const pubspecPath = 'pubspecPath';
   const serviceAccount = 'serviceAccount';
   const idToken = 'idToken';
 
-  const config: PluginConfig = { cli, pubspecPath };
+  const config: PluginConfig = { cli };
 
   beforeEach(() => {
     vi.mocked(getConfig).mockReturnValue(config);
