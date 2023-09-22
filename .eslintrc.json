@@ -7,5 +7,11 @@
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": { "project": ["tsconfig.eslint.json"] },
-  "plugins": ["@typescript-eslint"]
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "no-unused-vars": [
+      "error",
+      { "vars": "all", "args": "all", "ignoreRestSiblings": false }
+    ]
+  }
 }

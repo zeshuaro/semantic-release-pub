@@ -10,8 +10,7 @@ vi.mock('google-auth-library');
 
 describe('getConfig', () => {
   const config: PluginConfig = {
-    cli: 'flutter',
-    pubspecPath: 'a/pubspec.yaml'
+    cli: 'flutter'
   };
 
   test('success', () => {

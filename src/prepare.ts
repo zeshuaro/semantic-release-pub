@@ -2,16 +2,11 @@ import { readFileSync, writeFileSync } from 'fs';
 import { PrepareContext } from 'semantic-release';
 import { parse } from 'yaml';
 import { Pubspec } from './schemas.js';
-import { PluginConfig } from './types.js';
-import { getConfig } from './utils.js';
 
-export const prepare = async (
-  pluginConfig: PluginConfig,
-  { nextRelease }: PrepareContext
-) => {
-  const { pubspecPath } = getConfig(pluginConfig);
+const PUBSPEC_PATH = 'pubspec.yaml';
 
-  const data = readFileSync(pubspecPath, 'utf-8');
+export const prepare = async ({ nextRelease }: PrepareContext) => {
+  const data = readFileSync(PUBSPEC_PATH, 'utf-8');
   const pubspec = Pubspec.parse(parse(data));
 
   const newData = data.replace(
@@ -19,5 +14,5 @@ export const prepare = async (
     `version: ${nextRelease.version}`
   );
 
-  writeFileSync(pubspecPath, newData);
+  writeFileSync(PUBSPEC_PATH, newData);
 };
