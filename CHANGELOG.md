@@ -1,3 +1,31 @@
+## [0.3.0](https://github.com/zeshuaro/semantic-release-pub/compare/v0.2.2...v0.3.0) (2023-09-22)
+
+
+### Features
+
+* add `publishPub` config option ([#30](https://github.com/zeshuaro/semantic-release-pub/issues/30)) ([a6d20cd](https://github.com/zeshuaro/semantic-release-pub/commit/a6d20cde44c1b6ce977c18b0150cbaeed8f80319))
+
+
+### Bug Fixes
+
+* add logging around `prepare` and `publish` lifecycle ([#29](https://github.com/zeshuaro/semantic-release-pub/issues/29)) ([ed70ef5](https://github.com/zeshuaro/semantic-release-pub/commit/ed70ef57c4eee749248cf162b6d2b9e876f882dd))
+* remove unused config `pubspecPath` ([#28](https://github.com/zeshuaro/semantic-release-pub/issues/28)) ([ba966d4](https://github.com/zeshuaro/semantic-release-pub/commit/ba966d4632d2658dedb28715c2b7be0a3630ae70))
+
+
+### Documentation
+
+* **readme:** add detailed configurations ([#27](https://github.com/zeshuaro/semantic-release-pub/issues/27)) ([fb48e9a](https://github.com/zeshuaro/semantic-release-pub/commit/fb48e9af772e0e385886d1d6dc97bbb016683293))
+
+
+### Miscellaneous Chores
+
+* cleanup files from biome ([#26](https://github.com/zeshuaro/semantic-release-pub/issues/26)) ([8ff33d5](https://github.com/zeshuaro/semantic-release-pub/commit/8ff33d5a2e19a4653e73cef06c819a9b3e9597c3))
+
+
+### Continuous Integration
+
+* **workflows:** combine semantic release into main workflow ([#31](https://github.com/zeshuaro/semantic-release-pub/issues/31)) ([e677422](https://github.com/zeshuaro/semantic-release-pub/commit/e67742276b7b3a96372ad3f34c5b44c871a51c14))
+
 ## [0.2.2](https://github.com/zeshuaro/semantic-release-pub/compare/v0.2.1...v0.2.2) (2023-09-20)
 
 
