@@ -1,5 +1,8 @@
 import { execa } from 'execa';
+import { NextRelease, PublishContext } from 'semantic-release';
+import { Signale } from 'signale';
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
+import { mock } from 'vitest-mock-extended';
 import { PluginConfig, publish } from '../src/index.js';
 import { getConfig, getGoogleIdentityToken } from '../src/utils.js';
 
@@ -8,14 +11,21 @@ vi.mock('../src/utils');
 
 describe('publish', () => {
   const cli = 'dart';
-  const pubspecPath = 'pubspecPath';
   const serviceAccount = 'serviceAccount';
   const idToken = 'idToken';
+  const version = '1.2.3';
   const semanticReleasePubToken = 'SEMANTIC_RELEASE_PUB_TOKEN';
 
-  const config: PluginConfig = { cli, pubspecPath };
+  const config: PluginConfig = { cli };
+  const nextRelease = mock<NextRelease>();
+  const logger = mock<Signale>();
+  const context = mock<PublishContext>();
 
   beforeEach(() => {
+    nextRelease.version = version;
+    context.logger = logger;
+    context.nextRelease = nextRelease;
+
     vi.mocked(getConfig).mockReturnValue(config);
     vi.mocked(getGoogleIdentityToken).mockResolvedValue(idToken);
   });
@@ -28,7 +38,7 @@ describe('publish', () => {
   test('success', async () => {
     stubEnv();
 
-    await publish(config);
+    await publish(config, context);
 
     expect(process.env[semanticReleasePubToken]).toEqual(idToken);
     expect(execa).toHaveBeenNthCalledWith(1, cli, [
