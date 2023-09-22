@@ -4,8 +4,7 @@ import { ServiceAccount } from './schemas.js';
 import { PluginConfig } from './types.js';
 
 const DEFAULT_CONFIG: PluginConfig = {
-  cli: 'dart',
-  pubspecPath: 'pubspec.yaml'
+  cli: 'dart'
 };
 
 const PUB_DEV_AUDIENCE = 'https://pub.dev';

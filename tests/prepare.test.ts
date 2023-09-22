@@ -1,16 +1,15 @@
-import { readFileSync, writeFileSync } from 'fs';
 import { codeBlock } from 'common-tags';
+import { readFileSync, writeFileSync } from 'fs';
 import { NextRelease, PrepareContext } from 'semantic-release';
 import { afterEach, describe, expect, test, vi } from 'vitest';
 import { mock } from 'vitest-mock-extended';
-import { PluginConfig, prepare } from '../src/index.js';
+import { prepare } from '../src/index.js';
 
 vi.mock('fs');
 
 describe('prepare', () => {
-  const cli = 'dart';
   const newVersion = '1.2.3';
-  const pubspecPath = 'pubspecPath';
+  const pubspecPath = 'pubspec.yaml';
   const oldPubspec = codeBlock`
     name: pub_package
     version: 1.2.0
@@ -32,8 +31,6 @@ describe('prepare', () => {
       cupertino_icons: 1.0.6
   `;
 
-  const config: PluginConfig = { cli, pubspecPath };
-
   afterEach(() => {
     vi.restoreAllMocks();
   });
@@ -47,7 +44,7 @@ describe('prepare', () => {
 
     vi.mocked(readFileSync).mockReturnValue(oldPubspec);
 
-    await prepare(config, context);
+    await prepare(context);
 
     expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, 'utf-8');
     expect(writeFileSync).toHaveBeenNthCalledWith(1, pubspecPath, newPubspec);
