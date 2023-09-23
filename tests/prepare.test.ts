@@ -20,7 +20,10 @@ describe('prepare', () => {
       sdk: ">=3.0.0 <4.0.0"
 
     dependencies:
-      cupertino_icons: 1.0.6
+      packageA: 1.0.0
+      packageB:
+        hosted: https://some-package-server.com
+        version: 1.2.0
   `;
 
   const newPubspec = codeBlock`
@@ -31,7 +34,10 @@ describe('prepare', () => {
       sdk: ">=3.0.0 <4.0.0"
 
     dependencies:
-      cupertino_icons: 1.0.6
+      packageA: 1.0.0
+      packageB:
+        hosted: https://some-package-server.com
+        version: 1.2.0
   `;
 
   const nextRelease = mock<NextRelease>();
