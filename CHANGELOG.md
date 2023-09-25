@@ -1,3 +1,29 @@
+## [0.3.1](https://github.com/zeshuaro/semantic-release-pub/compare/v0.3.0...v0.3.1) (2023-09-25)
+
+
+### Bug Fixes
+
+* prepare version to handle versions with build number ([#40](https://github.com/zeshuaro/semantic-release-pub/issues/40)) ([3e4cd02](https://github.com/zeshuaro/semantic-release-pub/commit/3e4cd0276da5b4c02081d27e685576fc3a47a94e))
+* semantic release `prepare` lifecycle arguments ([#39](https://github.com/zeshuaro/semantic-release-pub/issues/39)) ([2bf9915](https://github.com/zeshuaro/semantic-release-pub/commit/2bf9915ce8fb23bd8480e6744a636c0bc80721bd))
+
+
+### Miscellaneous Chores
+
+* **deps:** pin dependencies ([#34](https://github.com/zeshuaro/semantic-release-pub/issues/34)) ([bd80d2d](https://github.com/zeshuaro/semantic-release-pub/commit/bd80d2d6bec8b9983b7f560eac1cdfdb4e92c89a))
+* **deps:** update dependency typescript to v5.2.2 ([#35](https://github.com/zeshuaro/semantic-release-pub/issues/35)) ([8013c3e](https://github.com/zeshuaro/semantic-release-pub/commit/8013c3ea9cb12bc55d40d46a870c90f4347242d7))
+* **deps:** update vitest monorepo to v0.34.5 ([#38](https://github.com/zeshuaro/semantic-release-pub/issues/38)) ([8c168b8](https://github.com/zeshuaro/semantic-release-pub/commit/8c168b85d086f4ce063b0c425f572a8d4051fc29))
+* **deps:** update zeshuaro/github-actions-workflows digest to 06fac08 ([#37](https://github.com/zeshuaro/semantic-release-pub/issues/37)) ([63a198e](https://github.com/zeshuaro/semantic-release-pub/commit/63a198ef791b746ec97857a37676ad007d210dfc))
+
+
+### Tests
+
+* **prepare:** verify only the package version is updated ([#32](https://github.com/zeshuaro/semantic-release-pub/issues/32)) ([8287ccc](https://github.com/zeshuaro/semantic-release-pub/commit/8287cccd9e8e3a4bf15dbe485d794a5e5f6e276f))
+
+
+### Continuous Integration
+
+* **renovate:** configure Renovate ([#33](https://github.com/zeshuaro/semantic-release-pub/issues/33)) ([e9099e4](https://github.com/zeshuaro/semantic-release-pub/commit/e9099e4d119bb9b84ccd2c22ff7764f8e98743db))
+
 ## [0.3.0](https://github.com/zeshuaro/semantic-release-pub/compare/v0.2.2...v0.3.0) (2023-09-22)
 
 
