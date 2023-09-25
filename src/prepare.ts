@@ -12,9 +12,13 @@ export const prepare = async (
 ) => {
   const data = readFileSync(PUBSPEC_PATH, 'utf-8');
   const pubspec = Pubspec.parse(parse(data));
+  const pubspecVersionEscaped = pubspec.version.replace(
+    /[/\-\\^$*+?.()|[\]{}]/g,
+    '\\$&'
+  );
 
   const newData = data.replace(
-    new RegExp(`version:[ \t]+${pubspec.version}`),
+    new RegExp(`version:[ \t]+${pubspecVersionEscaped}`),
     `version: ${version}`
   );
 
