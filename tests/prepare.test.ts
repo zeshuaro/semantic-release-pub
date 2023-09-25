@@ -4,13 +4,16 @@ import { NextRelease, PrepareContext } from 'semantic-release';
 import { Signale } from 'signale';
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { mock } from 'vitest-mock-extended';
-import { prepare } from '../src/index.js';
+import { PluginConfig, prepare } from '../src/index.js';
 
 vi.mock('fs');
 
 describe('prepare', () => {
   const newVersion = '1.2.3';
   const pubspecPath = 'pubspec.yaml';
+  const cli = 'dart';
+
+  const config: PluginConfig = { cli, publishPub: true };
 
   const oldPubspec = codeBlock`
     name: pub_package
@@ -57,7 +60,7 @@ describe('prepare', () => {
   test('success', async () => {
     vi.mocked(readFileSync).mockReturnValue(oldPubspec);
 
-    await prepare(context);
+    await prepare(config, context);
 
     expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, 'utf-8');
     expect(writeFileSync).toHaveBeenNthCalledWith(1, pubspecPath, newPubspec);
