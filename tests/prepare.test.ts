@@ -9,15 +9,18 @@ import { PluginConfig, prepare } from '../src/index.js';
 vi.mock('fs');
 
 describe('prepare', () => {
+  const oldVersion = '1.2.0';
+  const oldVersionWithBuild = '1.2.0+1';
   const newVersion = '1.2.3';
+  const versionPlaceholder = '__version__';
   const pubspecPath = 'pubspec.yaml';
   const cli = 'dart';
 
   const config: PluginConfig = { cli, publishPub: true };
 
-  const oldPubspec = codeBlock`
+  const basePubspec = codeBlock`
     name: pub_package
-    version: 1.2.0
+    version: ${versionPlaceholder}
 
     environment:
       sdk: ">=3.0.0 <4.0.0"
@@ -29,19 +32,10 @@ describe('prepare', () => {
         version: 1.2.0
   `;
 
-  const newPubspec = codeBlock`
-    name: pub_package
-    version: ${newVersion}
-
-    environment:
-      sdk: ">=3.0.0 <4.0.0"
-
-    dependencies:
-      packageA: 1.0.0
-      packageB:
-        hosted: https://some-package-server.com
-        version: 1.2.0
-  `;
+  const newPubspec = basePubspec.replace(
+    new RegExp(versionPlaceholder),
+    newVersion
+  );
 
   const nextRelease = mock<NextRelease>();
   const logger = mock<Signale>();
@@ -57,12 +51,19 @@ describe('prepare', () => {
     vi.restoreAllMocks();
   });
 
-  test('success', async () => {
-    vi.mocked(readFileSync).mockReturnValue(oldPubspec);
+  test.each([oldVersion, oldVersionWithBuild])(
+    'success with pubspec version %s',
+    async (version) => {
+      const pubspec = basePubspec.replace(
+        new RegExp(versionPlaceholder),
+        version
+      );
+      vi.mocked(readFileSync).mockReturnValue(pubspec);
 
-    await prepare(config, context);
+      await prepare(config, context);
 
-    expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, 'utf-8');
-    expect(writeFileSync).toHaveBeenNthCalledWith(1, pubspecPath, newPubspec);
-  });
+      expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, 'utf-8');
+      expect(writeFileSync).toHaveBeenNthCalledWith(1, pubspecPath, newPubspec);
+    }
+  );
 });
