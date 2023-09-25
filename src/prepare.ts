@@ -2,13 +2,14 @@ import { readFileSync, writeFileSync } from 'fs';
 import { PrepareContext } from 'semantic-release';
 import { parse } from 'yaml';
 import { Pubspec } from './schemas.js';
+import { PluginConfig } from './types.js';
 
 const PUBSPEC_PATH = 'pubspec.yaml';
 
-export const prepare = async ({
-  nextRelease: { version },
-  logger
-}: PrepareContext) => {
+export const prepare = async (
+  _pluginConfig: PluginConfig,
+  { nextRelease: { version }, logger }: PrepareContext
+) => {
   const data = readFileSync(PUBSPEC_PATH, 'utf-8');
   const pubspec = Pubspec.parse(parse(data));
 
