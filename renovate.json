@@ -1,6 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "github>zeshuaro/renovate-configs",
+    "github>zeshuaro/renovate-configs:package",
+    "github>zeshuaro/renovate-configs:javascript"
   ]
 }
