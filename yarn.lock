@@ -785,10 +785,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/semantic-release__error@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@types/semantic-release__error/-/semantic-release__error-3.0.0.tgz#41ed8f1c2f9bd4a362df3b41f011748a6ff8e839"
-  integrity sha512-+SvabqqSpOpP7iZ6aygbEfhJ3X+NKjLzn4S1qTDIfRXyZWXacejF5bxKWKwTl0Zdh+N+l1mZtfzxjBiX9iCF+w==
+"@types/semantic-release__error@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@types/semantic-release__error/-/semantic-release__error-3.0.1.tgz#db203420d0fbc55b879c23957d72aad38195a6bb"
+  integrity sha512-ueI8cufnYrK9tJ288Fs4FeDdPe1ex3N+7VIOx5yx+jR7X30q8xK81wMpqVVONkGz4tP5BGNWcnrOGJNkNJjmYw==
 
 "@types/semver@^7.5.0":
   version "7.5.2"
