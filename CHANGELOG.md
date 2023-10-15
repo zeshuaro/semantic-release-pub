@@ -1,3 +1,24 @@
+## [0.3.3](https://github.com/zeshuaro/semantic-release-pub/compare/v0.3.2...v0.3.3) (2023-10-15)
+
+
+### Bug Fixes
+
+* **verifyConditions:** skip google service account key verification when `publishPub` is false ([#56](https://github.com/zeshuaro/semantic-release-pub/issues/56)) ([21196e3](https://github.com/zeshuaro/semantic-release-pub/commit/21196e382f17bf2725e4fc13c0540a9a26e0a589))
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency eslint to v8.51.0 ([#55](https://github.com/zeshuaro/semantic-release-pub/issues/55)) ([bb9f001](https://github.com/zeshuaro/semantic-release-pub/commit/bb9f001ecd9d215a6445392a0a0251c7644893ff))
+* **deps:** update dependency eslint-plugin-n to v16.2.0 ([#59](https://github.com/zeshuaro/semantic-release-pub/issues/59)) ([329df49](https://github.com/zeshuaro/semantic-release-pub/commit/329df49e3c1a5b8b9235e623f9bcfe788d981a8d))
+* **deps:** update dependency vitest-mock-extended to v1.3.1 ([#53](https://github.com/zeshuaro/semantic-release-pub/issues/53)) ([567b14d](https://github.com/zeshuaro/semantic-release-pub/commit/567b14d5602b0a92a1f65cb2408fddb93b7d881d))
+* **deps:** update typescript-eslint monorepo to v6.7.5 ([#58](https://github.com/zeshuaro/semantic-release-pub/issues/58)) ([39699b5](https://github.com/zeshuaro/semantic-release-pub/commit/39699b57871eed15fabf13327ec6345668ebe696))
+
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 68a82af ([#54](https://github.com/zeshuaro/semantic-release-pub/issues/54)) ([446b790](https://github.com/zeshuaro/semantic-release-pub/commit/446b790cf86ece9e6edcb85d032229116e0a1dc1))
+* **deps:** update zeshuaro/github-actions-workflows digest to a7f44cd ([#57](https://github.com/zeshuaro/semantic-release-pub/issues/57)) ([7252e33](https://github.com/zeshuaro/semantic-release-pub/commit/7252e33154836eb5c42cd86abe4c1eb1b1cad2bf))
+
 ## [0.3.2](https://github.com/zeshuaro/semantic-release-pub/compare/v0.3.1...v0.3.2) (2023-10-08)
 
 
