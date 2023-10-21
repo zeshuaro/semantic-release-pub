@@ -43,7 +43,7 @@
     "@semantic-release/git": "10.0.1",
     "@types/common-tags": "1.8.3",
     "@types/semantic-release": "20.0.4",
-    "@types/semantic-release__error": "3.0.1",
+    "@types/semantic-release__error": "3.0.2",
     "@types/signale": "1.4.6",
     "@typescript-eslint/eslint-plugin": "6.8.0",
     "@typescript-eslint/parser": "6.8.0",
