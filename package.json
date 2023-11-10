@@ -44,7 +44,7 @@
     "@types/common-tags": "1.8.4",
     "@types/semantic-release": "20.0.4",
     "@types/semantic-release__error": "3.0.3",
-    "@types/signale": "1.4.6",
+    "@types/signale": "1.4.7",
     "@typescript-eslint/eslint-plugin": "6.10.0",
     "@typescript-eslint/parser": "6.10.0",
     "@vitest/coverage-v8": "0.34.6",
