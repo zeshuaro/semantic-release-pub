@@ -776,10 +776,10 @@
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.3.tgz#291c243e4b94dbfbc0c0ee26b7666f1d5c030e2c"
   integrity sha512-ehPtgRgaULsFG8x0NeYJvmyH1hmlfsNLujHe9dQEia/7MAJYdzMSi19JtchUHjmBA6XC/75dK55mzZH+RyieSg==
 
-"@types/semantic-release@20.0.4":
-  version "20.0.4"
-  resolved "https://registry.yarnpkg.com/@types/semantic-release/-/semantic-release-20.0.4.tgz#386a72b565344830d7af6bf6fdc1e770c12f32c6"
-  integrity sha512-9zjlWBYjlRKKOtCu7mEcUTu5Ii5nRAujRe841R6ZfwzhLFCa+BGMdWMImzXZDeVj0ODpI37pO0FSKpMiR7sdww==
+"@types/semantic-release@20.0.5":
+  version "20.0.5"
+  resolved "https://registry.yarnpkg.com/@types/semantic-release/-/semantic-release-20.0.5.tgz#bfb9aaacb2df89243a85c9c49d8ed22eab549686"
+  integrity sha512-KOnAenccRS53JzEXPe/lgK65JOAWn5jM7xJPqCt2F3FlN0qUR9BoZaXW9e0VLNlOPlu8a5/BZUoml2rXWcvNjg==
   dependencies:
     "@types/node" "*"
 
