@@ -2457,7 +2457,7 @@ globby@^14.0.0:
     slash "^5.1.0"
     unicorn-magic "^0.1.0"
 
-google-auth-library@^9.0.0:
+google-auth-library@^9.2.0:
   version "9.2.0"
   resolved "https://registry.yarnpkg.com/google-auth-library/-/google-auth-library-9.2.0.tgz#16c14a775b3a9a1be53b7428ddbd9d2c3599836b"
   integrity sha512-1oV3p0JhNEhVbj26eF3FAJcv9MXXQt4S0wcvKZaDbl4oHq5V3UJoSbsGZGQNcjoCdhW4kDSwOs11wLlHog3fgQ==
