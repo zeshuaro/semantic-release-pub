@@ -3,6 +3,7 @@
   "extends": [
     "github>zeshuaro/renovate-configs",
     "github>zeshuaro/renovate-configs:package",
-    "github>zeshuaro/renovate-configs:javascript"
+    "github>zeshuaro/renovate-configs:javascript",
+    "github>zeshuaro/renovate-configs:nodeVersion"
   ]
 }
