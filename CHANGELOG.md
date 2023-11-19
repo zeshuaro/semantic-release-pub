@@ -1,3 +1,10 @@
+## [0.5.0](https://github.com/zeshuaro/semantic-release-pub/compare/v0.4.0...v0.5.0) (2023-11-19)
+
+
+### Features
+
+* **node:** update node.js to v20 ([#99](https://github.com/zeshuaro/semantic-release-pub/issues/99)) ([0f00926](https://github.com/zeshuaro/semantic-release-pub/commit/0f00926fc6a776b733f97462d919b530dd9ff1b1))
+
 ## [0.4.0](https://github.com/zeshuaro/semantic-release-pub/compare/v0.3.3...v0.4.0) (2023-11-18)
 
 
