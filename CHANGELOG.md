@@ -1,3 +1,10 @@
+## [0.6.1](https://github.com/zeshuaro/semantic-release-pub/compare/v0.6.0...v0.6.1) (2023-12-03)
+
+
+### Bug Fixes
+
+* skip cli verification when `publishPub` is false ([#119](https://github.com/zeshuaro/semantic-release-pub/issues/119)) ([fc46428](https://github.com/zeshuaro/semantic-release-pub/commit/fc46428c0caebe99d25ad0e0c33d14bb89c29336))
+
 ## [0.6.0](https://github.com/zeshuaro/semantic-release-pub/compare/v0.5.0...v0.6.0) (2023-12-03)
 
 
