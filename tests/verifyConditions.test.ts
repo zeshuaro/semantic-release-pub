@@ -48,8 +48,8 @@ describe('verifyConditions', () => {
 
     await verifyConditions(config, context);
 
-    expect(execa).toBeCalledWith(cli);
     expect(getGoogleIdentityToken).toBeCalledTimes(0);
+    expect(execa).toBeCalledTimes(0);
   });
 
   test('error due to missing environment variable', async () => {

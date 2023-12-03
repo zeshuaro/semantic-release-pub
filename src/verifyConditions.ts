@@ -19,13 +19,12 @@ export const verifyConditions = async (
     }
 
     await getGoogleIdentityToken(GOOGLE_SERVICE_ACCOUNT_KEY);
+    await verifyCommand(cli);
   } else {
     logger.log(
-      `Skipping Google service account key verification as publishPub is ${publishPub}`
+      `Skipping Google service account key and ${cli} CLI verification as publishPub is ${publishPub}`
     );
   }
-
-  await verifyCommand(cli);
 };
 
 const verifyCommand = async (command: string) => {
