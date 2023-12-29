@@ -1,12 +1,12 @@
-import SemanticReleaseError from '@semantic-release/error';
-import { execa } from 'execa';
-import { VerifyConditionsContext } from 'semantic-release';
-import { PluginConfig } from './types.js';
-import { getConfig, getGoogleIdentityToken } from './utils.js';
+import SemanticReleaseError from "@semantic-release/error";
+import { execa } from "execa";
+import { VerifyConditionsContext } from "semantic-release";
+import { PluginConfig } from "./types.js";
+import { getConfig, getGoogleIdentityToken } from "./utils.js";
 
 export const verifyConditions = async (
   pluginConfig: PluginConfig,
-  { logger }: VerifyConditionsContext
+  { logger }: VerifyConditionsContext,
 ) => {
   const { cli, publishPub } = getConfig(pluginConfig);
   const { GOOGLE_SERVICE_ACCOUNT_KEY } = process.env;
@@ -14,7 +14,7 @@ export const verifyConditions = async (
   if (publishPub) {
     if (!GOOGLE_SERVICE_ACCOUNT_KEY) {
       throw new SemanticReleaseError(
-        'Environment variable not found: GOOGLE_SERVICE_ACCOUNT_KEY'
+        "Environment variable not found: GOOGLE_SERVICE_ACCOUNT_KEY",
       );
     }
 
@@ -22,7 +22,7 @@ export const verifyConditions = async (
     await verifyCommand(cli);
   } else {
     logger.log(
-      `Skipping Google service account key and ${cli} CLI verification as publishPub is ${publishPub}`
+      `Skipping Google service account key and ${cli} CLI verification as publishPub is ${publishPub}`,
     );
   }
 };

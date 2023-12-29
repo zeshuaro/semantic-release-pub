@@ -1,4 +1,4 @@
 export type PluginConfig = {
-  cli: 'dart' | 'flutter';
+  cli: "dart" | "flutter";
   publishPub: boolean;
 };
