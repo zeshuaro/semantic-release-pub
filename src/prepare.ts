@@ -1,25 +1,25 @@
-import { readFileSync, writeFileSync } from 'fs';
-import { PrepareContext } from 'semantic-release';
-import { parse } from 'yaml';
-import { Pubspec } from './schemas.js';
-import { PluginConfig } from './types.js';
+import { readFileSync, writeFileSync } from "fs";
+import { PrepareContext } from "semantic-release";
+import { parse } from "yaml";
+import { Pubspec } from "./schemas.js";
+import { PluginConfig } from "./types.js";
 
-const PUBSPEC_PATH = 'pubspec.yaml';
+const PUBSPEC_PATH = "pubspec.yaml";
 
 export const prepare = async (
   _pluginConfig: PluginConfig,
-  { nextRelease: { version }, logger }: PrepareContext
+  { nextRelease: { version }, logger }: PrepareContext,
 ) => {
-  const data = readFileSync(PUBSPEC_PATH, 'utf-8');
+  const data = readFileSync(PUBSPEC_PATH, "utf-8");
   const pubspec = Pubspec.parse(parse(data));
   const pubspecVersionEscaped = pubspec.version.replace(
     /[/\-\\^$*+?.()|[\]{}]/g,
-    '\\$&'
+    "\\$&",
   );
 
   const newData = data.replace(
     new RegExp(`version:[ \t]+${pubspecVersionEscaped}`),
-    `version: ${version}`
+    `version: ${version}`,
   );
 
   logger.log(`Writing version ${version} to ${PUBSPEC_PATH}`);

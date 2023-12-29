@@ -1,20 +1,20 @@
-import { execa } from 'execa';
-import { NextRelease, PublishContext } from 'semantic-release';
-import { Signale } from 'signale';
-import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
-import { mock } from 'vitest-mock-extended';
-import { PluginConfig, publish } from '../src/index.js';
-import { getConfig, getGoogleIdentityToken } from '../src/utils.js';
+import { execa } from "execa";
+import { NextRelease, PublishContext } from "semantic-release";
+import { Signale } from "signale";
+import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
+import { mock } from "vitest-mock-extended";
+import { PluginConfig, publish } from "../src/index.js";
+import { getConfig, getGoogleIdentityToken } from "../src/utils.js";
 
-vi.mock('execa');
-vi.mock('../src/utils');
+vi.mock("execa");
+vi.mock("../src/utils");
 
-describe('publish', () => {
-  const cli = 'dart';
-  const serviceAccount = 'serviceAccount';
-  const idToken = 'idToken';
-  const version = '1.2.3';
-  const semanticReleasePubToken = 'SEMANTIC_RELEASE_PUB_TOKEN';
+describe("publish", () => {
+  const cli = "dart";
+  const serviceAccount = "serviceAccount";
+  const idToken = "idToken";
+  const version = "1.2.3";
+  const semanticReleasePubToken = "SEMANTIC_RELEASE_PUB_TOKEN";
 
   const config: PluginConfig = { cli, publishPub: true };
   const nextRelease = mock<NextRelease>();
@@ -35,7 +35,7 @@ describe('publish', () => {
     vi.restoreAllMocks();
   });
 
-  test('success', async () => {
+  test("success", async () => {
     stubEnv();
 
     await publish(config, context);
@@ -43,20 +43,20 @@ describe('publish', () => {
     expect(process.env[semanticReleasePubToken]).toEqual(idToken);
     expect(getGoogleIdentityToken).toHaveBeenNthCalledWith(1, serviceAccount);
     expect(execa).toHaveBeenNthCalledWith(1, cli, [
-      'pub',
-      'token',
-      'add',
-      'https://pub.dev',
-      `--env-var=${semanticReleasePubToken}`
+      "pub",
+      "token",
+      "add",
+      "https://pub.dev",
+      `--env-var=${semanticReleasePubToken}`,
     ]);
     expect(execa).toHaveBeenNthCalledWith(2, cli, [
-      'pub',
-      'publish',
-      '--force'
+      "pub",
+      "publish",
+      "--force",
     ]);
   });
 
-  test('skip publish', async () => {
+  test("skip publish", async () => {
     const newConfig = { ...config, publishPub: false };
     vi.mocked(getConfig).mockReturnValue(newConfig);
 
@@ -67,5 +67,5 @@ describe('publish', () => {
   });
 
   const stubEnv = () =>
-    vi.stubEnv('GOOGLE_SERVICE_ACCOUNT_KEY', serviceAccount);
+    vi.stubEnv("GOOGLE_SERVICE_ACCOUNT_KEY", serviceAccount);
 });

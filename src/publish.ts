@@ -1,13 +1,13 @@
-import { execa } from 'execa';
-import { PublishContext } from 'semantic-release';
-import { PluginConfig } from './types.js';
-import { getConfig, getGoogleIdentityToken } from './utils.js';
+import { execa } from "execa";
+import { PublishContext } from "semantic-release";
+import { PluginConfig } from "./types.js";
+import { getConfig, getGoogleIdentityToken } from "./utils.js";
 
-const SEMANTIC_RELEASE_PUB_TOKEN = 'SEMANTIC_RELEASE_PUB_TOKEN';
+const SEMANTIC_RELEASE_PUB_TOKEN = "SEMANTIC_RELEASE_PUB_TOKEN";
 
 export const publish = async (
   pluginConfig: PluginConfig,
-  { nextRelease: { version }, logger }: PublishContext
+  { nextRelease: { version }, logger }: PublishContext,
 ) => {
   const { cli, publishPub } = getConfig(pluginConfig);
   if (!publishPub) {
@@ -21,17 +21,17 @@ export const publish = async (
   await setPubToken(cli, idToken);
 
   logger.log(`Publishing version ${version} to pub.dev`);
-  await execa(cli, ['pub', 'publish', '--force']);
-  logger.log('Published package');
+  await execa(cli, ["pub", "publish", "--force"]);
+  logger.log("Published package");
 };
 
 const setPubToken = async (cli: string, idToken: string) => {
   process.env[SEMANTIC_RELEASE_PUB_TOKEN] = idToken;
   await execa(cli, [
-    'pub',
-    'token',
-    'add',
-    'https://pub.dev',
-    `--env-var=${SEMANTIC_RELEASE_PUB_TOKEN}`
+    "pub",
+    "token",
+    "add",
+    "https://pub.dev",
+    `--env-var=${SEMANTIC_RELEASE_PUB_TOKEN}`,
   ]);
 };
