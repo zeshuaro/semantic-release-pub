@@ -12,6 +12,7 @@ describe("getConfig", () => {
   const config: PluginConfig = {
     cli: "flutter",
     publishPub: false,
+    useVersionCode: false,
   };
 
   test("success", () => {

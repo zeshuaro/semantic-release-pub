@@ -16,7 +16,7 @@ describe("verifyConditions", () => {
   const serviceAccount = "serviceAccount";
   const idToken = "idToken";
 
-  const config: PluginConfig = { cli, publishPub: true };
+  const config: PluginConfig = { cli, publishPub: true, useVersionCode: false };
 
   const logger = mock<Signale>();
   const context = mock<VerifyConditionsContext>();

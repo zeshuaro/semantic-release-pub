@@ -16,7 +16,7 @@ describe("prepare", () => {
   const pubspecPath = "pubspec.yaml";
   const cli = "dart";
 
-  const config: PluginConfig = { cli, publishPub: true };
+  const config: PluginConfig = { cli, publishPub: true, useVersionCode: false };
 
   const basePubspec = codeBlock`
     name: pub_package
@@ -66,4 +66,58 @@ describe("prepare", () => {
       expect(writeFileSync).toHaveBeenNthCalledWith(1, pubspecPath, newPubspec);
     },
   );
+
+  test("success with pubspec version with version code (useVersionCode = true)", async () => {
+    const newConfig = { ...config, useVersionCode: true };
+    const pubspec = basePubspec.replace(
+      new RegExp(versionPlaceholder),
+      `${newVersion}+1`,
+    );
+    vi.mocked(readFileSync).mockReturnValue(pubspec);
+
+    await prepare(newConfig, context);
+
+    const newPubspec = basePubspec.replace(
+      new RegExp(versionPlaceholder),
+      `${newVersion}+2`,
+    );
+
+    expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");
+    expect(writeFileSync).toHaveBeenNthCalledWith(1, pubspecPath, newPubspec);
+  });
+
+  test(`success with pubspec version without version code (useVersionCode = true)`, async () => {
+    const newConfig = { ...config, useVersionCode: true };
+    const pubspec = basePubspec.replace(
+      new RegExp(versionPlaceholder),
+      `${newVersion}`,
+    );
+    vi.mocked(readFileSync).mockReturnValue(pubspec);
+
+    await prepare(newConfig, context);
+
+    const newPubspec = basePubspec.replace(
+      new RegExp(versionPlaceholder),
+      `${newVersion}+1`,
+    );
+
+    expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");
+    expect(writeFileSync).toHaveBeenNthCalledWith(1, pubspecPath, newPubspec);
+  });
+
+  test("error due to invalid version code", async () => {
+    const newConfig = { ...config, useVersionCode: true };
+    const pubspec = basePubspec.replace(
+      new RegExp(versionPlaceholder),
+      `${newVersion}+invalid`,
+    );
+    vi.mocked(readFileSync).mockReturnValue(pubspec);
+
+    await expect(() => prepare(newConfig, context)).rejects.toThrowError(
+      /Invalid version code/,
+    );
+
+    expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");
+    expect(writeFileSync).toBeCalledTimes(0);
+  });
 });
