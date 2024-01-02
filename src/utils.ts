@@ -6,6 +6,7 @@ import { PluginConfig } from "./types.js";
 const DEFAULT_CONFIG: PluginConfig = {
   cli: "dart",
   publishPub: true,
+  useVersionCode: false,
 };
 
 const PUB_DEV_AUDIENCE = "https://pub.dev";
