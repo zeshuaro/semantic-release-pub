@@ -115,3 +115,5 @@ The following instructions are referenced from the [documentation](https://dart.
   ]
 }
 ```
+
+See [here](https://github.com/zeshuaro/firestore_cache/pull/162) for a sample pull request utilising this plugin and `semantic-release` to publish a Flutter package.
