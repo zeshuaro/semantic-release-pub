@@ -37,10 +37,9 @@ jobs:
         uses: sonarsource/sonarcloud-github-action@v2.1.1
         with:
           args: >
-            -Dsonar.pullrequest.provider=github 
-            -Dsonar.pullrequest.key=${{ github.event.pull_request.number }} 
-            -Dsonar.pullrequest.branch=${{github.event.pull_request.head.repo.owner.login}}:$PR_HEAD_REF 
-            -Dsonar.pullrequest.github.repository=${{ github.event.pull_request.base.repo.full_name }} 
+            -Dsonar.scm.revision=${{ github.event.pull_request.head.sha }}
+            -Dsonar.pullrequest.key=${{ github.event.pull_request.number }}
+            -Dsonar.pullrequest.branch=${{ github.event.pull_request.head.ref }}
             -Dsonar.pullrequest.base=${{ github.event.pull_request.base.ref }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
