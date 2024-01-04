@@ -16,7 +16,11 @@ describe("prepare", () => {
   const pubspecPath = "pubspec.yaml";
   const cli = "dart";
 
-  const config: PluginConfig = { cli, publishPub: true, useVersionCode: false };
+  const config: PluginConfig = {
+    cli,
+    publishPub: true,
+    updateBuildNumber: false,
+  };
 
   const basePubspec = codeBlock`
     name: pub_package
@@ -67,8 +71,8 @@ describe("prepare", () => {
     },
   );
 
-  test("success with pubspec version with version code (useVersionCode = true)", async () => {
-    const newConfig = { ...config, useVersionCode: true };
+  test("success with pubspec version with version code (updateBuildNumber = true)", async () => {
+    const newConfig = { ...config, updateBuildNumber: true };
     const pubspec = basePubspec.replace(
       new RegExp(versionPlaceholder),
       `${newVersion}+1`,
@@ -86,8 +90,8 @@ describe("prepare", () => {
     expect(writeFileSync).toHaveBeenNthCalledWith(1, pubspecPath, newPubspec);
   });
 
-  test(`success with pubspec version without version code (useVersionCode = true)`, async () => {
-    const newConfig = { ...config, useVersionCode: true };
+  test(`success with pubspec version without version code (updateBuildNumber = true)`, async () => {
+    const newConfig = { ...config, updateBuildNumber: true };
     const pubspec = basePubspec.replace(
       new RegExp(versionPlaceholder),
       `${newVersion}`,
@@ -106,7 +110,7 @@ describe("prepare", () => {
   });
 
   test("error due to invalid version code", async () => {
-    const newConfig = { ...config, useVersionCode: true };
+    const newConfig = { ...config, updateBuildNumber: true };
     const pubspec = basePubspec.replace(
       new RegExp(versionPlaceholder),
       `${newVersion}+invalid`,

@@ -11,7 +11,7 @@ export const prepare = async (
   pluginConfig: PluginConfig,
   { nextRelease: { version }, logger }: PrepareContext,
 ) => {
-  const { useVersionCode } = getConfig(pluginConfig);
+  const { updateBuildNumber } = getConfig(pluginConfig);
 
   const data = readFileSync(PUBSPEC_PATH, "utf-8");
   const pubspec = Pubspec.parse(parse(data));
@@ -21,7 +21,7 @@ export const prepare = async (
   );
 
   let nextVersion = version;
-  if (useVersionCode) {
+  if (updateBuildNumber) {
     const versionCodeString =
       pubspec.version.indexOf("+") >= 0 ? pubspec.version.split("+")[1] : "0";
 
