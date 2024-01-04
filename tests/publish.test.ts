@@ -16,7 +16,11 @@ describe("publish", () => {
   const version = "1.2.3";
   const semanticReleasePubToken = "SEMANTIC_RELEASE_PUB_TOKEN";
 
-  const config: PluginConfig = { cli, publishPub: true };
+  const config: PluginConfig = {
+    cli,
+    publishPub: true,
+    updateBuildNumber: false,
+  };
   const nextRelease = mock<NextRelease>();
   const logger = mock<Signale>();
   const context = mock<PublishContext>();
