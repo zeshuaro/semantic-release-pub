@@ -96,7 +96,7 @@ The following instructions are referenced from the [documentation](https://dart.
 |---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
 | `cli`               | The `dart` or `flutter` CLI to use to publish the package to the registry.                                                                                                | `dart`  |
 | `publishPub`        | Whether to publish the package to the registry. If set to `false`, the `pubspec.yaml` version will still be updated.                                                      | `true`  |
-| `updateBuildNumber` | Whether to write version code for every newly bumped version in `pubspec.yaml` ([Learn more](https://developer.android.com/studio/publish/versioning#versioningsettings)) | `false` |
+| `updateBuildNumber` | Whether to write build number for every newly bumped version in `pubspec.yaml` ([Learn more](https://docs.flutter.dev/deployment/android#updating-the-apps-version-number)) | `false` |
 
 ### Examples
 
