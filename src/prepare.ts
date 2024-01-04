@@ -1,6 +1,8 @@
 import { readFileSync, writeFileSync } from "fs";
-import { PrepareContext } from "semantic-release";
 import { parse } from "yaml";
+import { PrepareContext } from "semantic-release";
+import SemanticReleaseError from "@semantic-release/error";
+
 import { Pubspec } from "./schemas.js";
 import { PluginConfig } from "./types.js";
 import { getConfig } from "./utils.js";
@@ -22,17 +24,16 @@ export const prepare = async (
 
   let nextVersion = version;
   if (updateBuildNumber) {
-    const versionCodeString =
-      pubspec.version.indexOf("+") >= 0 ? pubspec.version.split("+")[1] : "0";
+    const parts = pubspec.version.split("+");
+    const buildNumber = parts.length > 1 ? Number(parts[1]) : 0;
 
-    const versionCode = Number(versionCodeString);
-    if (isNaN(versionCode)) {
-      throw new Error(
-        `Invalid version code: ${versionCodeString} in ${pubspec.version}`,
+    if (isNaN(buildNumber)) {
+      throw new SemanticReleaseError(
+        `Invalid build number: ${buildNumber} in ${pubspec.version}`,
       );
     }
 
-    nextVersion = `${version}+${versionCode + 1}`;
+    nextVersion = `${version}+${buildNumber + 1}`;
   }
 
   const newData = data.replace(
