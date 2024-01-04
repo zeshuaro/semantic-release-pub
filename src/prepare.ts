@@ -41,6 +41,6 @@ export const prepare = async (
     `version: ${nextVersion}`,
   );
 
-  logger.log(`Writing version ${version} to ${PUBSPEC_PATH}`);
+  logger.log(`Writing version ${nextVersion} to ${PUBSPEC_PATH}`);
   writeFileSync(PUBSPEC_PATH, newData);
 };
