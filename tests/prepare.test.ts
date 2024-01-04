@@ -71,7 +71,7 @@ describe("prepare", () => {
     },
   );
 
-  test("success with pubspec version with version code (updateBuildNumber = true)", async () => {
+  test("success with pubspec version with build number (updateBuildNumber = true)", async () => {
     const newConfig = { ...config, updateBuildNumber: true };
     const pubspec = basePubspec.replace(
       new RegExp(versionPlaceholder),
@@ -90,7 +90,7 @@ describe("prepare", () => {
     expect(writeFileSync).toHaveBeenNthCalledWith(1, pubspecPath, newPubspec);
   });
 
-  test(`success with pubspec version without version code (updateBuildNumber = true)`, async () => {
+  test(`success with pubspec version without build number (updateBuildNumber = true)`, async () => {
     const newConfig = { ...config, updateBuildNumber: true };
     const pubspec = basePubspec.replace(
       new RegExp(versionPlaceholder),
@@ -109,7 +109,7 @@ describe("prepare", () => {
     expect(writeFileSync).toHaveBeenNthCalledWith(1, pubspecPath, newPubspec);
   });
 
-  test("error due to invalid version code", async () => {
+  test("error due to invalid build number", async () => {
     const newConfig = { ...config, updateBuildNumber: true };
     const pubspec = basePubspec.replace(
       new RegExp(versionPlaceholder),
@@ -118,7 +118,7 @@ describe("prepare", () => {
     vi.mocked(readFileSync).mockReturnValue(pubspec);
 
     await expect(() => prepare(newConfig, context)).rejects.toThrowError(
-      /Invalid version code/,
+      /Invalid build number/,
     );
 
     expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");
