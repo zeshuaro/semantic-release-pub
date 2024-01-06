@@ -3,8 +3,8 @@
 [![npm](https://img.shields.io/npm/v/semantic-release-pub)](https://www.npmjs.com/package/semantic-release-pub)
 [![License](https://img.shields.io/github/license/zeshuaro/semantic-release-pub)](https://github.com/zeshuaro/semantic-release-pub/blob/main/LICENSE)
 [![GitHub Actions](https://github.com/zeshuaro/semantic-release-pub/actions/workflows/github-actions.yml/badge.svg)](https://github.com/zeshuaro/semantic-release-pub/actions/workflows/github-actions.yml)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=semantic-release-pub&metric=coverage)](https://sonarcloud.io/summary/new_code?id=semantic-release-pub)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=semantic-release-pub&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=semantic-release-pub)
+[![codecov](https://codecov.io/github/zeshuaro/semantic-release-pub/graph/badge.svg?token=P40ZNZNXG2)](https://codecov.io/github/zeshuaro/semantic-release-pub)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/2694cc48a8dd416798eaab232948090a)](https://app.codacy.com/gh/zeshuaro/semantic-release-pub/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![Code Style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 [![Github-sponsors](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#EA4AAA)](https://github.com/sponsors/zeshuaro)
@@ -92,10 +92,10 @@ The following instructions are referenced from the [documentation](https://dart.
 
 ### Options
 
-| Option              | Description                                                                                                                                                               | Default |
-|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
-| `cli`               | The `dart` or `flutter` CLI to use to publish the package to the registry.                                                                                                | `dart`  |
-| `publishPub`        | Whether to publish the package to the registry. If set to `false`, the `pubspec.yaml` version will still be updated.                                                      | `true`  |
+| Option              | Description                                                                                                                                                                                                                                             | Default |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| `cli`               | The `dart` or `flutter` CLI to use to publish the package to the registry.                                                                                                                                                                              | `dart`  |
+| `publishPub`        | Whether to publish the package to the registry. If set to `false`, the `pubspec.yaml` version will still be updated.                                                                                                                                    | `true`  |
 | `updateBuildNumber` | Whether to write build number for every newly bumped version in `pubspec.yaml`. Note that the build number will always be increased by one. Learn more on [Flutter docs](https://docs.flutter.dev/deployment/android#updating-the-apps-version-number). | `false` |
 
 ### Examples
