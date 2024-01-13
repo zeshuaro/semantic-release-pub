@@ -55,8 +55,8 @@ jobs:
           yarn
           yarn lint
 
-  semantic-release:
-    name: Semantic release
+  release:
+    name: Release
     runs-on: ubuntu-latest
     needs: [test, lint]
     if: ${{ (github.ref == 'refs/heads/main') && (contains(fromJSON('["workflow_dispatch", "schedule"]'), github.event_name)) }}
@@ -67,6 +67,13 @@ jobs:
       pull-requests: write
 
     steps:
+      - name: Create GitHub App token 🔑
+        id: create-app-token
+        uses: tibdex/github-app-token@v2.1.0
+        with:
+          app_id: ${{ secrets.GH_APP_ID }}
+          private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
       - name: Checkout 🛎️
         uses: actions/checkout@v4
         with:
@@ -88,5 +95,5 @@ jobs:
       - name: Release 🚀
         run: npx semantic-release
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ steps.create-app-token.outputs.token }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
