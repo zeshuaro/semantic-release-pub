@@ -1,8 +1,11 @@
 import SemanticReleaseError from "@semantic-release/error";
+import { readFileSync } from "fs";
 import { JWT } from "google-auth-library";
-import { ServiceAccount } from "./schemas.js";
+import { parse } from "yaml";
+import { Pubspec, ServiceAccount } from "./schemas.js";
 import { PluginConfig } from "./types.js";
 
+export const PUBSPEC_PATH = "pubspec.yaml";
 const DEFAULT_CONFIG: PluginConfig = {
   cli: "dart",
   publishPub: true,
@@ -32,6 +35,14 @@ export const getGoogleIdentityToken = async (serviceAccountStr: string) => {
   }
 
   return creds.id_token;
+};
+
+export const getPubspecString = () => {
+  return readFileSync(PUBSPEC_PATH, "utf-8");
+};
+
+export const getPubspecFromString = (data: string) => {
+  return Pubspec.parse(parse(data));
 };
 
 const getServiceAccount = (serviceAccountStr: string) => {

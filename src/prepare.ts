@@ -1,13 +1,14 @@
-import { readFileSync, writeFileSync } from "fs";
-import { parse } from "yaml";
-import { PrepareContext } from "semantic-release";
 import SemanticReleaseError from "@semantic-release/error";
+import { writeFileSync } from "fs";
+import { PrepareContext } from "semantic-release";
 
-import { Pubspec } from "./schemas.js";
 import { PluginConfig } from "./types.js";
-import { getConfig } from "./utils.js";
-
-const PUBSPEC_PATH = "pubspec.yaml";
+import {
+  PUBSPEC_PATH,
+  getConfig,
+  getPubspecFromString,
+  getPubspecString,
+} from "./utils.js";
 
 export const prepare = async (
   pluginConfig: PluginConfig,
@@ -15,8 +16,8 @@ export const prepare = async (
 ) => {
   const { updateBuildNumber } = getConfig(pluginConfig);
 
-  const data = readFileSync(PUBSPEC_PATH, "utf-8");
-  const pubspec = Pubspec.parse(parse(data));
+  const data = getPubspecString();
+  const pubspec = getPubspecFromString(data);
   const pubspecVersionEscaped = pubspec.version.replace(
     /[/\-\\^$*+?.()|[\]{}]/g,
     "\\$&",
