@@ -45,6 +45,11 @@ export const getPubspecFromString = (data: string) => {
   return Pubspec.parse(parse(data));
 };
 
+export const getPubspec = () => {
+  const data = getPubspecString();
+  return getPubspecFromString(data);
+};
+
 const getServiceAccount = (serviceAccountStr: string) => {
   try {
     return ServiceAccount.parse(JSON.parse(serviceAccountStr));

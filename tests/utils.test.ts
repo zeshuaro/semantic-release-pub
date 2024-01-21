@@ -2,13 +2,14 @@ import SemanticReleaseError from "@semantic-release/error";
 import { codeBlock } from "common-tags";
 import { readFileSync } from "fs";
 import { Credentials, JWT } from "google-auth-library";
-import { afterEach, describe, expect, test, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 import { mock } from "vitest-mock-extended";
 import { parse } from "yaml";
 import { PluginConfig } from "../src";
 import {
   getConfig,
   getGoogleIdentityToken,
+  getPubspec,
   getPubspecFromString,
   getPubspecString,
 } from "../src/utils";
@@ -93,36 +94,56 @@ describe("getGoogleIdentityToken", () => {
   };
 });
 
-describe("getPubspecString", () => {
+describe("pubspecUtils", () => {
   const pubspecPath = "pubspec.yaml";
   const fileContent = "fileContent";
+  const pubspec = {
+    name: "pub_package",
+    version: "1.0.0",
+  };
+
+  beforeEach(() => {
+    vi.mocked(readFileSync).mockReturnValue(fileContent);
+    vi.mocked(parse).mockReturnValue(pubspec);
+  });
 
   afterEach(() => {
     vi.restoreAllMocks();
   });
 
-  test("success", () => {
-    vi.mocked(readFileSync).mockReturnValue(fileContent);
+  describe("getPubspecString", () => {
+    test("success", () => {
+      const actual = getPubspecString();
 
-    const actual = getPubspecString();
-
-    expect(actual).toEqual(fileContent);
-    expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");
+      expect(actual).toEqual(fileContent);
+      expectReadFileCalled();
+    });
   });
-});
 
-describe("getPubspecFromString", () => {
-  const fileContent = "fileContent";
-  const pubspec = {
-    version: "1.0.0",
+  describe("getPubspecFromString", () => {
+    test("success", () => {
+      const actual = getPubspecFromString(fileContent);
+
+      expect(actual).toEqual(pubspec);
+      expectYamlParseCalled();
+    });
+  });
+
+  describe("getPubspec", () => {
+    test("success", () => {
+      const actual = getPubspec();
+
+      expect(actual).toEqual(pubspec);
+      expectReadFileCalled();
+      expectYamlParseCalled();
+    });
+  });
+
+  const expectReadFileCalled = () => {
+    expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");
   };
 
-  test("success", () => {
-    vi.mocked(parse).mockReturnValue(pubspec);
-
-    const actual = getPubspecFromString(fileContent);
-
-    expect(actual).toEqual(pubspec);
+  const expectYamlParseCalled = () => {
     expect(parse).toHaveBeenNthCalledWith(1, fileContent);
-  });
+  };
 });
