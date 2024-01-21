@@ -1,12 +1,21 @@
 import SemanticReleaseError from "@semantic-release/error";
 import { codeBlock } from "common-tags";
+import { readFileSync } from "fs";
 import { Credentials, JWT } from "google-auth-library";
 import { afterEach, describe, expect, test, vi } from "vitest";
 import { mock } from "vitest-mock-extended";
+import { parse } from "yaml";
 import { PluginConfig } from "../src";
-import { getConfig, getGoogleIdentityToken } from "../src/utils";
+import {
+  getConfig,
+  getGoogleIdentityToken,
+  getPubspecFromString,
+  getPubspecString,
+} from "../src/utils";
 
 vi.mock("google-auth-library");
+vi.mock("fs");
+vi.mock("yaml");
 
 describe("getConfig", () => {
   const config: PluginConfig = {
@@ -82,4 +91,38 @@ describe("getGoogleIdentityToken", () => {
       pubDevAudience,
     );
   };
+});
+
+describe("getPubspecString", () => {
+  const pubspecPath = "pubspec.yaml";
+  const fileContent = "fileContent";
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  test("success", () => {
+    vi.mocked(readFileSync).mockReturnValue(fileContent);
+
+    const actual = getPubspecString();
+
+    expect(actual).toEqual(fileContent);
+    expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");
+  });
+});
+
+describe("getPubspecFromString", () => {
+  const fileContent = "fileContent";
+  const pubspec = {
+    version: "1.0.0",
+  };
+
+  test("success", () => {
+    vi.mocked(parse).mockReturnValue(pubspec);
+
+    const actual = getPubspecFromString(fileContent);
+
+    expect(actual).toEqual(pubspec);
+    expect(parse).toHaveBeenNthCalledWith(1, fileContent);
+  });
 });
