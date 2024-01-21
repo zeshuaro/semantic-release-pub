@@ -4,7 +4,8 @@ import { Signale } from "signale";
 import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 import { mock } from "vitest-mock-extended";
 import { PluginConfig, publish } from "../src/index.js";
-import { getConfig, getGoogleIdentityToken } from "../src/utils.js";
+import { Pubspec } from "../src/schemas.js";
+import { getConfig, getGoogleIdentityToken, getPubspec } from "../src/utils.js";
 
 vi.mock("execa");
 vi.mock("../src/utils");
@@ -21,6 +22,12 @@ describe("publish", () => {
     publishPub: true,
     updateBuildNumber: false,
   };
+
+  const pubspec: Pubspec = {
+    name: "pub_package",
+    version,
+  };
+
   const nextRelease = mock<NextRelease>();
   const logger = mock<Signale>();
   const context = mock<PublishContext>();
@@ -32,6 +39,7 @@ describe("publish", () => {
 
     vi.mocked(getConfig).mockReturnValue(config);
     vi.mocked(getGoogleIdentityToken).mockResolvedValue(idToken);
+    vi.mocked(getPubspec).mockReturnValue(pubspec);
   });
 
   afterEach(() => {
@@ -42,9 +50,14 @@ describe("publish", () => {
   test("success", async () => {
     stubEnv();
 
-    await publish(config, context);
+    const actual = await publish(config, context);
 
+    expect(actual).toEqual({
+      name: "pub.dev package",
+      url: `https://pub.dev/packages/${pubspec.name}/versions/${version}`,
+    });
     expect(process.env[semanticReleasePubToken]).toEqual(idToken);
+
     expect(getGoogleIdentityToken).toHaveBeenNthCalledWith(1, serviceAccount);
     expect(execa).toHaveBeenNthCalledWith(1, cli, [
       "pub",
@@ -64,8 +77,9 @@ describe("publish", () => {
     const newConfig = { ...config, publishPub: false };
     vi.mocked(getConfig).mockReturnValue(newConfig);
 
-    await publish(newConfig, context);
+    const actual = await publish(newConfig, context);
 
+    expect(actual).toBeUndefined();
     expect(getGoogleIdentityToken).toBeCalledTimes(0);
     expect(execa).toBeCalledTimes(0);
   });

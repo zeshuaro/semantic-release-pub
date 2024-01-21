@@ -1,7 +1,7 @@
 import { execa } from "execa";
 import { PublishContext } from "semantic-release";
 import { PluginConfig } from "./types.js";
-import { getConfig, getGoogleIdentityToken } from "./utils.js";
+import { getConfig, getGoogleIdentityToken, getPubspec } from "./utils.js";
 
 const SEMANTIC_RELEASE_PUB_TOKEN = "SEMANTIC_RELEASE_PUB_TOKEN";
 
@@ -15,14 +15,19 @@ export const publish = async (
     return;
   }
 
+  const pubspec = getPubspec();
   const { GOOGLE_SERVICE_ACCOUNT_KEY } = process.env;
-
   const idToken = await getGoogleIdentityToken(GOOGLE_SERVICE_ACCOUNT_KEY);
   await setPubToken(cli, idToken);
 
   logger.log(`Publishing version ${version} to pub.dev`);
   await execa(cli, ["pub", "publish", "--force"]);
-  logger.log("Published package");
+  logger.log(`Published ${pubspec.name}@${version} on pub.dev`);
+
+  return {
+    name: "pub.dev package",
+    url: `https://pub.dev/packages/${pubspec.name}/versions/${version}`,
+  };
 };
 
 const setPubToken = async (cli: string, idToken: string) => {
