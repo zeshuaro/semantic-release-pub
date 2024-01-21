@@ -1,3 +1,38 @@
+## [0.8.0](https://github.com/zeshuaro/semantic-release-pub/compare/v0.7.1...v0.8.0) (2024-01-21)
+
+
+### Features
+
+* **publish:** return published package details ([#206](https://github.com/zeshuaro/semantic-release-pub/issues/206)) ([559d2b4](https://github.com/zeshuaro/semantic-release-pub/commit/559d2b47b64175b1ed1249eb8d494cc1c52077e4))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#194](https://github.com/zeshuaro/semantic-release-pub/issues/194)) ([4e21ada](https://github.com/zeshuaro/semantic-release-pub/commit/4e21ada37b7760d8208800e0e43d0f16dd3e8db9))
+* **deps:** update dependency prettier to v3.2.1 ([#195](https://github.com/zeshuaro/semantic-release-pub/issues/195)) ([81b8c21](https://github.com/zeshuaro/semantic-release-pub/commit/81b8c214bdffc259e2fc7ae20c17dfbed6efbc32))
+* **deps:** update dependency prettier to v3.2.2 ([#197](https://github.com/zeshuaro/semantic-release-pub/issues/197)) ([a59e752](https://github.com/zeshuaro/semantic-release-pub/commit/a59e752c00fd315c911c70116e3f71399923c78a))
+* **deps:** update dependency prettier to v3.2.3 ([#202](https://github.com/zeshuaro/semantic-release-pub/issues/202)) ([dcfabdc](https://github.com/zeshuaro/semantic-release-pub/commit/dcfabdcf13e65aa102ed33966e8cc84d3b58bfd7))
+* **deps:** update dependency prettier to v3.2.4 ([#203](https://github.com/zeshuaro/semantic-release-pub/issues/203)) ([59dc484](https://github.com/zeshuaro/semantic-release-pub/commit/59dc484cfb233377b6651b672521ae0a9df88370))
+* **deps:** update dependency semantic-release to v23 ([#198](https://github.com/zeshuaro/semantic-release-pub/issues/198)) ([7355f10](https://github.com/zeshuaro/semantic-release-pub/commit/7355f1068ae4580ab3044957994c5e86e6917d47))
+* **deps:** update typescript-eslint monorepo to v6.19.0 ([#200](https://github.com/zeshuaro/semantic-release-pub/issues/200)) ([279d2a8](https://github.com/zeshuaro/semantic-release-pub/commit/279d2a869cbde69ed3523a75d44197a445d6caae))
+* **deps:** update vitest monorepo to v1.2.0 ([#196](https://github.com/zeshuaro/semantic-release-pub/issues/196)) ([abf668e](https://github.com/zeshuaro/semantic-release-pub/commit/abf668eb28ccd0c1c37fbe3eec45cd431c3a3de4))
+* **deps:** update vitest monorepo to v1.2.1 ([#204](https://github.com/zeshuaro/semantic-release-pub/issues/204)) ([a6b46e6](https://github.com/zeshuaro/semantic-release-pub/commit/a6b46e69e21ec4af12e54596b7330557200851e6))
+
+
+### Code Refactoring
+
+* **prepare:** use shared functions to retrieve pubspec file content ([#205](https://github.com/zeshuaro/semantic-release-pub/issues/205)) ([747035c](https://github.com/zeshuaro/semantic-release-pub/commit/747035c82531a368bcd69514e4561402079490f1))
+
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 11305da ([#193](https://github.com/zeshuaro/semantic-release-pub/issues/193)) ([15b0b03](https://github.com/zeshuaro/semantic-release-pub/commit/15b0b0326a8d6b9e6d22a1b1310994255d45c509))
+* **deps:** update zeshuaro/github-actions-workflows digest to 1a5d202 ([#192](https://github.com/zeshuaro/semantic-release-pub/issues/192)) ([8b9fc45](https://github.com/zeshuaro/semantic-release-pub/commit/8b9fc45b1a44541b6eb0b395f60964f3e132fe9e))
+* **deps:** update zeshuaro/github-actions-workflows digest to 20f223c ([#199](https://github.com/zeshuaro/semantic-release-pub/issues/199)) ([0f31b1e](https://github.com/zeshuaro/semantic-release-pub/commit/0f31b1e3535b02ca153ef56b8d3b211c28e902d2))
+* **deps:** update zeshuaro/github-actions-workflows digest to b93ca44 ([#201](https://github.com/zeshuaro/semantic-release-pub/issues/201)) ([cd6a39c](https://github.com/zeshuaro/semantic-release-pub/commit/cd6a39c88b656e1e133cbf2f0ccaffbcc21a97c7))
+* **release:** remove redundant permissions ([#190](https://github.com/zeshuaro/semantic-release-pub/issues/190)) ([0118dfa](https://github.com/zeshuaro/semantic-release-pub/commit/0118dfa85c4300a6938fc958a21b747dc2087b31))
+* **scheduled:** use github app id and private key ([#191](https://github.com/zeshuaro/semantic-release-pub/issues/191)) ([2d2211d](https://github.com/zeshuaro/semantic-release-pub/commit/2d2211d8952bddb9eebbbb349d602eb02acaa5ac))
+
 ## [0.7.1](https://github.com/zeshuaro/semantic-release-pub/compare/v0.7.0...v0.7.1) (2024-01-14)
 
 
