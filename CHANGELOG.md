@@ -1,3 +1,27 @@
+## [0.8.2](https://github.com/zeshuaro/semantic-release-pub/compare/v0.8.1...v0.8.2) (2024-02-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency google-auth-library to ^9.6.1 ([#218](https://github.com/zeshuaro/semantic-release-pub/issues/218)) ([58eacb3](https://github.com/zeshuaro/semantic-release-pub/commit/58eacb3a8455b6c85a4f9cc69b8ed376f63d78de))
+* **deps:** update dependency google-auth-library to ^9.6.2 ([#220](https://github.com/zeshuaro/semantic-release-pub/issues/220)) ([ed97dca](https://github.com/zeshuaro/semantic-release-pub/commit/ed97dca4f4ba39f731741d278f332ddeafb2a6b1))
+* **deps:** update dependency google-auth-library to ^9.6.3 ([#226](https://github.com/zeshuaro/semantic-release-pub/issues/226)) ([c932da6](https://github.com/zeshuaro/semantic-release-pub/commit/c932da6ac8aff7084c978106606b0932fdac9628))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#219](https://github.com/zeshuaro/semantic-release-pub/issues/219)) ([eaac801](https://github.com/zeshuaro/semantic-release-pub/commit/eaac801974168d274a15b320bf49e520edaf7e17))
+* **deps:** update dependency prettier to v3.2.5 ([#222](https://github.com/zeshuaro/semantic-release-pub/issues/222)) ([6885157](https://github.com/zeshuaro/semantic-release-pub/commit/6885157e213c9d015580baf8955d0efaa1143861))
+* **deps:** update dependency semantic-release to v23.0.1 ([#225](https://github.com/zeshuaro/semantic-release-pub/issues/225)) ([422848c](https://github.com/zeshuaro/semantic-release-pub/commit/422848cb7b5d63739ca4d3864ae900c522601023))
+* **deps:** update dependency semantic-release to v23.0.2 ([#227](https://github.com/zeshuaro/semantic-release-pub/issues/227)) ([ce8accf](https://github.com/zeshuaro/semantic-release-pub/commit/ce8accf8b81ddb8f73b29aa31d8926627c28dd9f))
+* **deps:** update typescript-eslint monorepo to v6.21.0 ([#223](https://github.com/zeshuaro/semantic-release-pub/issues/223)) ([b613455](https://github.com/zeshuaro/semantic-release-pub/commit/b6134557845e6dfef76632036a838fe5b4110846))
+
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 8a9940e ([#221](https://github.com/zeshuaro/semantic-release-pub/issues/221)) ([0295643](https://github.com/zeshuaro/semantic-release-pub/commit/0295643c9d4dff780ffb22949afba385d0f0b87e))
+* **deps:** update zeshuaro/github-actions-workflows digest to 97519e9 ([#224](https://github.com/zeshuaro/semantic-release-pub/issues/224)) ([b06c041](https://github.com/zeshuaro/semantic-release-pub/commit/b06c041cfc39e3511befbcdc1b51ef282631ec6b))
+
 ## [0.8.1](https://github.com/zeshuaro/semantic-release-pub/compare/v0.8.0...v0.8.1) (2024-02-04)
 
 
