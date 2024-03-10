@@ -1,3 +1,17 @@
+## [0.8.5](https://github.com/zeshuaro/semantic-release-pub/compare/v0.8.4...v0.8.5) (2024-03-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency yaml to ^2.4.1 ([#248](https://github.com/zeshuaro/semantic-release-pub/issues/248)) ([7876d14](https://github.com/zeshuaro/semantic-release-pub/commit/7876d14bc41ae0a988df70401c7cc0c1acd3ff8a))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#246](https://github.com/zeshuaro/semantic-release-pub/issues/246)) ([75bf168](https://github.com/zeshuaro/semantic-release-pub/commit/75bf1683746cf516b965ccce1a6425772f065875))
+* **deps:** update dependency typescript to v5.4.2 ([#249](https://github.com/zeshuaro/semantic-release-pub/issues/249)) ([1e291a3](https://github.com/zeshuaro/semantic-release-pub/commit/1e291a3ba5bce888ade6acdaff09bdb68cb0f189))
+* **deps:** update typescript-eslint monorepo to v7.1.1 ([#247](https://github.com/zeshuaro/semantic-release-pub/issues/247)) ([8b29a11](https://github.com/zeshuaro/semantic-release-pub/commit/8b29a11c63034c40a2bc4e25bc05954b962efcc0))
+
 ## [0.8.4](https://github.com/zeshuaro/semantic-release-pub/compare/v0.8.3...v0.8.4) (2024-03-03)
 
 
