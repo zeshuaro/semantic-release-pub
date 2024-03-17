@@ -1,3 +1,16 @@
+## [0.8.6](https://github.com/zeshuaro/semantic-release-pub/compare/v0.8.5...v0.8.6) (2024-03-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency google-auth-library to ^9.7.0 ([#252](https://github.com/zeshuaro/semantic-release-pub/issues/252)) ([9e67baf](https://github.com/zeshuaro/semantic-release-pub/commit/9e67baf9c2dcc4da5244bcdff130a9f3a4706930))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#250](https://github.com/zeshuaro/semantic-release-pub/issues/250)) ([75ff085](https://github.com/zeshuaro/semantic-release-pub/commit/75ff0851674e5fb6671b0df8273f2ed7d9450cc1))
+* **deps:** update typescript-eslint monorepo to v7.2.0 ([#251](https://github.com/zeshuaro/semantic-release-pub/issues/251)) ([7c91912](https://github.com/zeshuaro/semantic-release-pub/commit/7c91912232ed645e178a2cb3710fe050b33c279b))
+
 ## [0.8.5](https://github.com/zeshuaro/semantic-release-pub/compare/v0.8.4...v0.8.5) (2024-03-10)
 
 
