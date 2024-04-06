@@ -29,7 +29,7 @@
     "format": "eslint --ext .ts --fix src tests && prettier --write src/**/*.ts tests/**/*.ts"
   },
   "engines": {
-    "node": ">=20.12.0"
+    "node": ">=20.12.1"
   },
   "dependencies": {
     "@semantic-release/error": "^4.0.0",
