@@ -2209,7 +2209,7 @@ execa@^8.0.0, execa@^8.0.1:
     signal-exit "^4.1.0"
     strip-final-newline "^3.0.0"
 
-execa@^9.0.0:
+execa@^9.0.0, execa@^9.0.1:
   version "9.0.2"
   resolved "https://registry.yarnpkg.com/execa/-/execa-9.0.2.tgz#9590a079f6632cc6381cb724cc03ae2489cbdea7"
   integrity sha512-oO281GF7ksH/Ogv1xyDf1prvFta/6/XkGKxRUvA3IB2MU1rCJGlFs86HRZhdooow1ISkR0Np0rOxUCIJVw36Rg==
