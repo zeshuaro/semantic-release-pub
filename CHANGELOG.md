@@ -1,3 +1,35 @@
+## [0.8.13](https://github.com/zeshuaro/semantic-release-pub/compare/v0.8.12...v0.8.13) (2024-05-12)
+
+
+### Bug Fixes
+
+* **deps:** update dependency zod to ^3.23.6 ([#322](https://github.com/zeshuaro/semantic-release-pub/issues/322)) ([f3740d0](https://github.com/zeshuaro/semantic-release-pub/commit/f3740d06f6bf471978d93f8426ac6f2d279a6bd3))
+* **deps:** update dependency zod to ^3.23.7 ([#332](https://github.com/zeshuaro/semantic-release-pub/issues/332)) ([dfc5f67](https://github.com/zeshuaro/semantic-release-pub/commit/dfc5f67a532bc91540ed475f654a69af817c573a))
+* **deps:** update dependency zod to ^3.23.8 ([#333](https://github.com/zeshuaro/semantic-release-pub/issues/333)) ([297dbaf](https://github.com/zeshuaro/semantic-release-pub/commit/297dbafa9af13939a9ded1854cb5c9d4f780befe))
+* **node:** update dependency node to v20.13.0 ([#325](https://github.com/zeshuaro/semantic-release-pub/issues/325)) ([29c4fc1](https://github.com/zeshuaro/semantic-release-pub/commit/29c4fc13b84bbb2e58c6864d65dcf5585cd38518))
+* **node:** update dependency node to v20.13.1 ([#328](https://github.com/zeshuaro/semantic-release-pub/issues/328)) ([9028c98](https://github.com/zeshuaro/semantic-release-pub/commit/9028c985bf4f21bdee225286e63106ca7a70f933))
+* **node:** update node.js to >=20.13.0 ([#331](https://github.com/zeshuaro/semantic-release-pub/issues/331)) ([92bf4c8](https://github.com/zeshuaro/semantic-release-pub/commit/92bf4c81e1ca374053b405b18986f1e406f02700))
+* **node:** update node.js to >=20.13.1 ([#335](https://github.com/zeshuaro/semantic-release-pub/issues/335)) ([f28aba1](https://github.com/zeshuaro/semantic-release-pub/commit/f28aba145120ac20094d1f1b4d4c1442b3699c4f))
+
+
+### Reverts
+
+* Revert "chore(deps): update dependency conventional-changelog-conventionalcommits to v8" (#336) ([5735fc0](https://github.com/zeshuaro/semantic-release-pub/commit/5735fc0feff8624c25c91c7057f041a87f2920a7)), closes [#336](https://github.com/zeshuaro/semantic-release-pub/issues/336)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#321](https://github.com/zeshuaro/semantic-release-pub/issues/321)) ([3c4ecd4](https://github.com/zeshuaro/semantic-release-pub/commit/3c4ecd4b69fd2102571fb808e8c0a3d95e959ab7))
+* **deps:** update dependency conventional-changelog-conventionalcommits to v8 ([#324](https://github.com/zeshuaro/semantic-release-pub/issues/324)) ([597761b](https://github.com/zeshuaro/semantic-release-pub/commit/597761be4677f0404a7bc4bd64358ebcbfcfbb87))
+* **deps:** update dependency eslint-plugin-n to v17.5.0 ([#329](https://github.com/zeshuaro/semantic-release-pub/issues/329)) ([bfbec0c](https://github.com/zeshuaro/semantic-release-pub/commit/bfbec0cb6d20b1cc7efa9febc9280212d3ff4072))
+* **deps:** update dependency eslint-plugin-n to v17.5.1 ([#330](https://github.com/zeshuaro/semantic-release-pub/issues/330)) ([04a9f95](https://github.com/zeshuaro/semantic-release-pub/commit/04a9f95e139d604aa976e0126df548ebc59c19c2))
+* **deps:** update vitest monorepo to v1.6.0 ([#323](https://github.com/zeshuaro/semantic-release-pub/issues/323)) ([2a9f0df](https://github.com/zeshuaro/semantic-release-pub/commit/2a9f0dfbabb2a05334864c5c0fe8400878f8ccab))
+
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to f618163 ([#326](https://github.com/zeshuaro/semantic-release-pub/issues/326)) ([dbb69a3](https://github.com/zeshuaro/semantic-release-pub/commit/dbb69a3f83b2238f8bc57c24df0bad3c30f51d99))
+
 ## [0.8.12](https://github.com/zeshuaro/semantic-release-pub/compare/v0.8.11...v0.8.12) (2024-05-05)
 
 
