@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@semantic-release/error": "^4.0.0",
-    "execa": "^9.2.0",
+    "execa": "^9.3.0",
     "google-auth-library": "^9.11.0",
     "yaml": "^2.4.5",
     "zod": "^3.23.8"
