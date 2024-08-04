@@ -1,3 +1,23 @@
+## [0.8.22](https://github.com/zeshuaro/semantic-release-pub/compare/v0.8.21...v0.8.22) (2024-08-04)
+
+### Bug Fixes
+
+* **deps:** update dependency google-auth-library to ^9.12.0 ([#433](https://github.com/zeshuaro/semantic-release-pub/issues/433)) ([7508231](https://github.com/zeshuaro/semantic-release-pub/commit/75082315ebde9bc48b26c609ec320f77ea76587f))
+* **deps:** update dependency google-auth-library to ^9.13.0 ([#438](https://github.com/zeshuaro/semantic-release-pub/issues/438)) ([b5886cc](https://github.com/zeshuaro/semantic-release-pub/commit/b5886cca4d1dfff02935dd2a964ac4b2e75a51f0))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#429](https://github.com/zeshuaro/semantic-release-pub/issues/429)) ([2f742d0](https://github.com/zeshuaro/semantic-release-pub/commit/2f742d00a64b69ce4976b3559378927c8a18fe5a))
+* **deps:** update dependency eslint to v9.8.0 ([#432](https://github.com/zeshuaro/semantic-release-pub/issues/432)) ([d1bc286](https://github.com/zeshuaro/semantic-release-pub/commit/d1bc2863e8e6c12775b31a11f565b6f8fc6f7ea0))
+* **deps:** update dependency eslint-plugin-n to v17.10.0 ([#430](https://github.com/zeshuaro/semantic-release-pub/issues/430)) ([c86f785](https://github.com/zeshuaro/semantic-release-pub/commit/c86f78598ad9be469e4f484917bec7592855dfd6))
+* **deps:** update dependency eslint-plugin-n to v17.10.1 ([#431](https://github.com/zeshuaro/semantic-release-pub/issues/431)) ([2ea8b9e](https://github.com/zeshuaro/semantic-release-pub/commit/2ea8b9e79db97c290b15ab4828b5745d2c469655))
+* **deps:** update typescript-eslint monorepo to v7.18.0 ([#435](https://github.com/zeshuaro/semantic-release-pub/issues/435)) ([475e46f](https://github.com/zeshuaro/semantic-release-pub/commit/475e46f94ab867e6a2f1bffef22dfc5094e408f3))
+* **deps:** update vitest monorepo to v2.0.5 ([#436](https://github.com/zeshuaro/semantic-release-pub/issues/436)) ([cba3d6f](https://github.com/zeshuaro/semantic-release-pub/commit/cba3d6f6eee91d2649017a189c6011df760dc332))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 536ff71 ([#434](https://github.com/zeshuaro/semantic-release-pub/issues/434)) ([568c4b7](https://github.com/zeshuaro/semantic-release-pub/commit/568c4b7744128d9baee805059814685fc768466c))
+
 ## [0.8.21](https://github.com/zeshuaro/semantic-release-pub/compare/v0.8.20...v0.8.21) (2024-07-28)
 
 ### Bug Fixes
