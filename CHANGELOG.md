@@ -1,3 +1,20 @@
+## [0.8.23](https://github.com/zeshuaro/semantic-release-pub/compare/v0.8.22...v0.8.23) (2024-08-18)
+
+### Bug Fixes
+
+* **deps:** update dependency execa to ^9.3.1 ([#446](https://github.com/zeshuaro/semantic-release-pub/issues/446)) ([a6fed40](https://github.com/zeshuaro/semantic-release-pub/commit/a6fed40b99572ecaefdc5f5a4a6886096372b7a5))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#439](https://github.com/zeshuaro/semantic-release-pub/issues/439)) ([eaee9e4](https://github.com/zeshuaro/semantic-release-pub/commit/eaee9e4cc7044089230bd01118fe70c26b158aa1))
+* **deps:** lock file maintenance ([#443](https://github.com/zeshuaro/semantic-release-pub/issues/443)) ([a8106f1](https://github.com/zeshuaro/semantic-release-pub/commit/a8106f150151b3c886634481a41b0fb04c59e831))
+* **deps:** update dependency eslint to v9.9.0 ([#444](https://github.com/zeshuaro/semantic-release-pub/issues/444)) ([7d81855](https://github.com/zeshuaro/semantic-release-pub/commit/7d81855f6cb0a191b4b0e4464b2ec9da4096c101))
+* **deps:** update dependency eslint-plugin-n to v17.10.2 ([#440](https://github.com/zeshuaro/semantic-release-pub/issues/440)) ([8625f7a](https://github.com/zeshuaro/semantic-release-pub/commit/8625f7a818ba1b8d41a5d3672c722820d64fd804))
+* **deps:** update dependency eslint-plugin-promise to v7.1.0 ([#442](https://github.com/zeshuaro/semantic-release-pub/issues/442)) ([d1efc8e](https://github.com/zeshuaro/semantic-release-pub/commit/d1efc8ec385487e6e8e01a3b63180df540914de4))
+* **deps:** update typescript-eslint monorepo to v8 (major) ([#437](https://github.com/zeshuaro/semantic-release-pub/issues/437)) ([7a78183](https://github.com/zeshuaro/semantic-release-pub/commit/7a78183c2aec8e3fd5295ed2e46155753ae337b5))
+* **deps:** update typescript-eslint monorepo to v8.0.1 ([#441](https://github.com/zeshuaro/semantic-release-pub/issues/441)) ([89ac74e](https://github.com/zeshuaro/semantic-release-pub/commit/89ac74e31041a93b4d75bb69ef30288e0ad587da))
+* **deps:** update typescript-eslint monorepo to v8.1.0 ([#445](https://github.com/zeshuaro/semantic-release-pub/issues/445)) ([1119479](https://github.com/zeshuaro/semantic-release-pub/commit/11194797b7400e8e386eec1ebb4bf38518c05bb5))
+
 ## [0.8.22](https://github.com/zeshuaro/semantic-release-pub/compare/v0.8.21...v0.8.22) (2024-08-04)
 
 ### Bug Fixes
