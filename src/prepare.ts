@@ -38,7 +38,7 @@ export const prepare = async (
   }
 
   const newData = data.replace(
-    new RegExp(`version:[ \t]+${pubspecVersionEscaped}`),
+    new RegExp(`version:[ \t]+['"]?${pubspecVersionEscaped}['"]?`),
     `version: ${nextVersion}`,
   );
 

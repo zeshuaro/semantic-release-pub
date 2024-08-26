@@ -10,6 +10,8 @@ vi.mock("fs");
 
 describe("prepare", () => {
   const oldVersion = "1.2.0";
+  const oldVersionSingleQuoted = "'1.2.0'";
+  const oldVersionDoubleQuoted = '"1.2.0"';
   const oldVersionWithBuild = "1.2.0+1";
   const newVersion = "1.2.3";
   const versionPlaceholder = "__version__";
@@ -55,21 +57,23 @@ describe("prepare", () => {
     vi.restoreAllMocks();
   });
 
-  test.each([oldVersion, oldVersionWithBuild])(
-    "success with pubspec version %s",
-    async (version) => {
-      const pubspec = basePubspec.replace(
-        new RegExp(versionPlaceholder),
-        version,
-      );
-      vi.mocked(readFileSync).mockReturnValue(pubspec);
+  test.each([
+    oldVersion,
+    oldVersionSingleQuoted,
+    oldVersionDoubleQuoted,
+    oldVersionWithBuild,
+  ])("success with pubspec version %s", async (version) => {
+    const pubspec = basePubspec.replace(
+      new RegExp(versionPlaceholder),
+      version,
+    );
+    vi.mocked(readFileSync).mockReturnValue(pubspec);
 
-      await prepare(config, context);
+    await prepare(config, context);
 
-      expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");
-      expect(writeFileSync).toHaveBeenNthCalledWith(1, pubspecPath, newPubspec);
-    },
-  );
+    expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");
+    expect(writeFileSync).toHaveBeenNthCalledWith(1, pubspecPath, newPubspec);
+  });
 
   test("success with pubspec version with build number (updateBuildNumber = true)", async () => {
     const newConfig = { ...config, updateBuildNumber: true };
