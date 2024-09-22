@@ -1,6 +1,6 @@
 {
   "name": "semantic-release-pub",
-  "version": "0.8.26",
+  "version": "0.8.27",
   "description": "semantic-release plugin to publish a Dart or Flutter package",
   "main": "dist/index.js",
   "author": "zeshuaro@gmail.com",
