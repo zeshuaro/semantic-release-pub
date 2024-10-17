@@ -35,7 +35,7 @@
     "@semantic-release/error": "^4.0.0",
     "execa": "^9.4.0",
     "google-auth-library": "^9.14.2",
-    "yaml": "^2.5.1",
+    "yaml": "^2.6.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
