@@ -50,7 +50,7 @@
     "@vitest/coverage-v8": "2.1.5",
     "common-tags": "1.8.2",
     "conventional-changelog-conventionalcommits": "8.0.0",
-    "eslint": "9.14.0",
+    "eslint": "9.15.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-semistandard": "17.0.0",
     "eslint-config-standard": "17.1.0",
