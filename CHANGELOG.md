@@ -1,3 +1,36 @@
+## [0.9.2](https://github.com/zeshuaro/semantic-release-pub/compare/v0.9.1...v0.9.2) (2024-12-08)
+
+### Bug Fixes
+
+* **node:** update node.js to >=22.12.0 ([#572](https://github.com/zeshuaro/semantic-release-pub/issues/572)) ([0c6757d](https://github.com/zeshuaro/semantic-release-pub/commit/0c6757d77c97d91d0b876d396bc6179c5b4123e9))
+* **node:** update node.js to v22.12.0 ([#571](https://github.com/zeshuaro/semantic-release-pub/issues/571)) ([8c1e295](https://github.com/zeshuaro/semantic-release-pub/commit/8c1e295772f122ea4ae33eb50f57804891e3d1a4))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#558](https://github.com/zeshuaro/semantic-release-pub/issues/558)) ([5aea2e1](https://github.com/zeshuaro/semantic-release-pub/commit/5aea2e107d8f8e2305146155f0cd5d29c97febff))
+* **deps:** lock file maintenance ([#567](https://github.com/zeshuaro/semantic-release-pub/issues/567)) ([3e36465](https://github.com/zeshuaro/semantic-release-pub/commit/3e364657984c226c96fddcea632b7507bc2a1295))
+* **deps:** update dependency eslint to v9.16.0 ([#568](https://github.com/zeshuaro/semantic-release-pub/issues/568)) ([cd4bc22](https://github.com/zeshuaro/semantic-release-pub/commit/cd4bc2214ce7ace70382ec53d96b9145c67380d6))
+* **deps:** update dependency eslint-plugin-n to v17.14.0 ([#559](https://github.com/zeshuaro/semantic-release-pub/issues/559)) ([2340a8f](https://github.com/zeshuaro/semantic-release-pub/commit/2340a8f88fa6aab1f70874b9b1c6a19dc3755fe7))
+* **deps:** update dependency eslint-plugin-promise to v7.2.0 ([#562](https://github.com/zeshuaro/semantic-release-pub/issues/562)) ([932511e](https://github.com/zeshuaro/semantic-release-pub/commit/932511e8d7e4b3db0c9d0d99fc54f920a8166da8))
+* **deps:** update dependency eslint-plugin-promise to v7.2.1 ([#566](https://github.com/zeshuaro/semantic-release-pub/issues/566)) ([f0d3ce9](https://github.com/zeshuaro/semantic-release-pub/commit/f0d3ce9a21b531ee8d2170eaafbef83414e1ad31))
+* **deps:** update dependency prettier to v3.4.1 ([#563](https://github.com/zeshuaro/semantic-release-pub/issues/563)) ([c46c4c6](https://github.com/zeshuaro/semantic-release-pub/commit/c46c4c6675aeb59059e2c2764745d84617a890ff))
+* **deps:** update dependency prettier to v3.4.2 ([#578](https://github.com/zeshuaro/semantic-release-pub/issues/578)) ([4bcb928](https://github.com/zeshuaro/semantic-release-pub/commit/4bcb9281fe74f2edd707c28c329dec7a64e6b831))
+* **deps:** update dependency typescript to v5.7.2 ([#560](https://github.com/zeshuaro/semantic-release-pub/issues/560)) ([20b24cb](https://github.com/zeshuaro/semantic-release-pub/commit/20b24cb28209f2044955b62f7512ead7376ad4f3))
+* **deps:** update typescript-eslint monorepo to v8.16.0 ([#565](https://github.com/zeshuaro/semantic-release-pub/issues/565)) ([9fba78f](https://github.com/zeshuaro/semantic-release-pub/commit/9fba78f5e1c0ef626dfda5a5413c008f90705555))
+* **deps:** update typescript-eslint monorepo to v8.17.0 ([#576](https://github.com/zeshuaro/semantic-release-pub/issues/576)) ([328d251](https://github.com/zeshuaro/semantic-release-pub/commit/328d251ca1b7dbab0ad173be9508455bffdc9e26))
+* **deps:** update vitest monorepo to v2.1.6 ([#564](https://github.com/zeshuaro/semantic-release-pub/issues/564)) ([30da903](https://github.com/zeshuaro/semantic-release-pub/commit/30da9031f431d31235a05016c72979c70d39be82))
+* **deps:** update vitest monorepo to v2.1.7 ([#573](https://github.com/zeshuaro/semantic-release-pub/issues/573)) ([4985d6b](https://github.com/zeshuaro/semantic-release-pub/commit/4985d6b33b056874ea44e07e0f45eae391f6db7f))
+* **deps:** update vitest monorepo to v2.1.8 ([#575](https://github.com/zeshuaro/semantic-release-pub/issues/575)) ([f233bd1](https://github.com/zeshuaro/semantic-release-pub/commit/f233bd1678bdd6b7961b889e7e36a48cf2790754))
+
+### Continuous Integration
+
+* **deps:** update codecov/codecov-action action to v5.1.1 ([#577](https://github.com/zeshuaro/semantic-release-pub/issues/577)) ([cf5d8c6](https://github.com/zeshuaro/semantic-release-pub/commit/cf5d8c6358a5ee99203f2c5d17f3da9b1e1b8624))
+* **deps:** update zeshuaro/github-actions-workflows digest to 02e8a2b ([#557](https://github.com/zeshuaro/semantic-release-pub/issues/557)) ([80a3143](https://github.com/zeshuaro/semantic-release-pub/commit/80a314373052acb3da57e2718f1ada98c3821db4))
+* **deps:** update zeshuaro/github-actions-workflows digest to 4d64095 ([#569](https://github.com/zeshuaro/semantic-release-pub/issues/569)) ([579f02a](https://github.com/zeshuaro/semantic-release-pub/commit/579f02a6a30ca4ff21b1742baa517800e0a95c9e))
+* **deps:** update zeshuaro/github-actions-workflows digest to ae58d06 ([#561](https://github.com/zeshuaro/semantic-release-pub/issues/561)) ([68682d1](https://github.com/zeshuaro/semantic-release-pub/commit/68682d152fa7aca379dcfa086ffad755ff629bc3))
+* **deps:** update zeshuaro/github-actions-workflows digest to b3246c8 ([#570](https://github.com/zeshuaro/semantic-release-pub/issues/570)) ([c4ad5d6](https://github.com/zeshuaro/semantic-release-pub/commit/c4ad5d605edf2c01c26b4c02b34b85a7f39517a3))
+* **deps:** update zeshuaro/github-actions-workflows digest to e9ba948 ([#574](https://github.com/zeshuaro/semantic-release-pub/issues/574)) ([e34b68c](https://github.com/zeshuaro/semantic-release-pub/commit/e34b68c92a5a4615fb8036088c31cca19d15b3c9))
+
 ## [0.9.1](https://github.com/zeshuaro/semantic-release-pub/compare/v0.9.0...v0.9.1) (2024-11-24)
 
 ### Bug Fixes
