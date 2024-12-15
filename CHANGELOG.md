@@ -1,3 +1,21 @@
+## [0.9.3](https://github.com/zeshuaro/semantic-release-pub/compare/v0.9.2...v0.9.3) (2024-12-15)
+
+### Bug Fixes
+
+* **deps:** update dependency execa to ^9.5.2 ([#580](https://github.com/zeshuaro/semantic-release-pub/issues/580)) ([38b02ce](https://github.com/zeshuaro/semantic-release-pub/commit/38b02ce2a086179a22979464a249a64047302b11))
+* **deps:** update dependency zod to ^3.24.0 ([#584](https://github.com/zeshuaro/semantic-release-pub/issues/584)) ([dec06e6](https://github.com/zeshuaro/semantic-release-pub/commit/dec06e68e21c9cfd2c6acae251510fc99bf009ea))
+* **deps:** update dependency zod to ^3.24.1 ([#585](https://github.com/zeshuaro/semantic-release-pub/issues/585)) ([60c7799](https://github.com/zeshuaro/semantic-release-pub/commit/60c7799dc8c462376c28126a5d859c99136467c7))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#579](https://github.com/zeshuaro/semantic-release-pub/issues/579)) ([82df0a1](https://github.com/zeshuaro/semantic-release-pub/commit/82df0a1383de2bfda001eeccb598b8d92a89bf91))
+* **deps:** update dependency eslint-plugin-n to v17.15.0 ([#581](https://github.com/zeshuaro/semantic-release-pub/issues/581)) ([ec02bff](https://github.com/zeshuaro/semantic-release-pub/commit/ec02bff3a57b387e4592a1e4cff844d812e528f6))
+* **deps:** update typescript-eslint monorepo to v8.18.0 ([#582](https://github.com/zeshuaro/semantic-release-pub/issues/582)) ([12f238e](https://github.com/zeshuaro/semantic-release-pub/commit/12f238ec09be2b978e7562f292fc4adb55dc8392))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 67e4ba8 ([#583](https://github.com/zeshuaro/semantic-release-pub/issues/583)) ([e50c0a1](https://github.com/zeshuaro/semantic-release-pub/commit/e50c0a1d714df15d65c1fe1f9a93f379d90da736))
+
 ## [0.9.2](https://github.com/zeshuaro/semantic-release-pub/compare/v0.9.1...v0.9.2) (2024-12-08)
 
 ### Bug Fixes
