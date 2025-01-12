@@ -1,3 +1,20 @@
+## [0.9.5](https://github.com/zeshuaro/semantic-release-pub/compare/v0.9.4...v0.9.5) (2025-01-12)
+
+### Bug Fixes
+
+* **node:** update node.js to v22.13.0 ([#604](https://github.com/zeshuaro/semantic-release-pub/issues/604)) ([a9434f7](https://github.com/zeshuaro/semantic-release-pub/commit/a9434f709fe206fd39a627e3ff56dda4e3b3dd2a))
+
+### Documentation
+
+* **license:** update copyright year to 2025 ([#602](https://github.com/zeshuaro/semantic-release-pub/issues/602)) ([b58666d](https://github.com/zeshuaro/semantic-release-pub/commit/b58666de0d80344f13c6e4dd4112c33c29589a8a))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#600](https://github.com/zeshuaro/semantic-release-pub/issues/600)) ([d08ce1c](https://github.com/zeshuaro/semantic-release-pub/commit/d08ce1c43231ec7d6daca367b21286acb4b775ce))
+* **deps:** update dependency semantic-release to v24.2.1 ([#601](https://github.com/zeshuaro/semantic-release-pub/issues/601)) ([e99b0db](https://github.com/zeshuaro/semantic-release-pub/commit/e99b0db148e957322713bb1b5d722608c1ccadd3))
+* **deps:** update dependency typescript to v5.7.3 ([#606](https://github.com/zeshuaro/semantic-release-pub/issues/606)) ([0ef974f](https://github.com/zeshuaro/semantic-release-pub/commit/0ef974f1e335a239762a08a9de69ed116784491e))
+* **deps:** update typescript-eslint monorepo to v8.19.1 ([#605](https://github.com/zeshuaro/semantic-release-pub/issues/605)) ([9bd70b0](https://github.com/zeshuaro/semantic-release-pub/commit/9bd70b016db9213db1bf7060d50e338cbc528a01))
+
 ## [0.9.4](https://github.com/zeshuaro/semantic-release-pub/compare/v0.9.3...v0.9.4) (2025-01-05)
 
 ### Bug Fixes
