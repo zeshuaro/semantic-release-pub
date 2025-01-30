@@ -1,3 +1,4 @@
+import core from "@actions/core";
 import SemanticReleaseError from "@semantic-release/error";
 import { codeBlock } from "common-tags";
 import { readFileSync } from "fs";
@@ -8,15 +9,19 @@ import { parse } from "yaml";
 import { PluginConfig } from "../src";
 import {
   getConfig,
+  getGithubIdentityToken,
   getGoogleIdentityToken,
   getPubspec,
   getPubspecFromString,
   getPubspecString,
 } from "../src/utils";
 
+vi.mock("@actions/core");
 vi.mock("google-auth-library");
 vi.mock("fs");
 vi.mock("yaml");
+
+const pubDevAudience = "https://pub.dev";
 
 describe("getConfig", () => {
   const config: PluginConfig = {
@@ -35,7 +40,6 @@ describe("getGoogleIdentityToken", () => {
   const idToken = "idToken";
   const clientEmail = "clientEmail";
   const privateKey = "privateKey";
-  const pubDevAudience = "https://pub.dev";
 
   const creds = mock<Credentials>();
 
@@ -93,6 +97,23 @@ describe("getGoogleIdentityToken", () => {
       pubDevAudience,
     );
   };
+});
+
+describe("getGithubIdentityToken", () => {
+  const idToken = "idToken";
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  test("success", async () => {
+    vi.mocked(core.getIDToken).mockResolvedValue(idToken);
+
+    const actual = await getGithubIdentityToken();
+
+    expect(actual).toEqual(idToken);
+    expect(core.getIDToken).toHaveBeenNthCalledWith(1, pubDevAudience);
+  });
 });
 
 describe("pubspecUtils", () => {
