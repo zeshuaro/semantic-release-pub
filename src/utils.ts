@@ -10,6 +10,7 @@ const DEFAULT_CONFIG: PluginConfig = {
   cli: "dart",
   publishPub: true,
   updateBuildNumber: false,
+  useGithubOidc: false,
 };
 
 const PUB_DEV_AUDIENCE = "https://pub.dev";
