@@ -1,9 +1,12 @@
-import core from "@actions/core";
 import SemanticReleaseError from "@semantic-release/error";
 import { execa } from "execa";
 import { VerifyConditionsContext } from "semantic-release";
 import { PluginConfig } from "./types.js";
-import { getConfig, getGoogleIdentityToken } from "./utils.js";
+import {
+  getConfig,
+  getGithubIdentityToken,
+  getGoogleIdentityToken,
+} from "./utils.js";
 
 export const verifyConditions = async (
   pluginConfig: PluginConfig,
@@ -23,7 +26,7 @@ export const verifyConditions = async (
 const verifyPublishToken = async (useGithubOidc: boolean) => {
   if (useGithubOidc) {
     try {
-      await core.getIDToken();
+      await getGithubIdentityToken();
     } catch (error) {
       throw new SemanticReleaseError(
         `Failed to get GitHub OIDC token: ${error}`,

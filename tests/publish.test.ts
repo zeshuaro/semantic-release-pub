@@ -1,4 +1,3 @@
-import core from "@actions/core";
 import { execa } from "execa";
 import { NextRelease, PublishContext } from "semantic-release";
 import { Signale } from "signale";
@@ -6,9 +5,13 @@ import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 import { mock } from "vitest-mock-extended";
 import { PluginConfig, publish } from "../src/index.js";
 import { Pubspec } from "../src/schemas.js";
-import { getConfig, getGoogleIdentityToken, getPubspec } from "../src/utils.js";
+import {
+  getConfig,
+  getGithubIdentityToken,
+  getGoogleIdentityToken,
+  getPubspec,
+} from "../src/utils.js";
 
-vi.mock("@actions/core");
 vi.mock("execa");
 vi.mock("../src/utils");
 
@@ -44,7 +47,7 @@ describe("publish", () => {
     vi.mocked(getConfig).mockReturnValue(testConfig);
     vi.mocked(getGoogleIdentityToken).mockResolvedValue(googleIdToken);
     vi.mocked(getPubspec).mockReturnValue(pubspec);
-    vi.mocked(core.getIDToken).mockResolvedValue(githubIdToken);
+    vi.mocked(getGithubIdentityToken).mockResolvedValue(githubIdToken);
   });
 
   afterEach(() => {
@@ -90,7 +93,7 @@ describe("publish", () => {
     });
     expect(process.env[semanticReleasePubToken]).toEqual(githubIdToken);
 
-    expect(core.getIDToken).toBeCalledTimes(1);
+    expect(getGithubIdentityToken).toHaveBeenCalledOnce();
     expect(execa).toHaveBeenNthCalledWith(1, cli, [
       "pub",
       "token",

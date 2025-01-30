@@ -1,3 +1,4 @@
+import core from "@actions/core";
 import SemanticReleaseError from "@semantic-release/error";
 import { readFileSync } from "fs";
 import { JWT } from "google-auth-library";
@@ -36,6 +37,10 @@ export const getGoogleIdentityToken = async (serviceAccountStr: string) => {
   }
 
   return creds.id_token;
+};
+
+export const getGithubIdentityToken = async () => {
+  return core.getIDToken(PUB_DEV_AUDIENCE);
 };
 
 export const getPubspecString = () => {

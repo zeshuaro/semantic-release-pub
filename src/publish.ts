@@ -1,9 +1,13 @@
-import core from "@actions/core";
 import { execa } from "execa";
 import { PublishContext } from "semantic-release";
 import { Signale } from "signale";
 import { PluginConfig } from "./types.js";
-import { getConfig, getGoogleIdentityToken, getPubspec } from "./utils.js";
+import {
+  getConfig,
+  getGithubIdentityToken,
+  getGoogleIdentityToken,
+  getPubspec,
+} from "./utils.js";
 
 const SEMANTIC_RELEASE_PUB_TOKEN = "SEMANTIC_RELEASE_PUB_TOKEN";
 
@@ -34,7 +38,7 @@ export const publish = async (
 const getPubToken = async (useGithubOidc: boolean, logger: Signale) => {
   if (useGithubOidc) {
     logger.log("Using GitHub OIDC token to publish to pub.dev");
-    return await core.getIDToken();
+    return await getGithubIdentityToken();
   }
 
   logger.log("Using Google identity token to publish to pub.dev");
