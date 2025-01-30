@@ -1,3 +1,14 @@
+## [0.10.1](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.0...v0.10.1) (2025-01-30)
+
+### Bug Fixes
+
+* **publish:** add logging for authentication token ([#626](https://github.com/zeshuaro/semantic-release-pub/issues/626)) ([54bf4da](https://github.com/zeshuaro/semantic-release-pub/commit/54bf4da12dcb5e678f93800f3e4054f0b5713d40))
+* **publish:** specify audience when retrieving GitHub OIDC token ([#628](https://github.com/zeshuaro/semantic-release-pub/issues/628)) ([71a6f3a](https://github.com/zeshuaro/semantic-release-pub/commit/71a6f3af1d40d02788f0978e41c2fcf41c58591f))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to dbd5e86 ([#627](https://github.com/zeshuaro/semantic-release-pub/issues/627)) ([909bd7c](https://github.com/zeshuaro/semantic-release-pub/commit/909bd7c4b182cae312c209ed96edd7db5ae9c62d))
+
 ## [0.10.0](https://github.com/zeshuaro/semantic-release-pub/compare/v0.9.6...v0.10.0) (2025-01-30)
 
 ### Features
