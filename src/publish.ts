@@ -1,6 +1,7 @@
 import core from "@actions/core";
 import { execa } from "execa";
 import { PublishContext } from "semantic-release";
+import { Signale } from "signale";
 import { PluginConfig } from "./types.js";
 import { getConfig, getGoogleIdentityToken, getPubspec } from "./utils.js";
 
@@ -17,7 +18,7 @@ export const publish = async (
   }
 
   const pubspec = getPubspec();
-  const pubToken = await getPubToken(useGithubOidc);
+  const pubToken = await getPubToken(useGithubOidc, logger);
   await setPubToken(cli, pubToken);
 
   logger.log(`Publishing version ${version} to pub.dev`);
@@ -30,11 +31,13 @@ export const publish = async (
   };
 };
 
-const getPubToken = async (useGithubOidc: boolean) => {
+const getPubToken = async (useGithubOidc: boolean, logger: Signale) => {
   if (useGithubOidc) {
+    logger.log("Using GitHub OIDC token to publish to pub.dev");
     return await core.getIDToken();
   }
 
+  logger.log("Using Google identity token to publish to pub.dev");
   const { GOOGLE_SERVICE_ACCOUNT_KEY } = process.env;
   return await getGoogleIdentityToken(GOOGLE_SERVICE_ACCOUNT_KEY);
 };
