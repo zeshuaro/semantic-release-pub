@@ -54,6 +54,31 @@ The plugin can be configured in the [semantic-release configuration file](https:
 
 ### `pub.dev` authentication
 
+You can publish to `pub.dev` using either GitHub Actions OIDC or Google Service Account.
+
+#### GitHub Actions OIDC
+
+The following instructions are referenced from the [documentation](https://dart.dev/tools/pub/automated-publishing#configuring-automated-publishing-from-github-actions-on-pub-dev) of Dart. Below are the key steps to allow authentication to `pub.dev` via GitHub Actions OIDC.
+
+1. Enable automated publishing.
+
+    > To complete this step, you must have uploader permission on the package or be an admin of the publisher that owns the package.
+
+    1. Navigate to the package Admin tab (pub.dev/packages/<package>/admin).
+    2. Click Enable publishing from GitHub Actions.
+    3. Then fill in the necessary information.
+   
+ 2. In your workflow, add the `id-token` permission.
+
+    ```yaml
+    jobs:
+      publish:
+        permissions:
+          id-token: write
+    ```
+
+#### Google Service Account
+
 The following instructions are referenced from the [documentation](https://dart.dev/tools/pub/automated-publishing#publish-using-exported-service-account-keys) of Dart. Below are the key steps to allow authentication to `pub.dev`.
 
 1. [Create a Google Cloud project](https://cloud.google.com/resource-manager/docs/creating-managing-projects), if you don’t have an existing project.
@@ -70,7 +95,7 @@ The following instructions are referenced from the [documentation](https://dart.
 
     > To complete this step, you must have uploader permission on the package or be an admin of the publisher that owns the package.
 
-    1. Navigate to the Admin tab (pub.dev/packages/<package>/admin).
+    1. Navigate to the package Admin tab (pub.dev/packages/<package>/admin).
     2. Click Enable publishing with Google Cloud Service account. 
     3. Type the email of the service account into the Service account email field.
         > You created this account in the previous step: `pub-dev@$PROJECT_ID.iam.gserviceaccount.com`
@@ -86,9 +111,9 @@ The following instructions are referenced from the [documentation](https://dart.
 
 ### Environment variables
 
-| Variable                     | Description                                                  |
-| ---------------------------- | ------------------------------------------------------------ |
-| `GOOGLE_SERVICE_ACCOUNT_KEY` | The google service account key created from the above steps. |
+| Variable                     | Description                                                                                             |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `GOOGLE_SERVICE_ACCOUNT_KEY` | The google service account key created from the above steps. Not required if using GitHub Actions OIDC. |
 
 ### Options
 
@@ -97,6 +122,7 @@ The following instructions are referenced from the [documentation](https://dart.
 | `cli`               | The `dart` or `flutter` CLI to use to publish the package to the registry.                                                                                                                                                                              | `dart`  |
 | `publishPub`        | Whether to publish the package to the registry. If set to `false`, the `pubspec.yaml` version will still be updated.                                                                                                                                    | `true`  |
 | `updateBuildNumber` | Whether to write build number for every newly bumped version in `pubspec.yaml`. Note that the build number will always be increased by one. Learn more on [Flutter docs](https://docs.flutter.dev/deployment/android#updating-the-apps-version-number). | `false` |
+| `useGithubOidc`     | Whether to use GitHub OIDC. If set to `true`, authentication to `pub.dev` will be done using GitHub OIDC. Otherwise, the `GOOGLE_SERVICE_ACCOUNT_KEY` will be used.                                                                                     | `false` |
 
 ### Examples
 
@@ -118,3 +144,20 @@ The following instructions are referenced from the [documentation](https://dart.
 ```
 
 See [here](https://github.com/zeshuaro/firestore_cache/pull/162) for a sample pull request utilising this plugin and `semantic-release` to publish a Flutter package.
+
+#### Using GitHub Actions OIDC
+
+```json
+{
+  "plugins": [
+    "@semantic-release/commit-analyzer", 
+    "@semantic-release/release-notes-generator", 
+    [
+      "semantic-release-pub",
+      {
+        "useGithubOidc": true
+      }
+    ]
+  ]
+}
+```

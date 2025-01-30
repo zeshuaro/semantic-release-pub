@@ -1,3 +1,4 @@
+import core from "@actions/core";
 import { execa } from "execa";
 import { NextRelease, PublishContext } from "semantic-release";
 import { Signale } from "signale";
@@ -7,20 +8,23 @@ import { PluginConfig, publish } from "../src/index.js";
 import { Pubspec } from "../src/schemas.js";
 import { getConfig, getGoogleIdentityToken, getPubspec } from "../src/utils.js";
 
+vi.mock("@actions/core");
 vi.mock("execa");
 vi.mock("../src/utils");
 
 describe("publish", () => {
   const cli = "dart";
   const serviceAccount = "serviceAccount";
-  const idToken = "idToken";
+  const googleIdToken = "googleIdToken";
+  const githubIdToken = "githubIdToken";
   const version = "1.2.3";
   const semanticReleasePubToken = "SEMANTIC_RELEASE_PUB_TOKEN";
 
-  const config: PluginConfig = {
+  const testConfig: PluginConfig = {
     cli,
     publishPub: true,
     updateBuildNumber: false,
+    useGithubOidc: false,
   };
 
   const pubspec: Pubspec = {
@@ -37,9 +41,10 @@ describe("publish", () => {
     context.logger = logger;
     context.nextRelease = nextRelease;
 
-    vi.mocked(getConfig).mockReturnValue(config);
-    vi.mocked(getGoogleIdentityToken).mockResolvedValue(idToken);
+    vi.mocked(getConfig).mockReturnValue(testConfig);
+    vi.mocked(getGoogleIdentityToken).mockResolvedValue(googleIdToken);
     vi.mocked(getPubspec).mockReturnValue(pubspec);
+    vi.mocked(core.getIDToken).mockResolvedValue(githubIdToken);
   });
 
   afterEach(() => {
@@ -50,13 +55,13 @@ describe("publish", () => {
   test("success", async () => {
     stubEnv();
 
-    const actual = await publish(config, context);
+    const actual = await publish(testConfig, context);
 
     expect(actual).toEqual({
       name: "pub.dev package",
       url: `https://pub.dev/packages/${pubspec.name}/versions/${version}`,
     });
-    expect(process.env[semanticReleasePubToken]).toEqual(idToken);
+    expect(process.env[semanticReleasePubToken]).toEqual(googleIdToken);
 
     expect(getGoogleIdentityToken).toHaveBeenNthCalledWith(1, serviceAccount);
     expect(execa).toHaveBeenNthCalledWith(1, cli, [
@@ -73,8 +78,35 @@ describe("publish", () => {
     ]);
   });
 
+  test("success with useGithubOidc=true", async () => {
+    const config = { ...testConfig, useGithubOidc: true };
+    vi.mocked(getConfig).mockReturnValue(config);
+
+    const actual = await publish(config, context);
+
+    expect(actual).toEqual({
+      name: "pub.dev package",
+      url: `https://pub.dev/packages/${pubspec.name}/versions/${version}`,
+    });
+    expect(process.env[semanticReleasePubToken]).toEqual(githubIdToken);
+
+    expect(core.getIDToken).toBeCalledTimes(1);
+    expect(execa).toHaveBeenNthCalledWith(1, cli, [
+      "pub",
+      "token",
+      "add",
+      "https://pub.dev",
+      `--env-var=${semanticReleasePubToken}`,
+    ]);
+    expect(execa).toHaveBeenNthCalledWith(2, cli, [
+      "pub",
+      "publish",
+      "--force",
+    ]);
+  });
+
   test("skip publish", async () => {
-    const newConfig = { ...config, publishPub: false };
+    const newConfig = { ...testConfig, publishPub: false };
     vi.mocked(getConfig).mockReturnValue(newConfig);
 
     const actual = await publish(newConfig, context);

@@ -1,3 +1,4 @@
+import core from "@actions/core";
 import SemanticReleaseError from "@semantic-release/error";
 import { execa } from "execa";
 import { VerifyConditionsContext } from "semantic-release";
@@ -7,6 +8,7 @@ import { mock } from "vitest-mock-extended";
 import { PluginConfig, verifyConditions } from "../src/index.js";
 import { getConfig, getGoogleIdentityToken } from "../src/utils.js";
 
+vi.mock("@actions/core");
 vi.mock("execa");
 vi.mock("google-auth-library");
 vi.mock("../src/utils");
@@ -16,10 +18,11 @@ describe("verifyConditions", () => {
   const serviceAccount = "serviceAccount";
   const idToken = "idToken";
 
-  const config: PluginConfig = {
+  const testConfig: PluginConfig = {
     cli,
     publishPub: true,
     updateBuildNumber: false,
+    useGithubOidc: false,
   };
 
   const logger = mock<Signale>();
@@ -28,8 +31,9 @@ describe("verifyConditions", () => {
   beforeEach(() => {
     context.logger = logger;
 
-    vi.mocked(getConfig).mockReturnValue(config);
+    vi.mocked(getConfig).mockReturnValue(testConfig);
     vi.mocked(getGoogleIdentityToken).mockResolvedValue(idToken);
+    vi.mocked(core.getIDToken).mockResolvedValue(idToken);
   });
 
   afterEach(() => {
@@ -40,14 +44,14 @@ describe("verifyConditions", () => {
   test("success", async () => {
     stubEnv();
 
-    await verifyConditions(config, context);
+    await verifyConditions(testConfig, context);
 
     expect(execa).toBeCalledWith(cli);
     expectGetGoogleIdentityTokenCalled();
   });
 
   test("success with publishPub=false", async () => {
-    const config: PluginConfig = { cli, publishPub: false };
+    const config = { ...testConfig, publishPub: false };
     vi.mocked(getConfig).mockReturnValue(config);
 
     await verifyConditions(config, context);
@@ -56,8 +60,32 @@ describe("verifyConditions", () => {
     expect(execa).toBeCalledTimes(0);
   });
 
+  test("success with useGithubOidc=true", async () => {
+    const config = { ...testConfig, useGithubOidc: true };
+    vi.mocked(getConfig).mockReturnValue(config);
+
+    await verifyConditions(config, context);
+
+    expect(core.getIDToken).toBeCalledTimes(1);
+    expect(getGoogleIdentityToken).toBeCalledTimes(0);
+    expect(execa).toBeCalledWith(cli);
+  });
+
   test("error due to missing environment variable", async () => {
     await expectSemanticReleaseError();
+
+    expect(execa).toBeCalledTimes(0);
+    expect(getGoogleIdentityToken).toBeCalledTimes(0);
+  });
+
+  test("error due to actions/core getIDToken", async () => {
+    const config = { ...testConfig, useGithubOidc: true };
+    vi.mocked(getConfig).mockReturnValue(config);
+    vi.mocked(core.getIDToken).mockImplementation(() => {
+      throw new Error();
+    });
+
+    await expectSemanticReleaseError(config);
 
     expect(execa).toBeCalledTimes(0);
     expect(getGoogleIdentityToken).toBeCalledTimes(0);
@@ -81,7 +109,9 @@ describe("verifyConditions", () => {
   const expectGetGoogleIdentityTokenCalled = () =>
     expect(getGoogleIdentityToken).toHaveBeenNthCalledWith(1, serviceAccount);
 
-  const expectSemanticReleaseError = async () => {
+  const expectSemanticReleaseError = async (
+    config: PluginConfig = testConfig,
+  ) => {
     await expect(() => verifyConditions(config, context)).rejects.toThrowError(
       SemanticReleaseError,
     );

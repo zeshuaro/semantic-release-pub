@@ -23,6 +23,7 @@ describe("getConfig", () => {
     cli: "flutter",
     publishPub: false,
     updateBuildNumber: false,
+    useGithubOidc: false,
   };
 
   test("success", () => {
