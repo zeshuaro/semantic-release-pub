@@ -54,28 +54,9 @@ The plugin can be configured in the [semantic-release configuration file](https:
 
 ### `pub.dev` authentication
 
-You can publish to `pub.dev` using either GitHub Actions OIDC or Google Service Account.
+You can publish to `pub.dev` using either Google Service Account or GitHub Actions OIDC. 
 
-#### GitHub Actions OIDC
-
-The following instructions are referenced from the [documentation](https://dart.dev/tools/pub/automated-publishing#configuring-automated-publishing-from-github-actions-on-pub-dev) of Dart. Below are the key steps to allow authentication to `pub.dev` via GitHub Actions OIDC.
-
-1. Enable automated publishing.
-
-    > To complete this step, you must have uploader permission on the package or be an admin of the publisher that owns the package.
-
-    1. Navigate to the package Admin tab (pub.dev/packages/<package>/admin).
-    2. Click Enable publishing from GitHub Actions.
-    3. Then fill in the necessary information.
-   
- 2. In your workflow, add the `id-token` permission.
-
-    ```yaml
-    jobs:
-      publish:
-        permissions:
-          id-token: write
-    ```
+Note that when using GitHub Actions OIDC, `pub.dev` only allows authentication when the workflow is triggered by a `tag` event. See [here](https://github.com/dart-lang/pub-dev/issues/8507) for more details.
 
 #### Google Service Account
 
@@ -108,6 +89,28 @@ The following instructions are referenced from the [documentation](https://dart.
     ```
 
 5. Copy the content of the JSON key file and set it as an environment variable under `GOOGLE_SERVICE_ACCOUNT_KEY`.
+
+
+#### GitHub Actions OIDC
+
+The following instructions are referenced from the [documentation](https://dart.dev/tools/pub/automated-publishing#configuring-automated-publishing-from-github-actions-on-pub-dev) of Dart. Below are the key steps to allow authentication to `pub.dev` via GitHub Actions OIDC.
+
+1. Enable automated publishing.
+
+    > To complete this step, you must have uploader permission on the package or be an admin of the publisher that owns the package.
+
+    1. Navigate to the package Admin tab (pub.dev/packages/<package>/admin).
+    2. Click Enable publishing from GitHub Actions.
+    3. Then fill in the necessary information.
+   
+ 2. In your workflow, add the `id-token` permission.
+
+    ```yaml
+    jobs:
+      publish:
+        permissions:
+          id-token: write
+    ```
 
 ### Environment variables
 
