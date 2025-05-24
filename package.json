@@ -37,7 +37,7 @@
     "execa": "^9.5.3",
     "google-auth-library": "^9.15.1",
     "yaml": "^2.8.0",
-    "zod": "^3.25.7"
+    "zod": "^3.25.12"
   },
   "devDependencies": {
     "@semantic-release/changelog": "6.0.3",
