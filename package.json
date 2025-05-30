@@ -34,7 +34,7 @@
   "dependencies": {
     "@actions/core": "^1.11.1",
     "@semantic-release/error": "^4.0.0",
-    "execa": "^9.5.3",
+    "execa": "^9.6.0",
     "google-auth-library": "^9.15.1",
     "yaml": "^2.8.0",
     "zod": "^3.25.28"
