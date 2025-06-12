@@ -1,10 +1,10 @@
+import { readFileSync, writeFileSync } from "node:fs";
 import { codeBlock } from "common-tags";
-import { readFileSync, writeFileSync } from "fs";
-import { NextRelease, PrepareContext } from "semantic-release";
-import { Signale } from "signale";
+import type { NextRelease, PrepareContext } from "semantic-release";
+import type { Signale } from "signale";
 import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 import { mock } from "vitest-mock-extended";
-import { PluginConfig, prepare } from "../src/index.js";
+import { type PluginConfig, prepare } from "../src/index.js";
 
 vi.mock("fs");
 
@@ -94,7 +94,7 @@ describe("prepare", () => {
     expect(writeFileSync).toHaveBeenNthCalledWith(1, pubspecPath, newPubspec);
   });
 
-  test(`success with pubspec version without build number (updateBuildNumber = true)`, async () => {
+  test("success with pubspec version without build number (updateBuildNumber = true)", async () => {
     const newConfig = { ...config, updateBuildNumber: true };
     const pubspec = basePubspec.replace(
       new RegExp(versionPlaceholder),

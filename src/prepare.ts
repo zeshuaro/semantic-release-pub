@@ -1,8 +1,8 @@
+import { writeFileSync } from "node:fs";
 import SemanticReleaseError from "@semantic-release/error";
-import { writeFileSync } from "fs";
-import { PrepareContext } from "semantic-release";
+import type { PrepareContext } from "semantic-release";
 
-import { PluginConfig } from "./types.js";
+import type { PluginConfig } from "./types.js";
 import {
   PUBSPEC_PATH,
   getConfig,
@@ -28,7 +28,7 @@ export const prepare = async (
     const parts = pubspec.version.split("+");
     const buildNumber = parts.length > 1 ? Number(parts[1]) : 0;
 
-    if (isNaN(buildNumber)) {
+    if (Number.isNaN(buildNumber)) {
       throw new SemanticReleaseError(
         `Invalid build number: ${buildNumber} in ${pubspec.version}`,
       );

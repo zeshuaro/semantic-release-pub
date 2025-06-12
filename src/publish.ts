@@ -1,7 +1,7 @@
 import { execa } from "execa";
-import { PublishContext } from "semantic-release";
-import { Signale } from "signale";
-import { PluginConfig } from "./types.js";
+import type { PublishContext } from "semantic-release";
+import type { Signale } from "signale";
+import type { PluginConfig } from "./types.js";
 import {
   getConfig,
   getGithubIdentityToken,

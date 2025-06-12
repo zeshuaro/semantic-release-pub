@@ -1,10 +1,10 @@
+import { readFileSync } from "node:fs";
 import core from "@actions/core";
 import SemanticReleaseError from "@semantic-release/error";
-import { readFileSync } from "fs";
 import { JWT } from "google-auth-library";
 import { parse } from "yaml";
 import { Pubspec, ServiceAccount } from "./schemas.js";
-import { PluginConfig } from "./types.js";
+import type { PluginConfig } from "./types.js";
 
 export const PUBSPEC_PATH = "pubspec.yaml";
 const DEFAULT_CONFIG: PluginConfig = {

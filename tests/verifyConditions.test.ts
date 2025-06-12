@@ -1,10 +1,10 @@
 import SemanticReleaseError from "@semantic-release/error";
 import { execa } from "execa";
-import { VerifyConditionsContext } from "semantic-release";
-import { Signale } from "signale";
+import type { VerifyConditionsContext } from "semantic-release";
+import type { Signale } from "signale";
 import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 import { mock } from "vitest-mock-extended";
-import { PluginConfig, verifyConditions } from "../src/index.js";
+import { type PluginConfig, verifyConditions } from "../src/index.js";
 import {
   getConfig,
   getGithubIdentityToken,
