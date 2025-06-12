@@ -1,7 +1,7 @@
 import SemanticReleaseError from "@semantic-release/error";
 import { execa } from "execa";
-import { VerifyConditionsContext } from "semantic-release";
-import { PluginConfig } from "./types.js";
+import type { VerifyConditionsContext } from "semantic-release";
+import type { PluginConfig } from "./types.js";
 import {
   getConfig,
   getGithubIdentityToken,
@@ -38,9 +38,9 @@ const verifyPublishToken = async (useGithubOidc: boolean) => {
       throw new SemanticReleaseError(
         "Environment variable not found: GOOGLE_SERVICE_ACCOUNT_KEY",
       );
-    } else {
-      await getGoogleIdentityToken(GOOGLE_SERVICE_ACCOUNT_KEY);
     }
+
+    await getGoogleIdentityToken(GOOGLE_SERVICE_ACCOUNT_KEY);
   }
 };
 

@@ -1,10 +1,10 @@
 import { execa } from "execa";
-import { NextRelease, PublishContext } from "semantic-release";
-import { Signale } from "signale";
+import type { NextRelease, PublishContext } from "semantic-release";
+import type { Signale } from "signale";
 import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 import { mock } from "vitest-mock-extended";
-import { PluginConfig, publish } from "../src/index.js";
-import { Pubspec } from "../src/schemas.js";
+import { type PluginConfig, publish } from "../src/index.js";
+import type { Pubspec } from "../src/schemas.js";
 import {
   getConfig,
   getGithubIdentityToken,

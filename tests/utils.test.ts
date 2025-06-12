@@ -1,12 +1,12 @@
+import { readFileSync } from "node:fs";
 import core from "@actions/core";
 import SemanticReleaseError from "@semantic-release/error";
 import { codeBlock } from "common-tags";
-import { readFileSync } from "fs";
-import { Credentials, JWT } from "google-auth-library";
+import { type Credentials, JWT } from "google-auth-library";
 import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 import { mock } from "vitest-mock-extended";
 import { parse } from "yaml";
-import { PluginConfig } from "../src";
+import type { PluginConfig } from "../src";
 import {
   getConfig,
   getGithubIdentityToken,
