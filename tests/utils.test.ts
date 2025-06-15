@@ -6,7 +6,7 @@ import { type Credentials, JWT } from "google-auth-library";
 import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 import { mock } from "vitest-mock-extended";
 import { parse } from "yaml";
-import type { PluginConfig } from "../src";
+import type { PluginConfig } from "../src/index.js";
 import {
   getConfig,
   getGithubIdentityToken,
@@ -14,7 +14,7 @@ import {
   getPubspec,
   getPubspecFromString,
   getPubspecString,
-} from "../src/utils";
+} from "../src/utils.js";
 
 vi.mock("@actions/core");
 vi.mock("google-auth-library");

@@ -119,6 +119,15 @@ describe("publish", () => {
     expect(execa).toBeCalledTimes(0);
   });
 
+  test("error due to missing environment variable", async () => {
+    await expect(() => publish(testConfig, context)).rejects.toThrowError(
+      "Environment variable not found: GOOGLE_SERVICE_ACCOUNT_KEY",
+    );
+
+    expect(getGoogleIdentityToken).toBeCalledTimes(0);
+    expect(execa).toBeCalledTimes(0);
+  });
+
   const stubEnv = () =>
     vi.stubEnv("GOOGLE_SERVICE_ACCOUNT_KEY", serviceAccount);
 });
