@@ -1,3 +1,4 @@
+import SemanticReleaseError from "@semantic-release/error";
 import { execa } from "execa";
 import type { PublishContext } from "semantic-release";
 import type { Signale } from "signale";
@@ -43,6 +44,12 @@ const getPubToken = async (useGithubOidc: boolean, logger: Signale) => {
 
   logger.log("Using Google identity token to publish to pub.dev");
   const { GOOGLE_SERVICE_ACCOUNT_KEY } = process.env;
+  if (!GOOGLE_SERVICE_ACCOUNT_KEY) {
+    throw new SemanticReleaseError(
+      "Environment variable not found: GOOGLE_SERVICE_ACCOUNT_KEY",
+    );
+  }
+
   return await getGoogleIdentityToken(GOOGLE_SERVICE_ACCOUNT_KEY);
 };
 

@@ -22,6 +22,7 @@ describe("prepare", () => {
     cli,
     publishPub: true,
     updateBuildNumber: false,
+    useGithubOidc: false,
   };
 
   const basePubspec = codeBlock`

@@ -1,14 +1,12 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": [
+    "@tsconfig/recommended/tsconfig.json",
+    "@tsconfig/node22/tsconfig.json"
+  ],
   "compilerOptions": {
-    "module": "NodeNext",
-    "target": "ES2022",
-    "outDir": "dist",
-    "declaration": true,
-    "declarationDir": "dist",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "moduleResolution": "NodeNext"
+    "outDir": "dist"
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "tests"]
 }

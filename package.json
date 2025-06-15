@@ -25,7 +25,7 @@
   "scripts": {
     "build": "tsc",
     "test": "vitest run tests --coverage",
-    "lint": "biome check src tests",
+    "lint": "biome check src tests && tsc --noEmit && tsc -p tsconfig.test.json",
     "lint:write": "biome check src tests --write"
   },
   "engines": {
@@ -43,6 +43,8 @@
     "@biomejs/biome": "1.9.4",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
+    "@tsconfig/node22": "^22.0.2",
+    "@tsconfig/recommended": "^1.0.8",
     "@types/common-tags": "1.8.4",
     "@types/semantic-release": "20.0.6",
     "@types/semantic-release__error": "3.0.3",
