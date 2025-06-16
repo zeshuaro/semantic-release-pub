@@ -22,12 +22,11 @@ export const getConfig = (config: PluginConfig): PluginConfig => {
 
 export const getGoogleIdentityToken = async (serviceAccountStr: string) => {
   const serviceAccountJson = getServiceAccount(serviceAccountStr);
-  const jwtClient = new JWT(
-    serviceAccountJson.client_email,
-    undefined,
-    serviceAccountJson.private_key,
-    PUB_DEV_AUDIENCE,
-  );
+  const jwtClient = new JWT({
+    email: serviceAccountJson.client_email,
+    key: serviceAccountJson.private_key,
+    scopes: PUB_DEV_AUDIENCE,
+  });
 
   const creds = await jwtClient.authorize();
   if (!creds.id_token) {

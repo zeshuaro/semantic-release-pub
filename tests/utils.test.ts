@@ -89,13 +89,11 @@ describe("getGoogleIdentityToken", () => {
   });
 
   const expectJwtCalled = () => {
-    expect(JWT).toHaveBeenNthCalledWith(
-      1,
-      clientEmail,
-      undefined,
-      privateKey,
-      pubDevAudience,
-    );
+    expect(JWT).toHaveBeenNthCalledWith(1, {
+      email: clientEmail,
+      key: privateKey,
+      scopes: pubDevAudience,
+    });
   };
 });
 
