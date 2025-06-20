@@ -914,10 +914,10 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/node22/-/node22-22.0.2.tgz#1e04e2c5cc946dac787d69bb502462a851ae51b6"
   integrity sha512-Kmwj4u8sDRDrMYRoN9FDEcXD8UpBSaPQQ24Gz+Gamqfm7xxn+GBR7ge/Z7pK8OXNGyUzbSwJj+TH6B+DS/epyA==
 
-"@tsconfig/recommended@^1.0.8":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@tsconfig/recommended/-/recommended-1.0.8.tgz#16483d57b56bbbd32b8c3af0eff1a40c32d006fa"
-  integrity sha512-TotjFaaXveVUdsrXCdalyF6E5RyG6+7hHHQVZonQtdlk1rJZ1myDIvPUUKPhoYv+JAzThb2lQJh9+9ZfF46hsA==
+"@tsconfig/recommended@^1.0.9":
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/@tsconfig/recommended/-/recommended-1.0.10.tgz#5ed23fcf8cca7d78a9e3a6e4828cd96cf783994c"
+  integrity sha512-cGvydvg03lONp5Z9yaplW493Vw9/um7k588mvDkm+VFPF2PZUVPx0uswq4PFpeEySsLbQRETrDRhzh4Dmxaslw==
 
 "@tsconfig/strictest@^2.0.5":
   version "2.0.5"
