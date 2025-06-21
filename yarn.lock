@@ -914,7 +914,7 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/node22/-/node22-22.0.2.tgz#1e04e2c5cc946dac787d69bb502462a851ae51b6"
   integrity sha512-Kmwj4u8sDRDrMYRoN9FDEcXD8UpBSaPQQ24Gz+Gamqfm7xxn+GBR7ge/Z7pK8OXNGyUzbSwJj+TH6B+DS/epyA==
 
-"@tsconfig/recommended@^1.0.9":
+"@tsconfig/recommended@^1.0.10":
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/@tsconfig/recommended/-/recommended-1.0.10.tgz#5ed23fcf8cca7d78a9e3a6e4828cd96cf783994c"
   integrity sha512-cGvydvg03lONp5Z9yaplW493Vw9/um7k588mvDkm+VFPF2PZUVPx0uswq4PFpeEySsLbQRETrDRhzh4Dmxaslw==
