@@ -1,3 +1,28 @@
+## [0.10.11](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.10...v0.10.11) (2025-06-22)
+
+### Bug Fixes
+
+* **deps:** update dependency google-auth-library to ^10.1.0 ([#783](https://github.com/zeshuaro/semantic-release-pub/issues/783)) ([2062ca9](https://github.com/zeshuaro/semantic-release-pub/commit/2062ca99e8222dc83855c6a637a5a2938fb08a84))
+* **deps:** update dependency google-auth-library to v10 ([#779](https://github.com/zeshuaro/semantic-release-pub/issues/779)) ([f9b476c](https://github.com/zeshuaro/semantic-release-pub/commit/f9b476c4d525bf242929d4b74e7dec9e06fd818d))
+* **deps:** update dependency google-auth-library to v10 ([#785](https://github.com/zeshuaro/semantic-release-pub/issues/785)) ([2037b8d](https://github.com/zeshuaro/semantic-release-pub/commit/2037b8d819aea6674ecd01c9171e09d81527c717))
+* **deps:** update dependency zod to ^3.25.63 ([#784](https://github.com/zeshuaro/semantic-release-pub/issues/784)) ([33bc136](https://github.com/zeshuaro/semantic-release-pub/commit/33bc136227a6aceb8bc02b3284582e3a871f8102))
+* **deps:** update dependency zod to ^3.25.64 ([#789](https://github.com/zeshuaro/semantic-release-pub/issues/789)) ([e37fb8f](https://github.com/zeshuaro/semantic-release-pub/commit/e37fb8fbd48226de5ed4ab228990599fb8ca40cc))
+* **deps:** update dependency zod to ^3.25.67 ([#792](https://github.com/zeshuaro/semantic-release-pub/issues/792)) ([f9f31fd](https://github.com/zeshuaro/semantic-release-pub/commit/f9f31fda4134066a81bbd61fbf3baec9ebc2be56))
+
+### Reverts
+
+* "fix(deps): update dependency google-auth-library to v10" ([#782](https://github.com/zeshuaro/semantic-release-pub/issues/782)) ([262678b](https://github.com/zeshuaro/semantic-release-pub/commit/262678bc16a8686160930264eb540fea10d6ba28))
+
+### Miscellaneous Chores
+
+* add strictest and node-ts tsconfigs ([#787](https://github.com/zeshuaro/semantic-release-pub/issues/787)) ([4ab9ed3](https://github.com/zeshuaro/semantic-release-pub/commit/4ab9ed38959de2e3df048a7aee5161b8524c3544))
+* **deps:** lock file maintenance ([#788](https://github.com/zeshuaro/semantic-release-pub/issues/788)) ([df068c9](https://github.com/zeshuaro/semantic-release-pub/commit/df068c966e1de93a06963717fdcd4f693edf704d))
+* **deps:** update dependency @tsconfig/recommended to ^1.0.10 ([#795](https://github.com/zeshuaro/semantic-release-pub/issues/795)) ([4e4c0f0](https://github.com/zeshuaro/semantic-release-pub/commit/4e4c0f022bdf92cd4f2b0cb27c90c8effbeebd6e))
+* **deps:** update dependency @tsconfig/recommended to ^1.0.9 ([#791](https://github.com/zeshuaro/semantic-release-pub/issues/791)) ([75670e3](https://github.com/zeshuaro/semantic-release-pub/commit/75670e36ee8ff43685ca672b81f6e684d1e9923d))
+* **deps:** update vitest monorepo to v3.2.4 ([#794](https://github.com/zeshuaro/semantic-release-pub/issues/794)) ([b30b0e4](https://github.com/zeshuaro/semantic-release-pub/commit/b30b0e4ce171caaf37de09095e1087ddeea8c706))
+* migrate to recommended tsconfig and configure tsc for tests folder ([#786](https://github.com/zeshuaro/semantic-release-pub/issues/786)) ([6a423c2](https://github.com/zeshuaro/semantic-release-pub/commit/6a423c2bf34102e293b41408ee52b3f768603133))
+* remove unused prettier config ([#790](https://github.com/zeshuaro/semantic-release-pub/issues/790)) ([76cf93e](https://github.com/zeshuaro/semantic-release-pub/commit/76cf93e7b4a3daa98f06345d43ef5e257f1113a0))
+
 ## [0.10.10](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.9...v0.10.10) (2025-06-15)
 
 ### Bug Fixes
