@@ -971,12 +971,12 @@
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.4.tgz#56e2cc26c397c038fab0e3a917a12d5c5909e901"
   integrity sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==
 
-"@types/semantic-release@20.0.6":
-  version "20.0.6"
-  resolved "https://registry.yarnpkg.com/@types/semantic-release/-/semantic-release-20.0.6.tgz#9883bd8557829af92097eea0e089b3c2f4213573"
-  integrity sha512-8YJXvsT1FwMrNdZI1e6NBHPzZWendDiUsLryzxurdup+9LnV3s9fF4NgO0D3LkBfLMnocb4Ax6TQ5yFdF3dXGQ==
+"@types/semantic-release@21.1.0":
+  version "21.1.0"
+  resolved "https://registry.yarnpkg.com/@types/semantic-release/-/semantic-release-21.1.0.tgz#41f2744d6cd506a9bfac69a052b91249c86308e0"
+  integrity sha512-9eGzz0L35u5W7B67x4OpCYfmWUqEre/pqW7PY389vbSFZigBc/Rr9uNNWIkMuy+q6QvfU+nknvXtiwFccDx4+g==
   dependencies:
-    "@types/node" "*"
+    semantic-release "*"
 
 "@types/semantic-release__error@3.0.3":
   version "3.0.3"
@@ -3565,7 +3565,7 @@ safe-buffer@^5.0.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-semantic-release@24.2.6:
+semantic-release@*, semantic-release@24.2.6:
   version "24.2.6"
   resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-24.2.6.tgz#03b098597c2c8d0642c8b5272f545be6ac2c6bf5"
   integrity sha512-D0cwjlO5RZzHHxAcsoF1HxiRLfC3ehw+ay+zntzFs6PNX6aV0JzKNG15mpxPipBYa/l4fHly88dHvgDyqwb1Ww==
