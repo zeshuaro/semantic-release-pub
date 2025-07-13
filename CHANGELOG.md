@@ -1,3 +1,17 @@
+## [0.10.14](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.13...v0.10.14) (2025-07-13)
+
+### Bug Fixes
+
+* **deps:** update dependency zod to ^3.25.71 ([#803](https://github.com/zeshuaro/semantic-release-pub/issues/803)) ([a1d3ff9](https://github.com/zeshuaro/semantic-release-pub/commit/a1d3ff9fa7619402f3a3781a6e30d9d4fc8ed0ec))
+* **deps:** update dependency zod to ^3.25.73 ([#805](https://github.com/zeshuaro/semantic-release-pub/issues/805)) ([158a059](https://github.com/zeshuaro/semantic-release-pub/commit/158a059a314f1d98812f77a15fad81a63c0dd5c7))
+* **deps:** update dependency zod to ^3.25.74 ([#806](https://github.com/zeshuaro/semantic-release-pub/issues/806)) ([7f4205e](https://github.com/zeshuaro/semantic-release-pub/commit/7f4205e605cfc55e6e06925f63865488947ffadc))
+* **deps:** update dependency zod to ^3.25.75 ([#807](https://github.com/zeshuaro/semantic-release-pub/issues/807)) ([f7e6d2c](https://github.com/zeshuaro/semantic-release-pub/commit/f7e6d2c55d49c9ae3c8e854a566fc3e312496566))
+* **deps:** update dependency zod to ^3.25.76 ([#808](https://github.com/zeshuaro/semantic-release-pub/issues/808)) ([d99cd01](https://github.com/zeshuaro/semantic-release-pub/commit/d99cd01460bb3488d6d144101525b386bbe0cc33))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#804](https://github.com/zeshuaro/semantic-release-pub/issues/804)) ([a590ade](https://github.com/zeshuaro/semantic-release-pub/commit/a590ade0d124b26855f200de57d947ca9e82f81b))
+
 ## [0.10.13](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.12...v0.10.13) (2025-07-06)
 
 ### Bug Fixes
