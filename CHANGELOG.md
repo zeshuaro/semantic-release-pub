@@ -1,3 +1,19 @@
+## [0.10.15](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.14...v0.10.15) (2025-07-20)
+
+### Bug Fixes
+
+* **deps:** update dependency zod to ^4.0.5 ([#811](https://github.com/zeshuaro/semantic-release-pub/issues/811)) ([ead2d9d](https://github.com/zeshuaro/semantic-release-pub/commit/ead2d9de5dc2f73043228115a578431c63b17a0e))
+* **deps:** update dependency zod to v4 ([#809](https://github.com/zeshuaro/semantic-release-pub/issues/809)) ([6741455](https://github.com/zeshuaro/semantic-release-pub/commit/67414558dc454b08ebbcdc8e9853bc88819bb6f5))
+* **node:** update node.js to >=22.17.1 ([#815](https://github.com/zeshuaro/semantic-release-pub/issues/815)) ([46f5734](https://github.com/zeshuaro/semantic-release-pub/commit/46f57343680323ad28053c3cbc2f4450cfaba8d0))
+* **node:** update node.js to v22.17.1 ([#814](https://github.com/zeshuaro/semantic-release-pub/issues/814)) ([6dcb65a](https://github.com/zeshuaro/semantic-release-pub/commit/6dcb65a94c7b61fdfe7e07edddba702d63f06b7f))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#810](https://github.com/zeshuaro/semantic-release-pub/issues/810)) ([5dac1f4](https://github.com/zeshuaro/semantic-release-pub/commit/5dac1f4589d2d6426e2cdc296a56cdd476716fea))
+* **deps:** update dependency @types/semantic-release to v21 ([#799](https://github.com/zeshuaro/semantic-release-pub/issues/799)) ([667fda5](https://github.com/zeshuaro/semantic-release-pub/commit/667fda5ca541a281f2bda76b57d73ef0a43a0992))
+* **deps:** update dependency conventional-changelog-conventionalcommits to v9.1.0 ([#812](https://github.com/zeshuaro/semantic-release-pub/issues/812)) ([12daf04](https://github.com/zeshuaro/semantic-release-pub/commit/12daf04e4c7ae5bfac12dd5bac73208fb5e138e0))
+* **deps:** update dependency semantic-release to v24.2.7 ([#813](https://github.com/zeshuaro/semantic-release-pub/issues/813)) ([dbf2fd9](https://github.com/zeshuaro/semantic-release-pub/commit/dbf2fd9f06c2f2030ac0e4f3278e177a40c7f01f))
+
 ## [0.10.14](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.13...v0.10.14) (2025-07-13)
 
 ### Bug Fixes
