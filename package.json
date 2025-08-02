@@ -37,7 +37,7 @@
     "execa": "^9.6.0",
     "google-auth-library": "^10.2.0",
     "yaml": "^2.8.0",
-    "zod": "^4.0.13"
+    "zod": "^4.0.14"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
