@@ -1,3 +1,19 @@
+## [0.10.16](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.15...v0.10.16) (2025-08-03)
+
+### Bug Fixes
+
+* **deps:** update dependency google-auth-library to ^10.2.0 ([#819](https://github.com/zeshuaro/semantic-release-pub/issues/819)) ([f22c910](https://github.com/zeshuaro/semantic-release-pub/commit/f22c9102fc9a016e18b406e14f36b7b605c0bdbf))
+* **deps:** update dependency zod to ^4.0.10 ([#818](https://github.com/zeshuaro/semantic-release-pub/issues/818)) ([255cbce](https://github.com/zeshuaro/semantic-release-pub/commit/255cbceac6a73e067641a18a42e1d4168d95ac72))
+* **deps:** update dependency zod to ^4.0.13 ([#820](https://github.com/zeshuaro/semantic-release-pub/issues/820)) ([ec64ad6](https://github.com/zeshuaro/semantic-release-pub/commit/ec64ad67e2e4b2550419382543fabaa5edbe39d0))
+* **deps:** update dependency zod to ^4.0.14 ([#822](https://github.com/zeshuaro/semantic-release-pub/issues/822)) ([9d64649](https://github.com/zeshuaro/semantic-release-pub/commit/9d6464961d535e07cd636c57de23d4b8ed7d2093))
+* **deps:** update dependency zod to ^4.0.8 ([#817](https://github.com/zeshuaro/semantic-release-pub/issues/817)) ([b8421d6](https://github.com/zeshuaro/semantic-release-pub/commit/b8421d66c83b72827cd85387dff041d2555b922e))
+* **node:** update node.js to >=22.18.0 ([#823](https://github.com/zeshuaro/semantic-release-pub/issues/823)) ([abd2bc4](https://github.com/zeshuaro/semantic-release-pub/commit/abd2bc443c7690f594742b011f2ab4b3314eea9b))
+* **node:** update node.js to v22.18.0 ([#821](https://github.com/zeshuaro/semantic-release-pub/issues/821)) ([eb1f136](https://github.com/zeshuaro/semantic-release-pub/commit/eb1f136e1d02ab3f4f511383603546b5875310d4))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#816](https://github.com/zeshuaro/semantic-release-pub/issues/816)) ([e825054](https://github.com/zeshuaro/semantic-release-pub/commit/e825054fa4276f5de95bd8d04498e10d16b3cf26))
+
 ## [0.10.15](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.14...v0.10.15) (2025-07-20)
 
 ### Bug Fixes
