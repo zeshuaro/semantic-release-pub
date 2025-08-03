@@ -29,7 +29,7 @@
     "lint:write": "biome check src tests --write"
   },
   "engines": {
-    "node": ">=22.17.1"
+    "node": ">=22.18.0"
   },
   "dependencies": {
     "@actions/core": "^1.11.1",
