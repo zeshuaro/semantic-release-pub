@@ -1,3 +1,22 @@
+## [0.10.17](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.16...v0.10.17) (2025-08-10)
+
+### Bug Fixes
+
+* **deps:** update dependency google-auth-library to ^10.2.1 ([#827](https://github.com/zeshuaro/semantic-release-pub/issues/827)) ([f15db27](https://github.com/zeshuaro/semantic-release-pub/commit/f15db27086ca077b84ec34f17c0e332123a80283))
+* **deps:** update dependency yaml to ^2.8.1 ([#829](https://github.com/zeshuaro/semantic-release-pub/issues/829)) ([3f74ced](https://github.com/zeshuaro/semantic-release-pub/commit/3f74cedbc32a9c56974783ca2db53d3e67814ad7))
+* **deps:** update dependency zod to ^4.0.15 ([#831](https://github.com/zeshuaro/semantic-release-pub/issues/831)) ([79656d3](https://github.com/zeshuaro/semantic-release-pub/commit/79656d335d0ff7404c21e2216e49a881e8544894))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#824](https://github.com/zeshuaro/semantic-release-pub/issues/824)) ([663887c](https://github.com/zeshuaro/semantic-release-pub/commit/663887c2c4b555e06a51ccb809333f5a10eac410))
+* **deps:** update dependency typescript to v5.9.2 ([#826](https://github.com/zeshuaro/semantic-release-pub/issues/826)) ([be49f33](https://github.com/zeshuaro/semantic-release-pub/commit/be49f33eef88cdd5cf634c1adfe1befded5bbcc0))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 329d366 ([#828](https://github.com/zeshuaro/semantic-release-pub/issues/828)) ([fb04264](https://github.com/zeshuaro/semantic-release-pub/commit/fb0426471d887090ce1e69e796dd1bc28c6b3bf6))
+* **deps:** update zeshuaro/github-actions-workflows digest to 3f485ef ([#830](https://github.com/zeshuaro/semantic-release-pub/issues/830)) ([ddb1c35](https://github.com/zeshuaro/semantic-release-pub/commit/ddb1c3521e9c9f85c0712944b8f2bd2c5ed0738c))
+* **deps:** update zeshuaro/github-actions-workflows digest to a7c7d46 ([#825](https://github.com/zeshuaro/semantic-release-pub/issues/825)) ([02ac198](https://github.com/zeshuaro/semantic-release-pub/commit/02ac198fdc80a362b201c09876479a891092f3e8))
+
 ## [0.10.16](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.15...v0.10.16) (2025-08-03)
 
 ### Bug Fixes
