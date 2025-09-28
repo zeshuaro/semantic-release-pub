@@ -1,3 +1,21 @@
+## [0.10.22](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.21...v0.10.22) (2025-09-28)
+
+### Bug Fixes
+
+* **deps:** update dependency zod to ^4.1.11 ([#861](https://github.com/zeshuaro/semantic-release-pub/issues/861)) ([78f79ca](https://github.com/zeshuaro/semantic-release-pub/commit/78f79cad0aa08c592ddd3bab557d16d240a00836))
+* **node:** update node.js to >=22.20.0 ([#865](https://github.com/zeshuaro/semantic-release-pub/issues/865)) ([a2ff45e](https://github.com/zeshuaro/semantic-release-pub/commit/a2ff45e1d5e3538cab3598385feb36cfa387e2de))
+* **node:** update node.js to v22.20.0 ([#862](https://github.com/zeshuaro/semantic-release-pub/issues/862)) ([d7905ea](https://github.com/zeshuaro/semantic-release-pub/commit/d7905ea99ef86d592d5d01c184d7ec1ca6e8075c))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#859](https://github.com/zeshuaro/semantic-release-pub/issues/859)) ([f16a045](https://github.com/zeshuaro/semantic-release-pub/commit/f16a0456601f15e35a6ded6e8665e2f09b060d3d))
+* **deps:** update dependency @tsconfig/strictest to ^2.0.6 ([#863](https://github.com/zeshuaro/semantic-release-pub/issues/863)) ([b511903](https://github.com/zeshuaro/semantic-release-pub/commit/b51190356e0105d7d2d2e5d6da0c4691b3c81487))
+* **deps:** update dependency semantic-release to v24.2.9 ([#860](https://github.com/zeshuaro/semantic-release-pub/issues/860)) ([e7d6eb2](https://github.com/zeshuaro/semantic-release-pub/commit/e7d6eb2ce90dd90346c84197fdcee2f3166cc7ec))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to eaa9651 ([#864](https://github.com/zeshuaro/semantic-release-pub/issues/864)) ([af735a9](https://github.com/zeshuaro/semantic-release-pub/commit/af735a91db9ec2d112c537e664a8adbc8aa028ea))
+
 ## [0.10.21](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.20...v0.10.21) (2025-09-21)
 
 ### Bug Fixes
