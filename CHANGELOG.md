@@ -1,3 +1,20 @@
+## [0.10.23](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.22...v0.10.23) (2025-10-05)
+
+### Bug Fixes
+
+* **deps:** update dependency google-auth-library to ^10.3.1 ([#868](https://github.com/zeshuaro/semantic-release-pub/issues/868)) ([13a89ae](https://github.com/zeshuaro/semantic-release-pub/commit/13a89ae72cf5f26eb56062bd8f4d66a88249e9fc))
+* **deps:** update dependency google-auth-library to ^10.4.0 ([#871](https://github.com/zeshuaro/semantic-release-pub/issues/871)) ([b5e05d1](https://github.com/zeshuaro/semantic-release-pub/commit/b5e05d1940647df186f714809e46db238f64f0a3))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#866](https://github.com/zeshuaro/semantic-release-pub/issues/866)) ([3e60269](https://github.com/zeshuaro/semantic-release-pub/commit/3e602694caddb307d42077fa850193ba7ea8f223))
+* **deps:** update dependency typescript to v5.9.3 ([#870](https://github.com/zeshuaro/semantic-release-pub/issues/870)) ([d2c2f01](https://github.com/zeshuaro/semantic-release-pub/commit/d2c2f01640d5f31481cd2604730a940ef59ba923))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 82ff499 ([#867](https://github.com/zeshuaro/semantic-release-pub/issues/867)) ([07013f3](https://github.com/zeshuaro/semantic-release-pub/commit/07013f30ee0cf4c9bfed99aeb06d1d6f0ef2f7a3))
+* **deps:** update zeshuaro/github-actions-workflows digest to 9786936 ([#869](https://github.com/zeshuaro/semantic-release-pub/issues/869)) ([459e4eb](https://github.com/zeshuaro/semantic-release-pub/commit/459e4eb369881379f2bf9cf7929ad8878bee07c1))
+
 ## [0.10.22](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.21...v0.10.22) (2025-09-28)
 
 ### Bug Fixes
