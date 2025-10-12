@@ -1,3 +1,17 @@
+## [0.10.24](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.23...v0.10.24) (2025-10-12)
+
+### Bug Fixes
+
+* **deps:** update dependency zod to ^4.1.12 ([#874](https://github.com/zeshuaro/semantic-release-pub/issues/874)) ([ef489b8](https://github.com/zeshuaro/semantic-release-pub/commit/ef489b82286d91628e483e23b8116c0fdda5b3dc))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#872](https://github.com/zeshuaro/semantic-release-pub/issues/872)) ([90acc7d](https://github.com/zeshuaro/semantic-release-pub/commit/90acc7de92044fa65d4bda95426cca069c128033))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 55dc268 ([#873](https://github.com/zeshuaro/semantic-release-pub/issues/873)) ([0c397ab](https://github.com/zeshuaro/semantic-release-pub/commit/0c397abbddb62734997f8624d93e1e6bf3a181ab))
+
 ## [0.10.23](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.22...v0.10.23) (2025-10-05)
 
 ### Bug Fixes
