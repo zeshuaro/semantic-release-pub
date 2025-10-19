@@ -1,3 +1,18 @@
+## [0.10.25](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.24...v0.10.25) (2025-10-19)
+
+### Bug Fixes
+
+* **deps:** update dependency google-auth-library to ^10.4.1 ([#876](https://github.com/zeshuaro/semantic-release-pub/issues/876)) ([23abd2c](https://github.com/zeshuaro/semantic-release-pub/commit/23abd2c22c251c01b19d0bc1e7b1a4863a668490))
+
+### Miscellaneous Chores
+
+* **deps:** update dependency semantic-release to v25 ([#877](https://github.com/zeshuaro/semantic-release-pub/issues/877)) ([6de5026](https://github.com/zeshuaro/semantic-release-pub/commit/6de50269af227286bc67df8ac36b695e00cb48fb))
+
+### Continuous Integration
+
+* **deps:** update actions/setup-node action to v6 ([#875](https://github.com/zeshuaro/semantic-release-pub/issues/875)) ([e07cbb6](https://github.com/zeshuaro/semantic-release-pub/commit/e07cbb61009d141b4c84a0a38633c0cc07badf93))
+* **deps:** update zeshuaro/github-actions-workflows digest to 165f3ed ([#878](https://github.com/zeshuaro/semantic-release-pub/issues/878)) ([e8cab62](https://github.com/zeshuaro/semantic-release-pub/commit/e8cab62bcae1b64342413b68a8c3b063e6cf2c54))
+
 ## [0.10.24](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.23...v0.10.24) (2025-10-12)
 
 ### Bug Fixes
