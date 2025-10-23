@@ -817,10 +817,10 @@
     tinyglobby "^0.2.14"
     url-join "^5.0.0"
 
-"@semantic-release/npm@^13.0.0":
-  version "13.1.0"
-  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-13.1.0.tgz#76c870c341825ccb977008684ef732b0f0b008e4"
-  integrity sha512-q9FtRbTxTd93KPC3/wI8C21RNiF7dIwKGbTHtWUWavNJP58ErjPuVBViY1gQOG+QjKqwOWImDAmInvv+6XCxzg==
+"@semantic-release/npm@^13.1.1":
+  version "13.1.1"
+  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-13.1.1.tgz#7d4e8a6ae4ebf556463871e41fdd63499b6675fd"
+  integrity sha512-c4tlp3STYaTYORmMcLjiTaI8SLoxJ0Uf7IXkem8EyihuOM624wnaGuH4OuY2HHcsHDerNAQNzZ8VO6d4PMHSzA==
   dependencies:
     "@actions/core" "^1.11.1"
     "@semantic-release/error" "^4.0.0"
@@ -3485,15 +3485,15 @@ safe-buffer@^5.0.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-semantic-release@*, semantic-release@25.0.0:
-  version "25.0.0"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-25.0.0.tgz#d3e3af784ca1f09a99f777e60f9e14f08a47a7fd"
-  integrity sha512-JL2hY7b1hBli5FS98nAXH0OwfRsgdywuUVhKktyJOHu9tUO0wJGWNpQL69SDhJ5Uwp63rtIvGvy7ZDy4C3RsXg==
+semantic-release@*, semantic-release@25.0.1:
+  version "25.0.1"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-25.0.1.tgz#0a5b165ef0d9799bc860c5198605842dc4f50028"
+  integrity sha512-0OCYLm0AfVilNGukM+w0C4aptITfuW1Mhvmz8LQliLeYbPOTFRCIJzoltWWx/F5zVFe6np9eNatBUHdAvMFeZg==
   dependencies:
     "@semantic-release/commit-analyzer" "^13.0.1"
     "@semantic-release/error" "^4.0.0"
     "@semantic-release/github" "^12.0.0"
-    "@semantic-release/npm" "^13.0.0"
+    "@semantic-release/npm" "^13.1.1"
     "@semantic-release/release-notes-generator" "^14.1.0"
     aggregate-error "^5.0.0"
     cosmiconfig "^9.0.0"
