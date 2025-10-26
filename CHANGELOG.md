@@ -1,3 +1,15 @@
+## [0.10.26](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.25...v0.10.26) (2025-10-26)
+
+### Bug Fixes
+
+* **node:** update node.js to >=22.21.0 ([#882](https://github.com/zeshuaro/semantic-release-pub/issues/882)) ([7a94da1](https://github.com/zeshuaro/semantic-release-pub/commit/7a94da1f3971aea2d57b2b7e8a5b4a5b51cb45cf))
+* **node:** update node.js to v22.21.0 ([#880](https://github.com/zeshuaro/semantic-release-pub/issues/880)) ([c734a07](https://github.com/zeshuaro/semantic-release-pub/commit/c734a07bd6dbe0a8b935b357cf893751827ce6be))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#879](https://github.com/zeshuaro/semantic-release-pub/issues/879)) ([bac466e](https://github.com/zeshuaro/semantic-release-pub/commit/bac466ef95f6c748ff3f8b100d949b15607d00f3))
+* **deps:** update dependency semantic-release to v25.0.1 ([#881](https://github.com/zeshuaro/semantic-release-pub/issues/881)) ([026fe9a](https://github.com/zeshuaro/semantic-release-pub/commit/026fe9a67ae38622bde87969a75774763a374b30))
+
 ## [0.10.25](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.24...v0.10.25) (2025-10-19)
 
 ### Bug Fixes
