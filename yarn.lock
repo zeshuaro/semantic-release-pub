@@ -1995,7 +1995,7 @@ glob@^11.0.3:
     package-json-from-dist "^1.0.0"
     path-scurry "^2.0.0"
 
-google-auth-library@^10.4.1:
+google-auth-library@^10.4.2:
   version "10.4.2"
   resolved "https://registry.yarnpkg.com/google-auth-library/-/google-auth-library-10.4.2.tgz#fc2e66087990a4296eaf345cd9fd39b3a99a4b05"
   integrity sha512-EKiQasw6aEdxSovPEf1oBxCEvxjFamZ6MPaVOSPXZMnqKFLo+rrYjHyjKlFfZcXiKi9qAH6cutr5WRqqa1jKhg==
