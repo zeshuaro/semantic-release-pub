@@ -1,3 +1,13 @@
+## [0.11.1](https://github.com/zeshuaro/semantic-release-pub/compare/v0.11.0...v0.11.1) (2025-11-09)
+
+### Bug Fixes
+
+* **deps:** update dependency google-auth-library to ^10.5.0 ([#892](https://github.com/zeshuaro/semantic-release-pub/issues/892)) ([fa26a58](https://github.com/zeshuaro/semantic-release-pub/commit/fa26a582f4f5fd4a1727a59ac0f2d1d2e5c80dce))
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @tsconfig/strictest to ^2.0.7 ([#891](https://github.com/zeshuaro/semantic-release-pub/issues/891)) ([1e547d5](https://github.com/zeshuaro/semantic-release-pub/commit/1e547d5e95381cfab3040ddad2deb9e839220a11))
+
 ## [0.11.0](https://github.com/zeshuaro/semantic-release-pub/compare/v0.10.26...v0.11.0) (2025-11-02)
 
 ### Features
