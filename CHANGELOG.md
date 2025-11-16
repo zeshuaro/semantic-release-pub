@@ -1,3 +1,18 @@
+## [0.11.2](https://github.com/zeshuaro/semantic-release-pub/compare/v0.11.1...v0.11.2) (2025-11-16)
+
+### Bug Fixes
+
+* **node:** update node.js to v24.11.1 ([#895](https://github.com/zeshuaro/semantic-release-pub/issues/895)) ([969087b](https://github.com/zeshuaro/semantic-release-pub/commit/969087b646ee08a8f0d0e67ea1a4484421a7b8f6))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#893](https://github.com/zeshuaro/semantic-release-pub/issues/893)) ([cab24ab](https://github.com/zeshuaro/semantic-release-pub/commit/cab24ab0db3a664239dafba86e5b3b92f774bb02))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 1ea5fa5 ([#894](https://github.com/zeshuaro/semantic-release-pub/issues/894)) ([1fabc2b](https://github.com/zeshuaro/semantic-release-pub/commit/1fabc2beff661af55d61cb68bb26265af11faf37))
+* **deps:** update zeshuaro/github-actions-workflows digest to 40090c2 ([#896](https://github.com/zeshuaro/semantic-release-pub/issues/896)) ([aa38ed8](https://github.com/zeshuaro/semantic-release-pub/commit/aa38ed8e8f59ddb38d795e578ad75e703d7575ab))
+
 ## [0.11.1](https://github.com/zeshuaro/semantic-release-pub/compare/v0.11.0...v0.11.1) (2025-11-09)
 
 ### Bug Fixes
