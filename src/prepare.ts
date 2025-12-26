@@ -4,10 +4,10 @@ import type { PrepareContext } from "semantic-release";
 
 import type { PluginConfig } from "./types.js";
 import {
-  PUBSPEC_PATH,
   getConfig,
   getPubspecFromString,
   getPubspecString,
+  PUBSPEC_PATH,
 } from "./utils.js";
 
 export const prepare = async (
