@@ -48,7 +48,6 @@
     "@tsconfig/recommended": "^1.0.13",
     "@tsconfig/strictest": "^2.0.8",
     "@types/common-tags": "1.8.4",
-    "@types/semantic-release": "21.1.0",
     "@types/semantic-release__error": "3.0.3",
     "@types/signale": "1.4.7",
     "@vitest/coverage-v8": "3.2.4",
