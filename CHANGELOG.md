@@ -1,3 +1,16 @@
+## [0.11.6](https://github.com/zeshuaro/semantic-release-pub/compare/v0.11.5...v0.11.6) (2026-01-04)
+
+### Bug Fixes
+
+* **deps:** update dependency zod to ^4.3.0 ([#928](https://github.com/zeshuaro/semantic-release-pub/issues/928)) ([d67fa94](https://github.com/zeshuaro/semantic-release-pub/commit/d67fa94d478512379d45379f6fa5d69803b6d6fa))
+* **deps:** update dependency zod to ^4.3.2 ([#929](https://github.com/zeshuaro/semantic-release-pub/issues/929)) ([766d18f](https://github.com/zeshuaro/semantic-release-pub/commit/766d18f4e27c1b5a9d62a1f4d1e09d95fce5b0e7))
+* **deps:** update dependency zod to ^4.3.3 ([#930](https://github.com/zeshuaro/semantic-release-pub/issues/930)) ([18026a8](https://github.com/zeshuaro/semantic-release-pub/commit/18026a8841c628bb60f4b588f2883c746de92932))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 2281ba2 ([#927](https://github.com/zeshuaro/semantic-release-pub/issues/927)) ([3e339ba](https://github.com/zeshuaro/semantic-release-pub/commit/3e339ba7a8e85dd1e479bb76aa04c0c00ab59863))
+* **deps:** update zeshuaro/github-actions-workflows digest to aafdad3 ([#926](https://github.com/zeshuaro/semantic-release-pub/issues/926)) ([1a20164](https://github.com/zeshuaro/semantic-release-pub/commit/1a20164e585c9f9c6c3fc6054b0c2e2800f25b77))
+
 ## [0.11.5](https://github.com/zeshuaro/semantic-release-pub/compare/v0.11.4...v0.11.5) (2025-12-28)
 
 ### Bug Fixes
