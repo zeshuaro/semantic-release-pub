@@ -1,3 +1,18 @@
+## [0.11.7](https://github.com/zeshuaro/semantic-release-pub/compare/v0.11.6...v0.11.7) (2026-01-11)
+
+### Bug Fixes
+
+* **deps:** update dependency zod to ^4.3.4 ([#931](https://github.com/zeshuaro/semantic-release-pub/issues/931)) ([566d7cf](https://github.com/zeshuaro/semantic-release-pub/commit/566d7cf85963e3a27510b74ebf410091dfe62031))
+* **deps:** update dependency zod to ^4.3.5 ([#933](https://github.com/zeshuaro/semantic-release-pub/issues/933)) ([db2afa4](https://github.com/zeshuaro/semantic-release-pub/commit/db2afa4dec4d1d11d63df1c387f8073ebc1cf2d2))
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @biomejs/biome to v2.3.11 ([#932](https://github.com/zeshuaro/semantic-release-pub/issues/932)) ([8291b23](https://github.com/zeshuaro/semantic-release-pub/commit/8291b23ff19d81cf1e53b317d24c28e33ee06074))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 85d6441 ([#934](https://github.com/zeshuaro/semantic-release-pub/issues/934)) ([c469c76](https://github.com/zeshuaro/semantic-release-pub/commit/c469c76b536889396e03cfdd462f83e813a4b429))
+
 ## [0.11.6](https://github.com/zeshuaro/semantic-release-pub/compare/v0.11.5...v0.11.6) (2026-01-04)
 
 ### Bug Fixes
