@@ -1,3 +1,14 @@
+## [0.11.8](https://github.com/zeshuaro/semantic-release-pub/compare/v0.11.7...v0.11.8) (2026-01-18)
+
+### Bug Fixes
+
+* **deps:** update dependency @actions/core to ^2.0.2 ([#935](https://github.com/zeshuaro/semantic-release-pub/issues/935)) ([09e10f6](https://github.com/zeshuaro/semantic-release-pub/commit/09e10f620d3d114ba07f2ce1216792ea600a3e69))
+* **node:** update node.js to v24.13.0 ([#936](https://github.com/zeshuaro/semantic-release-pub/issues/936)) ([eb04f11](https://github.com/zeshuaro/semantic-release-pub/commit/eb04f110c92f888a5b6e0c929934c9e3c835f7d4))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 580b23d ([#937](https://github.com/zeshuaro/semantic-release-pub/issues/937)) ([fa218f6](https://github.com/zeshuaro/semantic-release-pub/commit/fa218f6628c0cf919f89ac7e62309e5ec7d6aa52))
+
 ## [0.11.7](https://github.com/zeshuaro/semantic-release-pub/compare/v0.11.6...v0.11.7) (2026-01-11)
 
 ### Bug Fixes
