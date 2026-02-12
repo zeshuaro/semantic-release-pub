@@ -32,7 +32,7 @@
     "node": ">=24.13.1"
   },
   "dependencies": {
-    "@actions/core": "^2.0.3",
+    "@actions/core": "^3.0.0",
     "@semantic-release/error": "^4.0.0",
     "execa": "^9.6.1",
     "google-auth-library": "^10.5.0",
