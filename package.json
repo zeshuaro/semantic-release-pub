@@ -43,7 +43,7 @@
     "@biomejs/biome": "2.3.15",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
-    "@tsconfig/node-ts": "^23.6.3",
+    "@tsconfig/node-ts": "^23.6.4",
     "@tsconfig/node24": "^24.0.4",
     "@tsconfig/recommended": "^1.0.13",
     "@tsconfig/strictest": "^2.0.8",
