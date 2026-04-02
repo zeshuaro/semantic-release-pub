@@ -1,5 +1,5 @@
 import { readFileSync } from "node:fs";
-import core from "@actions/core";
+import { getIDToken } from "@actions/core";
 import SemanticReleaseError from "@semantic-release/error";
 import { codeBlock } from "common-tags";
 import { type Credentials, JWT } from "google-auth-library";
@@ -105,12 +105,12 @@ describe("getGithubIdentityToken", () => {
   });
 
   test("success", async () => {
-    vi.mocked(core.getIDToken).mockResolvedValue(idToken);
+    vi.mocked(getIDToken).mockResolvedValue(idToken);
 
     const actual = await getGithubIdentityToken();
 
     expect(actual).toEqual(idToken);
-    expect(core.getIDToken).toHaveBeenNthCalledWith(1, pubDevAudience);
+    expect(getIDToken).toHaveBeenNthCalledWith(1, pubDevAudience);
   });
 });
 
