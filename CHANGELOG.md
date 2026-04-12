@@ -1,3 +1,34 @@
+## [0.11.13](https://github.com/zeshuaro/semantic-release-pub/compare/v0.11.12...v0.11.13) (2026-04-12)
+
+### Bug Fixes
+
+* **deps:** update dependency @actions/core to v3 ([#950](https://github.com/zeshuaro/semantic-release-pub/issues/950)) ([2712341](https://github.com/zeshuaro/semantic-release-pub/commit/2712341d7940eb906f9e0c4d4fac12e0d3c063e2))
+* **deps:** update dependency yaml to ^2.8.3 ([#983](https://github.com/zeshuaro/semantic-release-pub/issues/983)) ([d8d40cc](https://github.com/zeshuaro/semantic-release-pub/commit/d8d40cc5a755d74afea6e2e33c430c0cf34cc284))
+* **node:** update node.js to v24.14.1 ([#984](https://github.com/zeshuaro/semantic-release-pub/issues/984)) ([c68d4a0](https://github.com/zeshuaro/semantic-release-pub/commit/c68d4a0cea9cb5f84c7583795c42698356781d30))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#982](https://github.com/zeshuaro/semantic-release-pub/issues/982)) ([5fbe0fb](https://github.com/zeshuaro/semantic-release-pub/commit/5fbe0fb7643890b9648490a40942c2d3d5a3b40f))
+* **deps:** lock file maintenance ([#995](https://github.com/zeshuaro/semantic-release-pub/issues/995)) ([6767d42](https://github.com/zeshuaro/semantic-release-pub/commit/6767d42dcad26b5430d76cf1f0f7224e169011a7))
+* **deps:** update dependency @biomejs/biome to v2.4.10 ([#993](https://github.com/zeshuaro/semantic-release-pub/issues/993)) ([fc225f0](https://github.com/zeshuaro/semantic-release-pub/commit/fc225f0ab48bd9b8f8d765f9e3d1be1f217ba040))
+* **deps:** update dependency @biomejs/biome to v2.4.9 ([#990](https://github.com/zeshuaro/semantic-release-pub/issues/990)) ([99fcbdc](https://github.com/zeshuaro/semantic-release-pub/commit/99fcbdcfa95e1025f8839153425ef9752dbdeee1))
+* **deps:** update dependency conventional-changelog-conventionalcommits to v9.3.1 ([#992](https://github.com/zeshuaro/semantic-release-pub/issues/992)) ([ef90e3e](https://github.com/zeshuaro/semantic-release-pub/commit/ef90e3e28d0d219b0d44341b510cdf2fa96bbc69))
+* **deps:** update dependency typescript to v6 ([#987](https://github.com/zeshuaro/semantic-release-pub/issues/987)) ([10a2f49](https://github.com/zeshuaro/semantic-release-pub/commit/10a2f49430081641e413fba51ef9cd960a9e842b))
+* **deps:** update dependency vitest-mock-extended to v3.1.1 ([#994](https://github.com/zeshuaro/semantic-release-pub/issues/994)) ([9e612f1](https://github.com/zeshuaro/semantic-release-pub/commit/9e612f19eb76ebc121c2f245c06ab290a5ed72bb))
+* **deps:** update dependency vitest-mock-extended to v4 ([#996](https://github.com/zeshuaro/semantic-release-pub/issues/996)) ([914b0ad](https://github.com/zeshuaro/semantic-release-pub/commit/914b0ad57d9202ff2897dc98c2f416682a4a3616))
+* **deps:** update vitest monorepo to v4 (major) ([#883](https://github.com/zeshuaro/semantic-release-pub/issues/883)) ([f2239df](https://github.com/zeshuaro/semantic-release-pub/commit/f2239df220b08981d54a97c62e87b6f49e54b46b))
+* **tsconfig:** add missing build tsconfig ([#998](https://github.com/zeshuaro/semantic-release-pub/issues/998)) ([7e51cd2](https://github.com/zeshuaro/semantic-release-pub/commit/7e51cd2e52528c9c7e1926b22a77fb450394138e))
+* **tsconfig:** fix by having a build and test specific `tsconfig` ([#997](https://github.com/zeshuaro/semantic-release-pub/issues/997)) ([0fb21f6](https://github.com/zeshuaro/semantic-release-pub/commit/0fb21f64f35794a56f77e5c1565188c2a0a783ea))
+
+### Continuous Integration
+
+* **deps:** update actions/create-github-app-token action to v3 ([#975](https://github.com/zeshuaro/semantic-release-pub/issues/975)) ([86d0cb2](https://github.com/zeshuaro/semantic-release-pub/commit/86d0cb251b7f2099fe9070690fbd0ffbfcc95035))
+* **deps:** update codecov/codecov-action action to v5.5.4 ([#986](https://github.com/zeshuaro/semantic-release-pub/issues/986)) ([6e29641](https://github.com/zeshuaro/semantic-release-pub/commit/6e29641c89f80a620ccb8f7a6513b2daf3aa96f9))
+* **deps:** update codecov/codecov-action action to v6 ([#989](https://github.com/zeshuaro/semantic-release-pub/issues/989)) ([742911f](https://github.com/zeshuaro/semantic-release-pub/commit/742911f676e6b21643666741aa2ae6222d041b2e))
+* **deps:** update zeshuaro/github-actions-workflows digest to 3296120 ([#988](https://github.com/zeshuaro/semantic-release-pub/issues/988)) ([ac793db](https://github.com/zeshuaro/semantic-release-pub/commit/ac793db9b918877ceca4d5b6a8ccb462ed4f6378))
+* **deps:** update zeshuaro/github-actions-workflows digest to 6b595f8 ([#991](https://github.com/zeshuaro/semantic-release-pub/issues/991)) ([83bc003](https://github.com/zeshuaro/semantic-release-pub/commit/83bc0031e910116bac56026958484a8b4d7116fb))
+* **deps:** update zeshuaro/github-actions-workflows digest to a4be49f ([#985](https://github.com/zeshuaro/semantic-release-pub/issues/985)) ([fdcf64f](https://github.com/zeshuaro/semantic-release-pub/commit/fdcf64fa0f98dcbbd720e65606c2d96a927f58d5))
+
 ## [0.11.12](https://github.com/zeshuaro/semantic-release-pub/compare/v0.11.11...v0.11.12) (2026-03-22)
 
 ### Bug Fixes
