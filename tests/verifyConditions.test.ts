@@ -40,7 +40,7 @@ describe("verifyConditions", () => {
 
   afterEach(() => {
     vi.unstubAllEnvs();
-    vi.restoreAllMocks();
+    vi.clearAllMocks();
   });
 
   test("success", async () => {
@@ -48,7 +48,7 @@ describe("verifyConditions", () => {
 
     await verifyConditions(testConfig, context);
 
-    expect(execa).toBeCalledWith(cli);
+    expect(execa).toHaveBeenCalledWith(cli);
     expectGetGoogleIdentityTokenCalled();
   });
 
@@ -58,8 +58,8 @@ describe("verifyConditions", () => {
 
     await verifyConditions(config, context);
 
-    expect(getGoogleIdentityToken).toBeCalledTimes(0);
-    expect(execa).toBeCalledTimes(0);
+    expect(getGoogleIdentityToken).toHaveBeenCalledTimes(0);
+    expect(execa).toHaveBeenCalledTimes(0);
   });
 
   test("success with useGithubOidc=true", async () => {
@@ -68,16 +68,16 @@ describe("verifyConditions", () => {
 
     await verifyConditions(config, context);
 
-    expect(getGithubIdentityToken).toBeCalledTimes(1);
-    expect(getGoogleIdentityToken).toBeCalledTimes(0);
-    expect(execa).toBeCalledWith(cli);
+    expect(getGithubIdentityToken).toHaveBeenCalledTimes(1);
+    expect(getGoogleIdentityToken).toHaveBeenCalledTimes(0);
+    expect(execa).toHaveBeenCalledWith(cli);
   });
 
   test("error due to missing environment variable", async () => {
     await expectSemanticReleaseError();
 
-    expect(execa).toBeCalledTimes(0);
-    expect(getGoogleIdentityToken).toBeCalledTimes(0);
+    expect(execa).toHaveBeenCalledTimes(0);
+    expect(getGoogleIdentityToken).toHaveBeenCalledTimes(0);
   });
 
   test("error due to actions/core getIDToken", async () => {
@@ -89,8 +89,8 @@ describe("verifyConditions", () => {
 
     await expectSemanticReleaseError(config);
 
-    expect(execa).toBeCalledTimes(0);
-    expect(getGoogleIdentityToken).toBeCalledTimes(0);
+    expect(execa).toHaveBeenCalledTimes(0);
+    expect(getGoogleIdentityToken).toHaveBeenCalledTimes(0);
   });
 
   test("error due to execa", async () => {
@@ -101,7 +101,7 @@ describe("verifyConditions", () => {
 
     await expectSemanticReleaseError();
 
-    expect(execa).toBeCalledWith(cli);
+    expect(execa).toHaveBeenCalledWith(cli);
     expectGetGoogleIdentityTokenCalled();
   });
 
@@ -114,7 +114,7 @@ describe("verifyConditions", () => {
   const expectSemanticReleaseError = async (
     config: PluginConfig = testConfig,
   ) => {
-    await expect(() => verifyConditions(config, context)).rejects.toThrowError(
+    await expect(() => verifyConditions(config, context)).rejects.toThrow(
       SemanticReleaseError,
     );
   };
