@@ -23,7 +23,7 @@
     "dist/*"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.build.json",
     "test": "vitest run tests --coverage",
     "lint": "biome check src tests && tsc --noEmit && tsc -p tsconfig.test.json",
     "lint:write": "biome check src tests --write"

@@ -5,10 +5,5 @@
     "@tsconfig/strictest/tsconfig.json",
     "@tsconfig/node24/tsconfig.json",
     "@tsconfig/node-ts/tsconfig.json"
-  ],
-  "compilerOptions": {
-    "outDir": "dist"
-  },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "tests"]
+  ]
 }
