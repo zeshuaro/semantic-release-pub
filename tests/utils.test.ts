@@ -17,9 +17,17 @@ import {
 } from "../src/utils.js";
 
 vi.mock("@actions/core");
-vi.mock("google-auth-library");
 vi.mock("fs");
 vi.mock("yaml");
+
+const authorize = vi.fn();
+vi.mock("google-auth-library", () => ({
+  JWT: vi.fn(
+    class {
+      authorize = authorize;
+    },
+  ),
+}));
 
 const pubDevAudience = "https://pub.dev";
 
@@ -51,41 +59,37 @@ describe("getGoogleIdentityToken", () => {
   `;
 
   afterEach(() => {
-    vi.restoreAllMocks();
+    vi.clearAllMocks();
   });
 
   test("success", async () => {
     creds.id_token = idToken;
-    const authorize = vi.fn().mockResolvedValue(creds);
-    const jwtClient = mock<JWT>({ authorize });
-    vi.mocked(JWT).mockReturnValue(jwtClient);
+    authorize.mockResolvedValue(creds);
 
     const actual = await getGoogleIdentityToken(serviceAccount);
 
     expect(actual).toEqual(idToken);
     expectJwtCalled();
-    expect(authorize).toBeCalledTimes(1);
+    expect(authorize).toHaveBeenCalledTimes(1);
   });
 
   test("error due to invalid service account", async () => {
     await expect(() =>
       getGoogleIdentityToken("clearlyInvalid"),
-    ).rejects.toThrowError(SemanticReleaseError);
-    expect(JWT).toBeCalledTimes(0);
+    ).rejects.toThrow(SemanticReleaseError);
+    expect(JWT).toHaveBeenCalledTimes(0);
   });
 
   test("error due to missing id token", async () => {
     creds.id_token = null;
-    const authorize = vi.fn().mockResolvedValue(creds);
-    const jwtClient = mock<JWT>({ authorize });
-    vi.mocked(JWT).mockReturnValue(jwtClient);
+    authorize.mockResolvedValue(creds);
 
-    await expect(() =>
-      getGoogleIdentityToken(serviceAccount),
-    ).rejects.toThrowError(SemanticReleaseError);
+    await expect(() => getGoogleIdentityToken(serviceAccount)).rejects.toThrow(
+      SemanticReleaseError,
+    );
 
     expectJwtCalled();
-    expect(authorize).toBeCalledTimes(1);
+    expect(authorize).toHaveBeenCalledTimes(1);
   });
 
   const expectJwtCalled = () => {
@@ -101,7 +105,7 @@ describe("getGithubIdentityToken", () => {
   const idToken = "idToken";
 
   afterEach(() => {
-    vi.restoreAllMocks();
+    vi.clearAllMocks();
   });
 
   test("success", async () => {
@@ -128,7 +132,7 @@ describe("pubspecUtils", () => {
   });
 
   afterEach(() => {
-    vi.restoreAllMocks();
+    vi.clearAllMocks();
   });
 
   describe("getPubspecString", () => {

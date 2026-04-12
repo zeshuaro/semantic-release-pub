@@ -52,7 +52,7 @@ describe("publish", () => {
 
   afterEach(() => {
     vi.unstubAllEnvs();
-    vi.restoreAllMocks();
+    vi.clearAllMocks();
   });
 
   test("success", async () => {
@@ -115,17 +115,17 @@ describe("publish", () => {
     const actual = await publish(newConfig, context);
 
     expect(actual).toBeUndefined();
-    expect(getGoogleIdentityToken).toBeCalledTimes(0);
-    expect(execa).toBeCalledTimes(0);
+    expect(getGoogleIdentityToken).toHaveBeenCalledTimes(0);
+    expect(execa).toHaveBeenCalledTimes(0);
   });
 
   test("error due to missing environment variable", async () => {
-    await expect(() => publish(testConfig, context)).rejects.toThrowError(
+    await expect(() => publish(testConfig, context)).rejects.toThrow(
       "Environment variable not found: GOOGLE_SERVICE_ACCOUNT_KEY",
     );
 
-    expect(getGoogleIdentityToken).toBeCalledTimes(0);
-    expect(execa).toBeCalledTimes(0);
+    expect(getGoogleIdentityToken).toHaveBeenCalledTimes(0);
+    expect(execa).toHaveBeenCalledTimes(0);
   });
 
   const stubEnv = () =>

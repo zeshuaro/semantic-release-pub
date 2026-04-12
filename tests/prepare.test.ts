@@ -55,7 +55,7 @@ describe("prepare", () => {
   });
 
   afterEach(() => {
-    vi.restoreAllMocks();
+    vi.clearAllMocks();
   });
 
   test.each([
@@ -122,11 +122,11 @@ describe("prepare", () => {
     );
     vi.mocked(readFileSync).mockReturnValue(pubspec);
 
-    await expect(() => prepare(newConfig, context)).rejects.toThrowError(
+    await expect(() => prepare(newConfig, context)).rejects.toThrow(
       /Invalid build number/,
     );
 
     expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");
-    expect(writeFileSync).toBeCalledTimes(0);
+    expect(writeFileSync).toHaveBeenCalledTimes(0);
   });
 });
