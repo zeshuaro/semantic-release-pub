@@ -1,3 +1,15 @@
+## [0.11.15](https://github.com/zeshuaro/semantic-release-pub/compare/v0.11.14...v0.11.15) (2026-04-26)
+
+### Bug Fixes
+
+* **deps:** update dependency @actions/core to ^3.0.1 ([#1008](https://github.com/zeshuaro/semantic-release-pub/issues/1008)) ([a221796](https://github.com/zeshuaro/semantic-release-pub/commit/a221796f2e78d6259e1b97ebe4d3dec89d01c2b8))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#1005](https://github.com/zeshuaro/semantic-release-pub/issues/1005)) ([a774530](https://github.com/zeshuaro/semantic-release-pub/commit/a774530b94fd259eee141485c99299890bde96f2))
+* **deps:** update dependency typescript to v6.0.3 ([#1006](https://github.com/zeshuaro/semantic-release-pub/issues/1006)) ([97d1c26](https://github.com/zeshuaro/semantic-release-pub/commit/97d1c26ad36b07a811674d8703cd086a28ec94cc))
+* **deps:** update vitest monorepo to v4.1.5 ([#1007](https://github.com/zeshuaro/semantic-release-pub/issues/1007)) ([bd7bbe0](https://github.com/zeshuaro/semantic-release-pub/commit/bd7bbe07675a3c458e234d00218593543b40542e))
+
 ## [0.11.14](https://github.com/zeshuaro/semantic-release-pub/compare/v0.11.13...v0.11.14) (2026-04-19)
 
 ### Bug Fixes
