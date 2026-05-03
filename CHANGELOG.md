@@ -1,3 +1,21 @@
+## [0.11.16](https://github.com/zeshuaro/semantic-release-pub/compare/v0.11.15...v0.11.16) (2026-05-03)
+
+### Bug Fixes
+
+* **deps:** update dependency zod to ^4.4.1 ([#1015](https://github.com/zeshuaro/semantic-release-pub/issues/1015)) ([71a5924](https://github.com/zeshuaro/semantic-release-pub/commit/71a5924babad3b33c11ec740ca4fd6dec80abb92))
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @biomejs/biome to v2.4.13 ([#1009](https://github.com/zeshuaro/semantic-release-pub/issues/1009)) ([d9d8ef1](https://github.com/zeshuaro/semantic-release-pub/commit/d9d8ef166f1b683178bf6ac4c6484374b40f6bfe))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 4599947 ([#1011](https://github.com/zeshuaro/semantic-release-pub/issues/1011)) ([81cf373](https://github.com/zeshuaro/semantic-release-pub/commit/81cf37380e23c68869265b6cfa311fca9578d14a))
+* **deps:** update zeshuaro/github-actions-workflows digest to 4d59d30 ([#1012](https://github.com/zeshuaro/semantic-release-pub/issues/1012)) ([c49da17](https://github.com/zeshuaro/semantic-release-pub/commit/c49da17cc6123aba4097d4f433375c55200254e6))
+* **deps:** update zeshuaro/github-actions-workflows digest to 7a3db4b ([#1013](https://github.com/zeshuaro/semantic-release-pub/issues/1013)) ([5a6d4b4](https://github.com/zeshuaro/semantic-release-pub/commit/5a6d4b4664f4cf639c77765912ffee484c18f7b8))
+* **deps:** update zeshuaro/github-actions-workflows digest to cf90821 ([#1014](https://github.com/zeshuaro/semantic-release-pub/issues/1014)) ([bb07178](https://github.com/zeshuaro/semantic-release-pub/commit/bb07178b659b11262798f56c3bdbb544ed6bb150))
+* **github-actions:** add `main` branch comment to github actions digest reference ([#1010](https://github.com/zeshuaro/semantic-release-pub/issues/1010)) ([bd340e1](https://github.com/zeshuaro/semantic-release-pub/commit/bd340e1875755f2ab84ebf3eade3e6d0843d9a47))
+
 ## [0.11.15](https://github.com/zeshuaro/semantic-release-pub/compare/v0.11.14...v0.11.15) (2026-04-26)
 
 ### Bug Fixes
