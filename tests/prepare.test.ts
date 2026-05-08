@@ -76,6 +76,30 @@ describe("prepare", () => {
     expect(writeFileSync).toHaveBeenNthCalledWith(1, pubspecPath, newPubspec);
   });
 
+  test("success with pkgRoot resolves pubspec path relative to pkgRoot", async () => {
+    const pkgRoot = "packages/my_pkg";
+    const pkgRootPubspecPath = "packages/my_pkg/pubspec.yaml";
+    const configWithPkgRoot: PluginConfig = { ...config, pkgRoot };
+    const pubspec = basePubspec.replace(
+      new RegExp(versionPlaceholder),
+      oldVersion,
+    );
+    vi.mocked(readFileSync).mockReturnValue(pubspec);
+
+    await prepare(configWithPkgRoot, context);
+
+    expect(readFileSync).toHaveBeenNthCalledWith(
+      1,
+      pkgRootPubspecPath,
+      "utf-8",
+    );
+    expect(writeFileSync).toHaveBeenNthCalledWith(
+      1,
+      pkgRootPubspecPath,
+      newPubspec,
+    );
+  });
+
   test("success with pubspec version with build number (updateBuildNumber = true)", async () => {
     const newConfig = { ...config, updateBuildNumber: true };
     const pubspec = basePubspec.replace(

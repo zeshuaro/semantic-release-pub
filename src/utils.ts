@@ -1,4 +1,5 @@
 import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { getIDToken } from "@actions/core";
 import SemanticReleaseError from "@semantic-release/error";
 import { JWT } from "google-auth-library";
@@ -19,6 +20,9 @@ const PUB_DEV_AUDIENCE = "https://pub.dev";
 export const getConfig = (config: PluginConfig): PluginConfig => {
   return { ...DEFAULT_CONFIG, ...config };
 };
+
+export const getPubspecPath = (pkgRoot?: string): string =>
+  pkgRoot ? join(pkgRoot, PUBSPEC_PATH) : PUBSPEC_PATH;
 
 export const getGoogleIdentityToken = async (serviceAccountStr: string) => {
   const serviceAccountJson = getServiceAccount(serviceAccountStr);
@@ -42,16 +46,16 @@ export const getGithubIdentityToken = async () => {
   return getIDToken(PUB_DEV_AUDIENCE);
 };
 
-export const getPubspecString = () => {
-  return readFileSync(PUBSPEC_PATH, "utf-8");
+export const getPubspecString = (pkgRoot?: string): string => {
+  return readFileSync(getPubspecPath(pkgRoot), "utf-8");
 };
 
 export const getPubspecFromString = (data: string) => {
   return Pubspec.parse(parse(data));
 };
 
-export const getPubspec = () => {
-  const data = getPubspecString();
+export const getPubspec = (pkgRoot?: string) => {
+  const data = getPubspecString(pkgRoot);
   return getPubspecFromString(data);
 };
 

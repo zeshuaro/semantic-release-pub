@@ -6,17 +6,18 @@ import type { PluginConfig } from "./types.js";
 import {
   getConfig,
   getPubspecFromString,
+  getPubspecPath,
   getPubspecString,
-  PUBSPEC_PATH,
 } from "./utils.js";
 
 export const prepare = async (
   pluginConfig: PluginConfig,
   { nextRelease: { version }, logger }: PrepareContext,
 ) => {
-  const { updateBuildNumber } = getConfig(pluginConfig);
+  const { updateBuildNumber, pkgRoot } = getConfig(pluginConfig);
+  const pubspecPath = getPubspecPath(pkgRoot);
 
-  const data = getPubspecString();
+  const data = getPubspecString(pkgRoot);
   const pubspec = getPubspecFromString(data);
   const pubspecVersionEscaped = pubspec.version.replace(
     /[/\-\\^$*+?.()|[\]{}]/g,
@@ -42,6 +43,6 @@ export const prepare = async (
     `version: ${nextVersion}`,
   );
 
-  logger.log(`Writing version ${nextVersion} to ${PUBSPEC_PATH}`);
-  writeFileSync(PUBSPEC_PATH, newData);
+  logger.log(`Writing version ${nextVersion} to ${pubspecPath}`);
+  writeFileSync(pubspecPath, newData);
 };

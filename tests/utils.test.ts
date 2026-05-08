@@ -13,6 +13,7 @@ import {
   getGoogleIdentityToken,
   getPubspec,
   getPubspecFromString,
+  getPubspecPath,
   getPubspecString,
 } from "../src/utils.js";
 
@@ -118,8 +119,22 @@ describe("getGithubIdentityToken", () => {
   });
 });
 
+describe("getPubspecPath", () => {
+  test("returns default path without pkgRoot", () => {
+    expect(getPubspecPath()).toEqual("pubspec.yaml");
+  });
+
+  test("joins pkgRoot with pubspec.yaml", () => {
+    expect(getPubspecPath("packages/my_pkg")).toEqual(
+      "packages/my_pkg/pubspec.yaml",
+    );
+  });
+});
+
 describe("pubspecUtils", () => {
   const pubspecPath = "pubspec.yaml";
+  const pkgRoot = "packages/my_pkg";
+  const pkgRootPubspecPath = "packages/my_pkg/pubspec.yaml";
   const fileContent = "fileContent";
   const pubspec = {
     name: "pub_package",
@@ -136,11 +151,22 @@ describe("pubspecUtils", () => {
   });
 
   describe("getPubspecString", () => {
-    test("success", () => {
+    test("success without pkgRoot", () => {
       const actual = getPubspecString();
 
       expect(actual).toEqual(fileContent);
-      expectReadFileCalled();
+      expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");
+    });
+
+    test("success with pkgRoot", () => {
+      const actual = getPubspecString(pkgRoot);
+
+      expect(actual).toEqual(fileContent);
+      expect(readFileSync).toHaveBeenNthCalledWith(
+        1,
+        pkgRootPubspecPath,
+        "utf-8",
+      );
     });
   });
 
@@ -149,25 +175,29 @@ describe("pubspecUtils", () => {
       const actual = getPubspecFromString(fileContent);
 
       expect(actual).toEqual(pubspec);
-      expectYamlParseCalled();
+      expect(parse).toHaveBeenNthCalledWith(1, fileContent);
     });
   });
 
   describe("getPubspec", () => {
-    test("success", () => {
+    test("success without pkgRoot", () => {
       const actual = getPubspec();
 
       expect(actual).toEqual(pubspec);
-      expectReadFileCalled();
-      expectYamlParseCalled();
+      expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");
+      expect(parse).toHaveBeenNthCalledWith(1, fileContent);
+    });
+
+    test("success with pkgRoot", () => {
+      const actual = getPubspec(pkgRoot);
+
+      expect(actual).toEqual(pubspec);
+      expect(readFileSync).toHaveBeenNthCalledWith(
+        1,
+        pkgRootPubspecPath,
+        "utf-8",
+      );
+      expect(parse).toHaveBeenNthCalledWith(1, fileContent);
     });
   });
-
-  const expectReadFileCalled = () => {
-    expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");
-  };
-
-  const expectYamlParseCalled = () => {
-    expect(parse).toHaveBeenNthCalledWith(1, fileContent);
-  };
 });

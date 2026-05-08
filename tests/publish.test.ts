@@ -108,6 +108,23 @@ describe("publish", () => {
     ]);
   });
 
+  test("success with pkgRoot publishes from pkgRoot directory", async () => {
+    const pkgRoot = "packages/my_pkg";
+    const config = { ...testConfig, pkgRoot };
+    vi.mocked(getConfig).mockReturnValue(config);
+    stubEnv();
+
+    await publish(config, context);
+
+    expect(getPubspec).toHaveBeenNthCalledWith(1, pkgRoot);
+    expect(execa).toHaveBeenNthCalledWith(
+      2,
+      cli,
+      ["pub", "publish", "--force"],
+      { cwd: pkgRoot },
+    );
+  });
+
   test("skip publish", async () => {
     const newConfig = { ...testConfig, publishPub: false };
     vi.mocked(getConfig).mockReturnValue(newConfig);
