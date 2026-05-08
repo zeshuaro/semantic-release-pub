@@ -9,6 +9,7 @@ import {
   getConfig,
   getGithubIdentityToken,
   getGoogleIdentityToken,
+  PUB_DEV_URL,
 } from "../src/utils.js";
 
 vi.mock("execa");
@@ -19,6 +20,7 @@ describe("verifyConditions", () => {
   const cli = "dart";
   const serviceAccount = "serviceAccount";
   const idToken = "idToken";
+  const customUrl = "https://my-registry.example.com";
 
   const testConfig: PluginConfig = {
     cli,
@@ -26,6 +28,7 @@ describe("verifyConditions", () => {
     updateBuildNumber: false,
     useGithubOidc: false,
     pkgRoot: ".",
+    registryUrl: PUB_DEV_URL,
   };
 
   const logger = mock<Signale>();
@@ -50,7 +53,18 @@ describe("verifyConditions", () => {
     await verifyConditions(testConfig, context);
 
     expect(execa).toHaveBeenCalledWith(cli);
-    expectGetGoogleIdentityTokenCalled();
+    expectGetGoogleIdentityTokenCalled(PUB_DEV_URL);
+  });
+
+  test("success with custom registryUrl", async () => {
+    const config = { ...testConfig, registryUrl: customUrl };
+    vi.mocked(getConfig).mockReturnValue(config);
+    stubEnv();
+
+    await verifyConditions(config, context);
+
+    expect(execa).toHaveBeenCalledWith(cli);
+    expectGetGoogleIdentityTokenCalled(customUrl);
   });
 
   test("success with publishPub=false", async () => {
@@ -69,7 +83,7 @@ describe("verifyConditions", () => {
 
     await verifyConditions(config, context);
 
-    expect(getGithubIdentityToken).toHaveBeenCalledTimes(1);
+    expect(getGithubIdentityToken).toHaveBeenNthCalledWith(1, PUB_DEV_URL);
     expect(getGoogleIdentityToken).toHaveBeenCalledTimes(0);
     expect(execa).toHaveBeenCalledWith(cli);
   });
@@ -103,14 +117,18 @@ describe("verifyConditions", () => {
     await expectSemanticReleaseError();
 
     expect(execa).toHaveBeenCalledWith(cli);
-    expectGetGoogleIdentityTokenCalled();
+    expectGetGoogleIdentityTokenCalled(PUB_DEV_URL);
   });
 
   const stubEnv = () =>
     vi.stubEnv("GOOGLE_SERVICE_ACCOUNT_KEY", serviceAccount);
 
-  const expectGetGoogleIdentityTokenCalled = () =>
-    expect(getGoogleIdentityToken).toHaveBeenNthCalledWith(1, serviceAccount);
+  const expectGetGoogleIdentityTokenCalled = (registryUrl: string) =>
+    expect(getGoogleIdentityToken).toHaveBeenNthCalledWith(
+      1,
+      serviceAccount,
+      registryUrl,
+    );
 
   const expectSemanticReleaseError = async (
     config: PluginConfig = testConfig,

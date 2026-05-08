@@ -4,4 +4,5 @@ export type PluginConfig = {
   updateBuildNumber: boolean;
   useGithubOidc: boolean;
   pkgRoot: string;
+  registryUrl: string;
 };
