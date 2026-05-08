@@ -35,6 +35,11 @@ export const prepare = async (
     }
 
     nextVersion = `${version}+${buildNumber + 1}`;
+  } else {
+    const parts = pubspec.version.split("+");
+    if (parts.length > 1) {
+      nextVersion = `${version}+${parts[1]}`;
+    }
   }
 
   const newData = data.replace(
