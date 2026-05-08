@@ -6,15 +6,17 @@ import {
   getConfig,
   getGithubIdentityToken,
   getGoogleIdentityToken,
+  PUB_DEV_URL,
 } from "./utils.js";
 
 export const verifyConditions = async (
   pluginConfig: PluginConfig,
   { logger }: VerifyConditionsContext,
 ) => {
-  const { cli, publishPub, useGithubOidc } = getConfig(pluginConfig);
+  const { cli, publishPub, useGithubOidc, registryUrl } =
+    getConfig(pluginConfig);
   if (publishPub) {
-    await verifyPublishToken(useGithubOidc);
+    await verifyPublishToken(useGithubOidc, registryUrl ?? PUB_DEV_URL);
     await verifyCommand(cli);
   } else {
     logger.log(
@@ -23,10 +25,13 @@ export const verifyConditions = async (
   }
 };
 
-const verifyPublishToken = async (useGithubOidc: boolean) => {
+const verifyPublishToken = async (
+  useGithubOidc: boolean,
+  registryUrl: string,
+) => {
   if (useGithubOidc) {
     try {
-      await getGithubIdentityToken();
+      await getGithubIdentityToken(registryUrl);
     } catch (error) {
       throw new SemanticReleaseError(
         `Failed to get GitHub OIDC token: ${error}`,
@@ -40,7 +45,7 @@ const verifyPublishToken = async (useGithubOidc: boolean) => {
       );
     }
 
-    await getGoogleIdentityToken(GOOGLE_SERVICE_ACCOUNT_KEY);
+    await getGoogleIdentityToken(GOOGLE_SERVICE_ACCOUNT_KEY, registryUrl);
   }
 };
 

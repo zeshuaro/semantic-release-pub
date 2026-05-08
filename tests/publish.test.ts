@@ -10,6 +10,7 @@ import {
   getGithubIdentityToken,
   getGoogleIdentityToken,
   getPubspec,
+  PUB_DEV_URL,
 } from "../src/utils.js";
 
 vi.mock("execa");
@@ -28,6 +29,7 @@ describe("publish", () => {
     publishPub: true,
     updateBuildNumber: false,
     useGithubOidc: false,
+    registryUrl: PUB_DEV_URL,
   };
 
   const pubspec: Pubspec = {
@@ -62,16 +64,20 @@ describe("publish", () => {
 
     expect(actual).toEqual({
       name: "pub.dev package",
-      url: `https://pub.dev/packages/${pubspec.name}/versions/${version}`,
+      url: `${PUB_DEV_URL}/packages/${pubspec.name}/versions/${version}`,
     });
     expect(process.env[semanticReleasePubToken]).toEqual(googleIdToken);
 
-    expect(getGoogleIdentityToken).toHaveBeenNthCalledWith(1, serviceAccount);
+    expect(getGoogleIdentityToken).toHaveBeenNthCalledWith(
+      1,
+      serviceAccount,
+      PUB_DEV_URL,
+    );
     expect(execa).toHaveBeenNthCalledWith(1, cli, [
       "pub",
       "token",
       "add",
-      "https://pub.dev",
+      PUB_DEV_URL,
       `--env-var=${semanticReleasePubToken}`,
     ]);
     expect(execa).toHaveBeenNthCalledWith(2, cli, [
@@ -89,22 +95,48 @@ describe("publish", () => {
 
     expect(actual).toEqual({
       name: "pub.dev package",
-      url: `https://pub.dev/packages/${pubspec.name}/versions/${version}`,
+      url: `${PUB_DEV_URL}/packages/${pubspec.name}/versions/${version}`,
     });
     expect(process.env[semanticReleasePubToken]).toEqual(githubIdToken);
 
-    expect(getGithubIdentityToken).toHaveBeenCalledOnce();
+    expect(getGithubIdentityToken).toHaveBeenNthCalledWith(1, PUB_DEV_URL);
     expect(execa).toHaveBeenNthCalledWith(1, cli, [
       "pub",
       "token",
       "add",
-      "https://pub.dev",
+      PUB_DEV_URL,
       `--env-var=${semanticReleasePubToken}`,
     ]);
     expect(execa).toHaveBeenNthCalledWith(2, cli, [
       "pub",
       "publish",
       "--force",
+    ]);
+  });
+
+  test("success with custom registryUrl", async () => {
+    const customUrl = "https://my-registry.example.com";
+    const config = { ...testConfig, registryUrl: customUrl };
+    vi.mocked(getConfig).mockReturnValue(config);
+    stubEnv();
+
+    const actual = await publish(config, context);
+
+    expect(actual).toEqual({
+      name: "pub.dev package",
+      url: `${customUrl}/packages/${pubspec.name}/versions/${version}`,
+    });
+    expect(getGoogleIdentityToken).toHaveBeenNthCalledWith(
+      1,
+      serviceAccount,
+      customUrl,
+    );
+    expect(execa).toHaveBeenNthCalledWith(1, cli, [
+      "pub",
+      "token",
+      "add",
+      customUrl,
+      `--env-var=${semanticReleasePubToken}`,
     ]);
   });
 
