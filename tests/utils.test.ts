@@ -38,6 +38,7 @@ describe("getConfig", () => {
     publishPub: false,
     updateBuildNumber: false,
     useGithubOidc: false,
+    pkgRoot: ".",
   };
 
   test("success", () => {
@@ -120,8 +121,8 @@ describe("getGithubIdentityToken", () => {
 });
 
 describe("getPubspecPath", () => {
-  test("returns default path without pkgRoot", () => {
-    expect(getPubspecPath()).toEqual("pubspec.yaml");
+  test("returns default path with root pkgRoot", () => {
+    expect(getPubspecPath(".")).toEqual("pubspec.yaml");
   });
 
   test("joins pkgRoot with pubspec.yaml", () => {
@@ -151,8 +152,8 @@ describe("pubspecUtils", () => {
   });
 
   describe("getPubspecString", () => {
-    test("success without pkgRoot", () => {
-      const actual = getPubspecString();
+    test("success with default pkgRoot", () => {
+      const actual = getPubspecString(".");
 
       expect(actual).toEqual(fileContent);
       expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");
@@ -180,8 +181,8 @@ describe("pubspecUtils", () => {
   });
 
   describe("getPubspec", () => {
-    test("success without pkgRoot", () => {
-      const actual = getPubspec();
+    test("success with default pkgRoot", () => {
+      const actual = getPubspec(".");
 
       expect(actual).toEqual(pubspec);
       expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");

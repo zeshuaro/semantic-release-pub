@@ -126,6 +126,7 @@ The following instructions are referenced from the [documentation](https://dart.
 | `publishPub`        | Whether to publish the package to the registry. If set to `false`, the `pubspec.yaml` version will still be updated.                                                                                                                                    | `true`  |
 | `updateBuildNumber` | Whether to write build number for every newly bumped version in `pubspec.yaml`. Note that the build number will always be increased by one. Learn more on [Flutter docs](https://docs.flutter.dev/deployment/android#updating-the-apps-version-number). | `false` |
 | `useGithubOidc`     | Whether to use GitHub OIDC. If set to `true`, authentication to `pub.dev` will be done using GitHub OIDC. Otherwise, the `GOOGLE_SERVICE_ACCOUNT_KEY` will be used.                                                                                     | `false` |
+| `pkgRoot`           | The path to the package root directory. Useful for monorepos where the package is not at the repository root.                                                                                                                                           | `.`     |
 
 ### Examples
 

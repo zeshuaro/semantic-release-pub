@@ -27,11 +27,8 @@ export const publish = async (
   await setPubToken(cli, pubToken);
 
   logger.log(`Publishing version ${version} to pub.dev`);
-  if (pkgRoot) {
-    await execa(cli, ["pub", "publish", "--force"], { cwd: pkgRoot });
-  } else {
-    await execa(cli, ["pub", "publish", "--force"]);
-  }
+  const options = pkgRoot ? { cwd: pkgRoot } : undefined;
+  await execa(cli, ["pub", "publish", "--force"], options);
   logger.log(`Published ${pubspec.name}@${version} on pub.dev`);
 
   return {

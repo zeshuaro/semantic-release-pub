@@ -13,6 +13,7 @@ const DEFAULT_CONFIG: PluginConfig = {
   publishPub: true,
   updateBuildNumber: false,
   useGithubOidc: false,
+  pkgRoot: ".",
 };
 
 const PUB_DEV_AUDIENCE = "https://pub.dev";
@@ -21,8 +22,8 @@ export const getConfig = (config: PluginConfig): PluginConfig => {
   return { ...DEFAULT_CONFIG, ...config };
 };
 
-export const getPubspecPath = (pkgRoot?: string): string =>
-  pkgRoot ? join(pkgRoot, PUBSPEC_PATH) : PUBSPEC_PATH;
+export const getPubspecPath = (pkgRoot: string): string =>
+  join(pkgRoot, PUBSPEC_PATH);
 
 export const getGoogleIdentityToken = async (serviceAccountStr: string) => {
   const serviceAccountJson = getServiceAccount(serviceAccountStr);
@@ -46,7 +47,7 @@ export const getGithubIdentityToken = async () => {
   return getIDToken(PUB_DEV_AUDIENCE);
 };
 
-export const getPubspecString = (pkgRoot?: string): string => {
+export const getPubspecString = (pkgRoot: string): string => {
   return readFileSync(getPubspecPath(pkgRoot), "utf-8");
 };
 
@@ -54,7 +55,7 @@ export const getPubspecFromString = (data: string) => {
   return Pubspec.parse(parse(data));
 };
 
-export const getPubspec = (pkgRoot?: string) => {
+export const getPubspec = (pkgRoot: string) => {
   const data = getPubspecString(pkgRoot);
   return getPubspecFromString(data);
 };

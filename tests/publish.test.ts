@@ -28,6 +28,7 @@ describe("publish", () => {
     publishPub: true,
     updateBuildNumber: false,
     useGithubOidc: false,
+    pkgRoot: ".",
   };
 
   const pubspec: Pubspec = {
@@ -78,7 +79,7 @@ describe("publish", () => {
       "pub",
       "publish",
       "--force",
-    ]);
+    ], { cwd: "." });
   });
 
   test("success with useGithubOidc=true", async () => {
@@ -105,7 +106,7 @@ describe("publish", () => {
       "pub",
       "publish",
       "--force",
-    ]);
+    ], { cwd: "." });
   });
 
   test("success with pkgRoot publishes from pkgRoot directory", async () => {
