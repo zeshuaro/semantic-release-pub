@@ -8,7 +8,6 @@ import {
   getGithubIdentityToken,
   getGoogleIdentityToken,
   getPubspec,
-  PUB_DEV_URL,
 } from "./utils.js";
 
 const SEMANTIC_RELEASE_PUB_TOKEN = "SEMANTIC_RELEASE_PUB_TOKEN";
@@ -24,18 +23,17 @@ export const publish = async (
     return;
   }
 
-  const registry = registryUrl ?? PUB_DEV_URL;
   const pubspec = getPubspec();
-  const pubToken = await getPubToken(useGithubOidc, registry, logger);
-  await setPubToken(cli, pubToken, registry);
+  const pubToken = await getPubToken(useGithubOidc, registryUrl, logger);
+  await setPubToken(cli, pubToken, registryUrl);
 
-  logger.log(`Publishing version ${version} to ${registry}`);
+  logger.log(`Publishing version ${version} to ${registryUrl}`);
   await execa(cli, ["pub", "publish", "--force"]);
-  logger.log(`Published ${pubspec.name}@${version} on ${registry}`);
+  logger.log(`Published ${pubspec.name}@${version} on ${registryUrl}`);
 
   return {
     name: "pub.dev package",
-    url: `${registry.replace(/\/$/, "")}/packages/${pubspec.name}/versions/${version}`,
+    url: `${registryUrl}/packages/${pubspec.name}/versions/${version}`,
   };
 };
 

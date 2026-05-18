@@ -18,7 +18,11 @@ const DEFAULT_CONFIG: PluginConfig = {
 };
 
 export const getConfig = (config: PluginConfig): PluginConfig => {
-  return { ...DEFAULT_CONFIG, ...config };
+  const merged = { ...DEFAULT_CONFIG, ...config };
+  return {
+    ...merged,
+    registryUrl: merged.registryUrl.replace(/\/$/, ""),
+  };
 };
 
 export const getGoogleIdentityToken = async (
