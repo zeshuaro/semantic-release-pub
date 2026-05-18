@@ -68,19 +68,7 @@ describe("publish", () => {
     expect(process.env[semanticReleasePubToken]).toEqual(googleIdToken);
 
     expect(getGoogleIdentityToken).toHaveBeenNthCalledWith(1, serviceAccount);
-    expect(execa).toHaveBeenNthCalledWith(1, cli, [
-      "pub",
-      "token",
-      "add",
-      "https://pub.dev",
-      `--env-var=${semanticReleasePubToken}`,
-    ]);
-    expect(execa).toHaveBeenNthCalledWith(
-      2,
-      cli,
-      ["pub", "publish", "--force"],
-      { cwd: "." },
-    );
+    expectExecaCalled();
   });
 
   test("success with useGithubOidc=true", async () => {
@@ -96,19 +84,7 @@ describe("publish", () => {
     expect(process.env[semanticReleasePubToken]).toEqual(githubIdToken);
 
     expect(getGithubIdentityToken).toHaveBeenCalledOnce();
-    expect(execa).toHaveBeenNthCalledWith(1, cli, [
-      "pub",
-      "token",
-      "add",
-      "https://pub.dev",
-      `--env-var=${semanticReleasePubToken}`,
-    ]);
-    expect(execa).toHaveBeenNthCalledWith(
-      2,
-      cli,
-      ["pub", "publish", "--force"],
-      { cwd: "." },
-    );
+    expectExecaCalled();
   });
 
   test("success with pkgRoot publishes from pkgRoot directory", async () => {
@@ -150,4 +126,20 @@ describe("publish", () => {
 
   const stubEnv = () =>
     vi.stubEnv("GOOGLE_SERVICE_ACCOUNT_KEY", serviceAccount);
+
+  const expectExecaCalled = (cwd = ".") => {
+    expect(execa).toHaveBeenNthCalledWith(1, cli, [
+      "pub",
+      "token",
+      "add",
+      "https://pub.dev",
+      `--env-var=${semanticReleasePubToken}`,
+    ]);
+    expect(execa).toHaveBeenNthCalledWith(
+      2,
+      cli,
+      ["pub", "publish", "--force"],
+      { cwd },
+    );
+  };
 });
