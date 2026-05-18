@@ -16,18 +16,18 @@ export const publish = async (
   pluginConfig: PluginConfig,
   { nextRelease: { version }, logger }: PublishContext,
 ) => {
-  const { cli, publishPub, useGithubOidc } = getConfig(pluginConfig);
+  const { cli, publishPub, useGithubOidc, pkgRoot } = getConfig(pluginConfig);
   if (!publishPub) {
     logger.log(`Skipping publishing to pub.dev as publishPub is ${publishPub}`);
     return;
   }
 
-  const pubspec = getPubspec();
+  const pubspec = getPubspec(pkgRoot);
   const pubToken = await getPubToken(useGithubOidc, logger);
   await setPubToken(cli, pubToken);
 
   logger.log(`Publishing version ${version} to pub.dev`);
-  await execa(cli, ["pub", "publish", "--force"]);
+  await execa(cli, ["pub", "publish", "--force"], { cwd: pkgRoot });
   logger.log(`Published ${pubspec.name}@${version} on pub.dev`);
 
   return {

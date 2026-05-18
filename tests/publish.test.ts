@@ -28,6 +28,7 @@ describe("publish", () => {
     publishPub: true,
     updateBuildNumber: false,
     useGithubOidc: false,
+    pkgRoot: ".",
   };
 
   const pubspec: Pubspec = {
@@ -67,18 +68,7 @@ describe("publish", () => {
     expect(process.env[semanticReleasePubToken]).toEqual(googleIdToken);
 
     expect(getGoogleIdentityToken).toHaveBeenNthCalledWith(1, serviceAccount);
-    expect(execa).toHaveBeenNthCalledWith(1, cli, [
-      "pub",
-      "token",
-      "add",
-      "https://pub.dev",
-      `--env-var=${semanticReleasePubToken}`,
-    ]);
-    expect(execa).toHaveBeenNthCalledWith(2, cli, [
-      "pub",
-      "publish",
-      "--force",
-    ]);
+    expectExecaCalled();
   });
 
   test("success with useGithubOidc=true", async () => {
@@ -94,18 +84,24 @@ describe("publish", () => {
     expect(process.env[semanticReleasePubToken]).toEqual(githubIdToken);
 
     expect(getGithubIdentityToken).toHaveBeenCalledOnce();
-    expect(execa).toHaveBeenNthCalledWith(1, cli, [
-      "pub",
-      "token",
-      "add",
-      "https://pub.dev",
-      `--env-var=${semanticReleasePubToken}`,
-    ]);
-    expect(execa).toHaveBeenNthCalledWith(2, cli, [
-      "pub",
-      "publish",
-      "--force",
-    ]);
+    expectExecaCalled();
+  });
+
+  test("success with pkgRoot publishes from pkgRoot directory", async () => {
+    const pkgRoot = "packages/my_pkg";
+    const config = { ...testConfig, pkgRoot };
+    vi.mocked(getConfig).mockReturnValue(config);
+    stubEnv();
+
+    await publish(config, context);
+
+    expect(getPubspec).toHaveBeenNthCalledWith(1, pkgRoot);
+    expect(execa).toHaveBeenNthCalledWith(
+      2,
+      cli,
+      ["pub", "publish", "--force"],
+      { cwd: pkgRoot },
+    );
   });
 
   test("skip publish", async () => {
@@ -130,4 +126,20 @@ describe("publish", () => {
 
   const stubEnv = () =>
     vi.stubEnv("GOOGLE_SERVICE_ACCOUNT_KEY", serviceAccount);
+
+  const expectExecaCalled = (cwd = ".") => {
+    expect(execa).toHaveBeenNthCalledWith(1, cli, [
+      "pub",
+      "token",
+      "add",
+      "https://pub.dev",
+      `--env-var=${semanticReleasePubToken}`,
+    ]);
+    expect(execa).toHaveBeenNthCalledWith(
+      2,
+      cli,
+      ["pub", "publish", "--force"],
+      { cwd },
+    );
+  };
 });

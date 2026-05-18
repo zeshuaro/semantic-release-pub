@@ -3,4 +3,5 @@ export type PluginConfig = {
   publishPub: boolean;
   updateBuildNumber: boolean;
   useGithubOidc: boolean;
+  pkgRoot: string;
 };
