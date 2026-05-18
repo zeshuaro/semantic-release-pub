@@ -62,7 +62,6 @@ describe("prepare", () => {
     oldVersion,
     oldVersionSingleQuoted,
     oldVersionDoubleQuoted,
-    oldVersionWithBuild,
   ])("success with pubspec version %s", async (version) => {
     const pubspec = basePubspec.replace(
       new RegExp(versionPlaceholder),
@@ -74,6 +73,28 @@ describe("prepare", () => {
 
     expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");
     expect(writeFileSync).toHaveBeenNthCalledWith(1, pubspecPath, newPubspec);
+  });
+
+  test("success preserves build number when updateBuildNumber is false", async () => {
+    const pubspec = basePubspec.replace(
+      new RegExp(versionPlaceholder),
+      oldVersionWithBuild,
+    );
+    vi.mocked(readFileSync).mockReturnValue(pubspec);
+
+    await prepare(config, context);
+
+    const expectedPubspec = basePubspec.replace(
+      new RegExp(versionPlaceholder),
+      `${newVersion}+1`,
+    );
+
+    expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");
+    expect(writeFileSync).toHaveBeenNthCalledWith(
+      1,
+      pubspecPath,
+      expectedPubspec,
+    );
   });
 
   test("success with pubspec version with build number (updateBuildNumber = true)", async () => {
