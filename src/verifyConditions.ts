@@ -6,7 +6,6 @@ import {
   getConfig,
   getGithubIdentityToken,
   getGoogleIdentityToken,
-  PUB_DEV_URL,
 } from "./utils.js";
 
 export const verifyConditions = async (
@@ -16,7 +15,7 @@ export const verifyConditions = async (
   const { cli, publishPub, useGithubOidc, registryUrl } =
     getConfig(pluginConfig);
   if (publishPub) {
-    await verifyPublishToken(useGithubOidc, registryUrl ?? PUB_DEV_URL);
+    await verifyPublishToken(useGithubOidc, registryUrl);
     await verifyCommand(cli);
   } else {
     logger.log(
