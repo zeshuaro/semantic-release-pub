@@ -23,6 +23,7 @@ describe("prepare", () => {
     publishPub: true,
     updateBuildNumber: false,
     useGithubOidc: false,
+    registryUrl: "https://pub.dev",
   };
 
   const basePubspec = codeBlock`

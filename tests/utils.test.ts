@@ -14,6 +14,7 @@ import {
   getPubspec,
   getPubspecFromString,
   getPubspecString,
+  PUB_DEV_URL,
 } from "../src/utils.js";
 
 vi.mock("@actions/core");
@@ -29,18 +30,24 @@ vi.mock("google-auth-library", () => ({
   ),
 }));
 
-const pubDevAudience = "https://pub.dev";
-
 describe("getConfig", () => {
   const config: PluginConfig = {
     cli: "flutter",
     publishPub: false,
     updateBuildNumber: false,
     useGithubOidc: false,
+    registryUrl: PUB_DEV_URL,
   };
 
-  test("success", () => {
+  test("success with all fields provided", () => {
     expect(getConfig(config)).toEqual(config);
+  });
+
+  test("applies default registryUrl when not provided", () => {
+    const { registryUrl: _omitted, ...configWithoutRegistry } = config;
+    expect(getConfig(configWithoutRegistry as PluginConfig)).toMatchObject({
+      registryUrl: PUB_DEV_URL,
+    });
   });
 });
 
@@ -62,20 +69,32 @@ describe("getGoogleIdentityToken", () => {
     vi.clearAllMocks();
   });
 
-  test("success", async () => {
+  test("success with default pub.dev audience", async () => {
     creds.id_token = idToken;
     authorize.mockResolvedValue(creds);
 
-    const actual = await getGoogleIdentityToken(serviceAccount);
+    const actual = await getGoogleIdentityToken(serviceAccount, PUB_DEV_URL);
 
     expect(actual).toEqual(idToken);
-    expectJwtCalled();
+    expectJwtCalled(PUB_DEV_URL);
+    expect(authorize).toHaveBeenCalledTimes(1);
+  });
+
+  test("success with custom registry URL", async () => {
+    const customUrl = "https://my-registry.example.com";
+    creds.id_token = idToken;
+    authorize.mockResolvedValue(creds);
+
+    const actual = await getGoogleIdentityToken(serviceAccount, customUrl);
+
+    expect(actual).toEqual(idToken);
+    expectJwtCalled(customUrl);
     expect(authorize).toHaveBeenCalledTimes(1);
   });
 
   test("error due to invalid service account", async () => {
     await expect(() =>
-      getGoogleIdentityToken("clearlyInvalid"),
+      getGoogleIdentityToken("clearlyInvalid", PUB_DEV_URL),
     ).rejects.toThrow(SemanticReleaseError);
     expect(JWT).toHaveBeenCalledTimes(0);
   });
@@ -84,19 +103,19 @@ describe("getGoogleIdentityToken", () => {
     creds.id_token = null;
     authorize.mockResolvedValue(creds);
 
-    await expect(() => getGoogleIdentityToken(serviceAccount)).rejects.toThrow(
-      SemanticReleaseError,
-    );
+    await expect(() =>
+      getGoogleIdentityToken(serviceAccount, PUB_DEV_URL),
+    ).rejects.toThrow(SemanticReleaseError);
 
-    expectJwtCalled();
+    expectJwtCalled(PUB_DEV_URL);
     expect(authorize).toHaveBeenCalledTimes(1);
   });
 
-  const expectJwtCalled = () => {
+  const expectJwtCalled = (registryUrl: string) => {
     expect(JWT).toHaveBeenNthCalledWith(1, {
       email: clientEmail,
       key: privateKey,
-      scopes: pubDevAudience,
+      scopes: registryUrl,
     });
   };
 });
@@ -108,13 +127,23 @@ describe("getGithubIdentityToken", () => {
     vi.clearAllMocks();
   });
 
-  test("success", async () => {
+  test("success with default pub.dev audience", async () => {
     vi.mocked(getIDToken).mockResolvedValue(idToken);
 
-    const actual = await getGithubIdentityToken();
+    const actual = await getGithubIdentityToken(PUB_DEV_URL);
 
     expect(actual).toEqual(idToken);
-    expect(getIDToken).toHaveBeenNthCalledWith(1, pubDevAudience);
+    expect(getIDToken).toHaveBeenNthCalledWith(1, PUB_DEV_URL);
+  });
+
+  test("success with custom registry URL", async () => {
+    const customUrl = "https://my-registry.example.com";
+    vi.mocked(getIDToken).mockResolvedValue(idToken);
+
+    const actual = await getGithubIdentityToken(customUrl);
+
+    expect(actual).toEqual(idToken);
+    expect(getIDToken).toHaveBeenNthCalledWith(1, customUrl);
   });
 });
 
@@ -140,7 +169,7 @@ describe("pubspecUtils", () => {
       const actual = getPubspecString();
 
       expect(actual).toEqual(fileContent);
-      expectReadFileCalled();
+      expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");
     });
   });
 
@@ -149,7 +178,7 @@ describe("pubspecUtils", () => {
       const actual = getPubspecFromString(fileContent);
 
       expect(actual).toEqual(pubspec);
-      expectYamlParseCalled();
+      expect(parse).toHaveBeenNthCalledWith(1, fileContent);
     });
   });
 
@@ -158,16 +187,8 @@ describe("pubspecUtils", () => {
       const actual = getPubspec();
 
       expect(actual).toEqual(pubspec);
-      expectReadFileCalled();
-      expectYamlParseCalled();
+      expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");
+      expect(parse).toHaveBeenNthCalledWith(1, fileContent);
     });
   });
-
-  const expectReadFileCalled = () => {
-    expect(readFileSync).toHaveBeenNthCalledWith(1, pubspecPath, "utf-8");
-  };
-
-  const expectYamlParseCalled = () => {
-    expect(parse).toHaveBeenNthCalledWith(1, fileContent);
-  };
 });
