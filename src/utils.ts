@@ -7,7 +7,7 @@ import { parse } from "yaml";
 import { Pubspec, ServiceAccount } from "./schemas.js";
 import type { PluginConfig } from "./types.js";
 
-export const PUBSPEC_PATH = "pubspec.yaml";
+const PUBSPEC_PATH = "pubspec.yaml";
 const DEFAULT_CONFIG: PluginConfig = {
   cli: "dart",
   publishPub: true,
