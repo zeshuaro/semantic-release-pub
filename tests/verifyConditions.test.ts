@@ -25,6 +25,7 @@ describe("verifyConditions", () => {
     publishPub: true,
     updateBuildNumber: false,
     useGithubOidc: false,
+    pkgRoot: ".",
   };
 
   const logger = mock<Signale>();

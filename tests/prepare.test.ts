@@ -23,6 +23,7 @@ describe("prepare", () => {
     publishPub: true,
     updateBuildNumber: false,
     useGithubOidc: false,
+    pkgRoot: ".",
   };
 
   const basePubspec = codeBlock`
