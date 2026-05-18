@@ -1,6 +1,6 @@
 {
   "name": "semantic-release-pub",
-  "version": "0.11.16",
+  "version": "0.11.18",
   "description": "semantic-release plugin to publish a Dart or Flutter package",
   "main": "dist/index.js",
   "author": "zeshuaro@gmail.com",
@@ -36,11 +36,11 @@
     "@semantic-release/error": "^4.0.0",
     "execa": "^9.6.1",
     "google-auth-library": "^10.6.2",
-    "yaml": "^2.8.4",
+    "yaml": "^2.9.0",
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.14",
+    "@biomejs/biome": "2.4.15",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "@tsconfig/node-ts": "^23.6.4",
@@ -50,12 +50,12 @@
     "@types/common-tags": "1.8.4",
     "@types/semantic-release__error": "3.0.3",
     "@types/signale": "1.4.7",
-    "@vitest/coverage-v8": "4.1.5",
+    "@vitest/coverage-v8": "4.1.6",
     "common-tags": "1.8.2",
     "conventional-changelog-conventionalcommits": "9.3.1",
     "semantic-release": "25.0.3",
     "typescript": "6.0.3",
-    "vitest": "4.1.5",
+    "vitest": "4.1.6",
     "vitest-mock-extended": "4.0.0"
   }
 }
