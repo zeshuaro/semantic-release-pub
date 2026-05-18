@@ -75,11 +75,12 @@ describe("publish", () => {
       "https://pub.dev",
       `--env-var=${semanticReleasePubToken}`,
     ]);
-    expect(execa).toHaveBeenNthCalledWith(2, cli, [
-      "pub",
-      "publish",
-      "--force",
-    ], { cwd: "." });
+    expect(execa).toHaveBeenNthCalledWith(
+      2,
+      cli,
+      ["pub", "publish", "--force"],
+      { cwd: "." },
+    );
   });
 
   test("success with useGithubOidc=true", async () => {
@@ -102,11 +103,12 @@ describe("publish", () => {
       "https://pub.dev",
       `--env-var=${semanticReleasePubToken}`,
     ]);
-    expect(execa).toHaveBeenNthCalledWith(2, cli, [
-      "pub",
-      "publish",
-      "--force",
-    ], { cwd: "." });
+    expect(execa).toHaveBeenNthCalledWith(
+      2,
+      cli,
+      ["pub", "publish", "--force"],
+      { cwd: "." },
+    );
   });
 
   test("success with pkgRoot publishes from pkgRoot directory", async () => {
