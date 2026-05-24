@@ -1,3 +1,24 @@
+## [0.12.0](https://github.com/zeshuaro/semantic-release-pub/compare/v0.11.18...v0.12.0) (2026-05-24)
+
+### Features
+
+* add pkgRoot config option to specify the path to publish ([#1022](https://github.com/zeshuaro/semantic-release-pub/issues/1022)) ([5dc53d2](https://github.com/zeshuaro/semantic-release-pub/commit/5dc53d2b755e10b09572f3eca82d81cc4ece8b4a))
+
+### Bug Fixes
+
+* **node:** update node.js to v24.16.0 ([#1032](https://github.com/zeshuaro/semantic-release-pub/issues/1032)) ([16133c1](https://github.com/zeshuaro/semantic-release-pub/commit/16133c18097cfe885cf9bab7a419c93aaf5e5415))
+
+### Miscellaneous Chores
+
+* **deps:** update vitest monorepo to v4.1.7 ([#1034](https://github.com/zeshuaro/semantic-release-pub/issues/1034)) ([f160314](https://github.com/zeshuaro/semantic-release-pub/commit/f1603141baa9d40901e3aff70f5562ac6586213f))
+
+### Continuous Integration
+
+* **deps:** update codecov/codecov-action action to v6.0.1 ([#1030](https://github.com/zeshuaro/semantic-release-pub/issues/1030)) ([ba0fa2b](https://github.com/zeshuaro/semantic-release-pub/commit/ba0fa2b57011969226b5821c96c6b474207ef67a))
+* **deps:** update zeshuaro/github-actions-workflows digest to 6243990 ([#1031](https://github.com/zeshuaro/semantic-release-pub/issues/1031)) ([1deaaf7](https://github.com/zeshuaro/semantic-release-pub/commit/1deaaf758b24945fe3b4375c62e863b8cf2e93a9))
+* **deps:** update zeshuaro/github-actions-workflows digest to 6a2734a ([#1033](https://github.com/zeshuaro/semantic-release-pub/issues/1033)) ([19fcc1c](https://github.com/zeshuaro/semantic-release-pub/commit/19fcc1c53137c2d42fd5a8171d9e7dd92100e7d7))
+* **deps:** update zeshuaro/github-actions-workflows digest to 803ca28 ([#1035](https://github.com/zeshuaro/semantic-release-pub/issues/1035)) ([2f2ef25](https://github.com/zeshuaro/semantic-release-pub/commit/2f2ef25cf6bed066c1c1d54d296ca98a7eaad406))
+
 ## [0.11.18](https://github.com/zeshuaro/semantic-release-pub/compare/v0.11.17...v0.11.18) (2026-05-17)
 
 ### Bug Fixes
