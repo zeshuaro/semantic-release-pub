@@ -10,6 +10,7 @@ import {
   getGithubIdentityToken,
   getGoogleIdentityToken,
   getPubspec,
+  PUB_DEV_URL,
 } from "../src/utils.js";
 
 vi.mock("execa");
@@ -29,6 +30,7 @@ describe("publish", () => {
     updateBuildNumber: false,
     useGithubOidc: false,
     pkgRoot: ".",
+    registryUrl: PUB_DEV_URL,
   };
 
   const pubspec: Pubspec = {
@@ -63,12 +65,30 @@ describe("publish", () => {
 
     expect(actual).toEqual({
       name: "pub.dev package",
-      url: `https://pub.dev/packages/${pubspec.name}/versions/${version}`,
+      url: `${PUB_DEV_URL}/packages/${pubspec.name}/versions/${version}`,
     });
     expect(process.env[semanticReleasePubToken]).toEqual(googleIdToken);
 
-    expect(getGoogleIdentityToken).toHaveBeenNthCalledWith(1, serviceAccount);
-    expectExecaCalled();
+    expect(getGoogleIdentityToken).toHaveBeenNthCalledWith(
+      1,
+      serviceAccount,
+      PUB_DEV_URL,
+    );
+    expect(execa).toHaveBeenNthCalledWith(1, cli, [
+      "pub",
+      "token",
+      "add",
+      PUB_DEV_URL,
+      `--env-var=${semanticReleasePubToken}`,
+    ]);
+    expect(execa).toHaveBeenNthCalledWith(
+      2,
+      cli,
+      ["pub", "publish", "--force"],
+      {
+        cwd: ".",
+      },
+    );
   });
 
   test("success with useGithubOidc=true", async () => {
@@ -79,12 +99,26 @@ describe("publish", () => {
 
     expect(actual).toEqual({
       name: "pub.dev package",
-      url: `https://pub.dev/packages/${pubspec.name}/versions/${version}`,
+      url: `${PUB_DEV_URL}/packages/${pubspec.name}/versions/${version}`,
     });
     expect(process.env[semanticReleasePubToken]).toEqual(githubIdToken);
 
-    expect(getGithubIdentityToken).toHaveBeenCalledOnce();
-    expectExecaCalled();
+    expect(getGithubIdentityToken).toHaveBeenNthCalledWith(1, PUB_DEV_URL);
+    expect(execa).toHaveBeenNthCalledWith(1, cli, [
+      "pub",
+      "token",
+      "add",
+      PUB_DEV_URL,
+      `--env-var=${semanticReleasePubToken}`,
+    ]);
+    expect(execa).toHaveBeenNthCalledWith(
+      2,
+      cli,
+      ["pub", "publish", "--force"],
+      {
+        cwd: ".",
+      },
+    );
   });
 
   test("success with pkgRoot publishes from pkgRoot directory", async () => {
@@ -102,6 +136,32 @@ describe("publish", () => {
       ["pub", "publish", "--force"],
       { cwd: pkgRoot },
     );
+  });
+
+  test("success with custom registryUrl", async () => {
+    const customUrl = "https://my-registry.example.com";
+    const config = { ...testConfig, registryUrl: customUrl };
+    vi.mocked(getConfig).mockReturnValue(config);
+    stubEnv();
+
+    const actual = await publish(config, context);
+
+    expect(actual).toEqual({
+      name: "pub.dev package",
+      url: `${customUrl}/packages/${pubspec.name}/versions/${version}`,
+    });
+    expect(getGoogleIdentityToken).toHaveBeenNthCalledWith(
+      1,
+      serviceAccount,
+      customUrl,
+    );
+    expect(execa).toHaveBeenNthCalledWith(1, cli, [
+      "pub",
+      "token",
+      "add",
+      customUrl,
+      `--env-var=${semanticReleasePubToken}`,
+    ]);
   });
 
   test("skip publish", async () => {
@@ -126,20 +186,4 @@ describe("publish", () => {
 
   const stubEnv = () =>
     vi.stubEnv("GOOGLE_SERVICE_ACCOUNT_KEY", serviceAccount);
-
-  const expectExecaCalled = (cwd = ".") => {
-    expect(execa).toHaveBeenNthCalledWith(1, cli, [
-      "pub",
-      "token",
-      "add",
-      "https://pub.dev",
-      `--env-var=${semanticReleasePubToken}`,
-    ]);
-    expect(execa).toHaveBeenNthCalledWith(
-      2,
-      cli,
-      ["pub", "publish", "--force"],
-      { cwd },
-    );
-  };
 });

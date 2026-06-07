@@ -8,29 +8,37 @@ import { Pubspec, ServiceAccount } from "./schemas.js";
 import type { PluginConfig } from "./types.js";
 
 const PUBSPEC_PATH = "pubspec.yaml";
+export const PUB_DEV_URL = "https://pub.dev";
+
 const DEFAULT_CONFIG: PluginConfig = {
   cli: "dart",
   publishPub: true,
   updateBuildNumber: false,
   useGithubOidc: false,
   pkgRoot: ".",
+  registryUrl: PUB_DEV_URL,
 };
 
-const PUB_DEV_AUDIENCE = "https://pub.dev";
-
 export const getConfig = (config: PluginConfig): PluginConfig => {
-  return { ...DEFAULT_CONFIG, ...config };
+  const merged = { ...DEFAULT_CONFIG, ...config };
+  return {
+    ...merged,
+    registryUrl: merged.registryUrl.replace(/\/$/, ""),
+  };
 };
 
 export const getPubspecPath = (pkgRoot: string): string =>
   join(pkgRoot, PUBSPEC_PATH);
 
-export const getGoogleIdentityToken = async (serviceAccountStr: string) => {
+export const getGoogleIdentityToken = async (
+  serviceAccountStr: string,
+  registryUrl: string,
+) => {
   const serviceAccountJson = getServiceAccount(serviceAccountStr);
   const jwtClient = new JWT({
     email: serviceAccountJson.client_email,
     key: serviceAccountJson.private_key,
-    scopes: PUB_DEV_AUDIENCE,
+    scopes: registryUrl,
   });
 
   const creds = await jwtClient.authorize();
@@ -43,8 +51,8 @@ export const getGoogleIdentityToken = async (serviceAccountStr: string) => {
   return creds.id_token;
 };
 
-export const getGithubIdentityToken = async () => {
-  return getIDToken(PUB_DEV_AUDIENCE);
+export const getGithubIdentityToken = async (registryUrl: string) => {
+  return getIDToken(registryUrl);
 };
 
 export const getPubspecString = (pkgRoot: string): string => {
