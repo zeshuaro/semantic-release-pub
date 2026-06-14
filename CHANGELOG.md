@@ -1,3 +1,31 @@
+## [0.13.0](https://github.com/zeshuaro/semantic-release-pub/compare/v0.12.0...v0.13.0) (2026-06-14)
+
+### Features
+
+* add registryUrl option to support custom pub registries ([#1023](https://github.com/zeshuaro/semantic-release-pub/issues/1023)) ([f2f1063](https://github.com/zeshuaro/semantic-release-pub/commit/f2f1063237d9db9b2d2b5453184c08cad56ca10d))
+
+### Bug Fixes
+
+* **deps:** update dependency google-auth-library to ^10.7.0 ([#1046](https://github.com/zeshuaro/semantic-release-pub/issues/1046)) ([5101044](https://github.com/zeshuaro/semantic-release-pub/commit/5101044a0f5bf6f963b70c36a48c5c6e3d579dc2))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#1036](https://github.com/zeshuaro/semantic-release-pub/issues/1036)) ([1f731b0](https://github.com/zeshuaro/semantic-release-pub/commit/1f731b0038e99ddff5a1278a16c743393291cd3e))
+* **deps:** lock file maintenance ([#1039](https://github.com/zeshuaro/semantic-release-pub/issues/1039)) ([2a1824a](https://github.com/zeshuaro/semantic-release-pub/commit/2a1824aa303237b4f4b9d91cbff411b43631883f))
+* **deps:** lock file maintenance ([#1044](https://github.com/zeshuaro/semantic-release-pub/issues/1044)) ([5b70d4a](https://github.com/zeshuaro/semantic-release-pub/commit/5b70d4a8eed23959e06730ce3fd4c0ea4bdd85d5))
+* **deps:** update dependency @biomejs/biome to v2.4.16 ([#1038](https://github.com/zeshuaro/semantic-release-pub/issues/1038)) ([d7c8e24](https://github.com/zeshuaro/semantic-release-pub/commit/d7c8e24972c98d9bb0a678e7b721233f364b9558))
+* **deps:** update semantic-release monorepo to v25.0.4 ([#1047](https://github.com/zeshuaro/semantic-release-pub/issues/1047)) ([b3d49ad](https://github.com/zeshuaro/semantic-release-pub/commit/b3d49add44c46ffd0f0182cfd23da0631cf701ac))
+* **deps:** update semantic-release monorepo to v25.0.5 ([#1048](https://github.com/zeshuaro/semantic-release-pub/issues/1048)) ([20937ff](https://github.com/zeshuaro/semantic-release-pub/commit/20937ff26f96a43e681f929415a0431fc917bb15))
+* **deps:** update vitest monorepo to v4.1.8 ([#1041](https://github.com/zeshuaro/semantic-release-pub/issues/1041)) ([f1d26e4](https://github.com/zeshuaro/semantic-release-pub/commit/f1d26e4a1c3b70d2d88abd9bed0b0e2b956d58ce))
+
+### Continuous Integration
+
+* **deps:** update codecov/codecov-action action to v6.0.2 ([#1042](https://github.com/zeshuaro/semantic-release-pub/issues/1042)) ([360b89d](https://github.com/zeshuaro/semantic-release-pub/commit/360b89d5edfb1028f77a228f06893e5175e0059e))
+* **deps:** update codecov/codecov-action action to v7 ([#1043](https://github.com/zeshuaro/semantic-release-pub/issues/1043)) ([ce1dac3](https://github.com/zeshuaro/semantic-release-pub/commit/ce1dac31051c49436b796e6ba8530795f7880845))
+* **deps:** update zeshuaro/github-actions-workflows digest to dca8343 ([#1037](https://github.com/zeshuaro/semantic-release-pub/issues/1037)) ([2cea49a](https://github.com/zeshuaro/semantic-release-pub/commit/2cea49a4fad9d0ea4ec8eb7b1dc9814330e7f275))
+* **deps:** update zeshuaro/github-actions-workflows digest to de5b773 ([#1045](https://github.com/zeshuaro/semantic-release-pub/issues/1045)) ([e064a7c](https://github.com/zeshuaro/semantic-release-pub/commit/e064a7cf5e45bc18ec723d835dd8ee4d36299533))
+* **deps:** update zeshuaro/github-actions-workflows digest to e2bd453 ([#1040](https://github.com/zeshuaro/semantic-release-pub/issues/1040)) ([b0ed784](https://github.com/zeshuaro/semantic-release-pub/commit/b0ed7849d34122947e284179fec36eb4f5d67a5a))
+
 ## [0.12.0](https://github.com/zeshuaro/semantic-release-pub/compare/v0.11.18...v0.12.0) (2026-05-24)
 
 ### Features
