@@ -1,3 +1,15 @@
+## [0.13.1](https://github.com/zeshuaro/semantic-release-pub/compare/v0.13.0...v0.13.1) (2026-06-21)
+
+### Bug Fixes
+
+* **node:** update node minor patch versions to v24.17.0 ([#1052](https://github.com/zeshuaro/semantic-release-pub/issues/1052)) ([a32dbbe](https://github.com/zeshuaro/semantic-release-pub/commit/a32dbbe071885d50df9603d132e3ad466b17d807))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#1049](https://github.com/zeshuaro/semantic-release-pub/issues/1049)) ([b6aa0bd](https://github.com/zeshuaro/semantic-release-pub/commit/b6aa0bdb3a9b1437d42ec127bfb5b1cb5fe801f2))
+* **deps:** update dependency @biomejs/biome to v2.5.0 ([#1050](https://github.com/zeshuaro/semantic-release-pub/issues/1050)) ([e9c837c](https://github.com/zeshuaro/semantic-release-pub/commit/e9c837c98394dbe9ad2dfe1ba51503c8cee9e5a3))
+* **deps:** update vitest monorepo to v4.1.9 ([#1051](https://github.com/zeshuaro/semantic-release-pub/issues/1051)) ([9bf028d](https://github.com/zeshuaro/semantic-release-pub/commit/9bf028dee62382cfa895fe06610a34c4a92d6ce7))
+
 ## [0.13.0](https://github.com/zeshuaro/semantic-release-pub/compare/v0.12.0...v0.13.0) (2026-06-14)
 
 ### Features
