@@ -1,3 +1,15 @@
+## [0.13.2](https://github.com/zeshuaro/semantic-release-pub/compare/v0.13.1...v0.13.2) (2026-06-28)
+
+### Bug Fixes
+
+* **deps:** update dependency google-auth-library to ^10.9.0 ([#1057](https://github.com/zeshuaro/semantic-release-pub/issues/1057)) ([f5a378f](https://github.com/zeshuaro/semantic-release-pub/commit/f5a378f34a26dce26dba0c64bacf9b11aed60e9c))
+* **node:** update node minor patch versions ([#1055](https://github.com/zeshuaro/semantic-release-pub/issues/1055)) ([c04a791](https://github.com/zeshuaro/semantic-release-pub/commit/c04a7912c4fa49b068885bff6d8a99f47012b7ad))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#1054](https://github.com/zeshuaro/semantic-release-pub/issues/1054)) ([8c74d21](https://github.com/zeshuaro/semantic-release-pub/commit/8c74d21e6bca4f4d854d82a18a7617584ae30173))
+* **deps:** update dependency @biomejs/biome to v2.5.1 ([#1056](https://github.com/zeshuaro/semantic-release-pub/issues/1056)) ([8b8e266](https://github.com/zeshuaro/semantic-release-pub/commit/8b8e266d398c73e15cd32177cc850228657342f8))
+
 ## [0.13.1](https://github.com/zeshuaro/semantic-release-pub/compare/v0.13.0...v0.13.1) (2026-06-21)
 
 ### Bug Fixes
