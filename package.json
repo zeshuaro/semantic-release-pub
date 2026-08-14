@@ -52,7 +52,7 @@
     "@types/signale": "1.4.7",
     "@vitest/coverage-v8": "4.1.10",
     "common-tags": "1.8.2",
-    "conventional-changelog-conventionalcommits": "10.2.1",
+    "conventional-changelog-conventionalcommits": "10.3.0",
     "semantic-release": "25.0.9",
     "typescript": "7.0.2",
     "vitest": "4.1.10",
