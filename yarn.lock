@@ -715,7 +715,7 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/node-ts/-/node-ts-23.6.4.tgz#40eeb4cc6bb70b6b8bec675a9307e4516af8e321"
   integrity sha512-37BMJvNQZ+vTgd1xG2TGBkJ6ENeT4eO4Wh2CHrnn0IwH7ybLFCzh4Uc//kc7UIvqiRac4uGdIc1meKOjMSlKzw==
 
-"@tsconfig/node24@^24.0.4":
+"@tsconfig/node24@^24.0.5":
   version "24.0.5"
   resolved "https://registry.yarnpkg.com/@tsconfig/node24/-/node24-24.0.5.tgz#27499f530fe67ad7b3405af29f52331dae357435"
   integrity sha512-DWC54fGPuhZgg3Ighg4Y/A/bA3ZdB5hnzAuv/MkQ/X85sVsBsMQxu8t7khutdYeiNksBbFdDyeqv1HSW2Zl8aA==
