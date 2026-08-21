@@ -50,12 +50,12 @@
     "@types/common-tags": "1.8.4",
     "@types/semantic-release__error": "3.0.3",
     "@types/signale": "1.4.7",
-    "@vitest/coverage-v8": "4.1.10",
+    "@vitest/coverage-v8": "4.1.11",
     "common-tags": "1.8.2",
     "conventional-changelog-conventionalcommits": "10.3.0",
     "semantic-release": "25.0.9",
     "typescript": "7.0.2",
-    "vitest": "4.1.10",
+    "vitest": "4.1.11",
     "vitest-mock-extended": "5.1.1"
   }
 }
