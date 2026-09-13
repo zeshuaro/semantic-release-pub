@@ -1,3 +1,41 @@
+## [0.13.5](https://github.com/zeshuaro/semantic-release-pub/compare/v0.13.4...v0.13.5) (2026-09-13)
+
+### Bug Fixes
+
+* **deps:** update dependency google-auth-library to v11 ([#1086](https://github.com/zeshuaro/semantic-release-pub/issues/1086)) ([e40b4cc](https://github.com/zeshuaro/semantic-release-pub/commit/e40b4cc6e0e4701481b72f7446f7264818f319a6))
+* **deps:** update dependency zod to ^4.5.2 ([#1105](https://github.com/zeshuaro/semantic-release-pub/issues/1105)) ([dfe9d3b](https://github.com/zeshuaro/semantic-release-pub/commit/dfe9d3b895f58a5b4cc8690c637e92d42987583e))
+* **deps:** update dependency zod to ^4.5.4 ([#1107](https://github.com/zeshuaro/semantic-release-pub/issues/1107)) ([7a867da](https://github.com/zeshuaro/semantic-release-pub/commit/7a867dad95be708e27dbf5b74a7d271d5255e375))
+* **deps:** update dependency zod to ^4.6.0 ([#1112](https://github.com/zeshuaro/semantic-release-pub/issues/1112)) ([94ff0ec](https://github.com/zeshuaro/semantic-release-pub/commit/94ff0ecf767003b81bfc409431c74a4d62a78f28))
+* **deps:** update dependency zod to ^4.6.1 ([#1113](https://github.com/zeshuaro/semantic-release-pub/issues/1113)) ([c8496c2](https://github.com/zeshuaro/semantic-release-pub/commit/c8496c2e2e101b18ca2193489dd4787bfaeb5a32))
+* **node:** update node.js to v24.20.0 ([#1100](https://github.com/zeshuaro/semantic-release-pub/issues/1100)) ([869d0fc](https://github.com/zeshuaro/semantic-release-pub/commit/869d0fc1bee15da7f1366ebdbdef8e7140844138))
+* **node:** update node.js to v24.21.0 ([#1111](https://github.com/zeshuaro/semantic-release-pub/issues/1111)) ([b48840b](https://github.com/zeshuaro/semantic-release-pub/commit/b48840b4022183a9300e289bdf7d346bfabdb63b))
+
+### Reverts
+
+* chore(deps): update dependency conventional-changelog-conventionalcommits to v10- [#1059](https://github.com/zeshuaro/semantic-release-pub/issues/1059) ([#1114](https://github.com/zeshuaro/semantic-release-pub/issues/1114)) ([460a26f](https://github.com/zeshuaro/semantic-release-pub/commit/460a26fa5d4810b4c71435c08a12a8945a6bf152))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#1091](https://github.com/zeshuaro/semantic-release-pub/issues/1091)) ([6c91f17](https://github.com/zeshuaro/semantic-release-pub/commit/6c91f1708526a567add62a0ff554512d8422b04d))
+* **deps:** lock file maintenance ([#1094](https://github.com/zeshuaro/semantic-release-pub/issues/1094)) ([2c4956e](https://github.com/zeshuaro/semantic-release-pub/commit/2c4956eb2ab6a6a58840b79fba39c8cb43e09639))
+* **deps:** lock file maintenance ([#1103](https://github.com/zeshuaro/semantic-release-pub/issues/1103)) ([64b710f](https://github.com/zeshuaro/semantic-release-pub/commit/64b710f78d6fd9daf3bf7f904d606b7b9b92d8a5))
+* **deps:** lock file maintenance ([#1110](https://github.com/zeshuaro/semantic-release-pub/issues/1110)) ([dcea81b](https://github.com/zeshuaro/semantic-release-pub/commit/dcea81bcc5601706c19788cfcca7a322d9515b28))
+* **deps:** update dependency @biomejs/biome to v2.5.10 ([#1099](https://github.com/zeshuaro/semantic-release-pub/issues/1099)) ([245fb62](https://github.com/zeshuaro/semantic-release-pub/commit/245fb62fbdb4c42877e848ef66a5b0799d14469f))
+* **deps:** update dependency @biomejs/biome to v2.5.11 ([#1104](https://github.com/zeshuaro/semantic-release-pub/issues/1104)) ([ca39f80](https://github.com/zeshuaro/semantic-release-pub/commit/ca39f80b6ccf2a0eb97ef82b0fdcf4199768f5c5))
+* **deps:** update dependency @biomejs/biome to v2.5.12 ([#1108](https://github.com/zeshuaro/semantic-release-pub/issues/1108)) ([09d7e33](https://github.com/zeshuaro/semantic-release-pub/commit/09d7e338c78e7f6463946c6714ae2db4684153fe))
+* **deps:** update dependency @biomejs/biome to v2.5.8 ([#1092](https://github.com/zeshuaro/semantic-release-pub/issues/1092)) ([a51ac14](https://github.com/zeshuaro/semantic-release-pub/commit/a51ac148c03f596c8aa2e33d53b422c245fe2ba6))
+* **deps:** update dependency @biomejs/biome to v2.5.9 ([#1096](https://github.com/zeshuaro/semantic-release-pub/issues/1096)) ([e5f1e48](https://github.com/zeshuaro/semantic-release-pub/commit/e5f1e481a23d1deff1c44ae3d2423338432fc19b))
+* **deps:** update dependency @tsconfig/node24 to v24.0.5 ([#1095](https://github.com/zeshuaro/semantic-release-pub/issues/1095)) ([537e19c](https://github.com/zeshuaro/semantic-release-pub/commit/537e19c4d6e6ac14f98317041e0bc6124b4a4a1e))
+* **deps:** update dependency conventional-changelog-conventionalcommits to v10.3.0 ([#1093](https://github.com/zeshuaro/semantic-release-pub/issues/1093)) ([24f7a8b](https://github.com/zeshuaro/semantic-release-pub/commit/24f7a8b2c55e7f11525607ca5cc8fa74c3f13b99))
+* **deps:** update dependency conventional-changelog-conventionalcommits to v10.4.0 ([#1098](https://github.com/zeshuaro/semantic-release-pub/issues/1098)) ([2b1e52d](https://github.com/zeshuaro/semantic-release-pub/commit/2b1e52dab3874d8f1d100652ff967a27f79267d2))
+* **deps:** update vitest monorepo to v4.1.11 ([#1097](https://github.com/zeshuaro/semantic-release-pub/issues/1097)) ([78b2c7b](https://github.com/zeshuaro/semantic-release-pub/commit/78b2c7ba660584a41379a3ba4c4823be444b8a35))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 5792007 ([#1102](https://github.com/zeshuaro/semantic-release-pub/issues/1102)) ([6cee65a](https://github.com/zeshuaro/semantic-release-pub/commit/6cee65a695125aa9cd88add7f19b37a9cd7f56a7))
+* **deps:** update zeshuaro/github-actions-workflows digest to befbed3 ([#1106](https://github.com/zeshuaro/semantic-release-pub/issues/1106)) ([24817b7](https://github.com/zeshuaro/semantic-release-pub/commit/24817b718ec08c5514d5df01804b6c9503cb9156))
+* **deps:** update zeshuaro/github-actions-workflows digest to bf2c360 ([#1101](https://github.com/zeshuaro/semantic-release-pub/issues/1101)) ([a95254d](https://github.com/zeshuaro/semantic-release-pub/commit/a95254db79a769b7c2800c6e8c6b77b5e5b52d29))
+
 ## [0.13.4](https://github.com/zeshuaro/semantic-release-pub/compare/v0.13.3...v0.13.4) (2026-08-09)
 
 ## [0.13.3](https://github.com/zeshuaro/semantic-release-pub/compare/v0.13.2...v0.13.3) (2026-08-02)
