@@ -3995,7 +3995,7 @@ yoctocolors@^2.1.1, yoctocolors@^2.1.2:
   resolved "https://registry.yarnpkg.com/yoctocolors/-/yoctocolors-2.2.0.tgz#c4b68ee477f3982c33e4de24a5aa4a354be506d3"
   integrity sha512-xYqdZFUK/VYazNl/oCDYN+3WloWQwMfZxBoiNt6qNyk+xfOdi598muWE42rNZFp1kNOiqW936q5RhUdnpqElSg==
 
-zod@^4.6.0:
-  version "4.6.2"
-  resolved "https://registry.yarnpkg.com/zod/-/zod-4.6.2.tgz#91b2ce79ec994eaa42675499166587d3d223c961"
-  integrity sha512-lh5RCAGFa1Cm2hjtNwLQhSs/AsqdWnTQaBER9fEwN/88pSh7KOtJavtBx/0VlkN/uFd61SwYmljLMDAsHlvzBQ==
+zod@^4.6.1:
+  version "4.6.4"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-4.6.4.tgz#1466178e4d8f9cedac31d093ccb7a1f0f97c99dc"
+  integrity sha512-AXSD6hvGdvRjajG/l1cC+d6IrhH+sjmPKtYeQdJIK8MFJl3LyClzS+o/YsVC+zQZPupAaeH5skwwm8YqYH7BqA==
