@@ -1672,10 +1672,19 @@ function-timeout@^1.0.1:
   resolved "https://registry.yarnpkg.com/function-timeout/-/function-timeout-1.0.2.tgz#e5a7b6ffa523756ff20e1231bbe37b5f373aadd5"
   integrity sha512-939eZS4gJ3htTHAldmyyuzlrD58P03fHG49v2JfFXbV6OhvZKRC9j2yAtdHw/zrp2zXHuv05zMIy40F0ge7spA==
 
-gaxios@^7.1.3, gaxios@^7.1.4:
+gaxios@^7.1.3:
   version "7.3.1"
   resolved "https://registry.yarnpkg.com/gaxios/-/gaxios-7.3.1.tgz#b26223db05856dfa5e2393ea376abad00e479c62"
   integrity sha512-kB3rzJV7d9juLZh8/56QTXCwQfxyhdOMdyYk1HdQKFtF8TJTDTZQJtixWIwXdE9Jji91mC41DUNpjleo4L4eAQ==
+  dependencies:
+    extend "^3.0.2"
+    https-proxy-agent "^7.0.1"
+    node-fetch "^3.3.2"
+
+gaxios@^8.3.0:
+  version "8.3.1"
+  resolved "https://registry.yarnpkg.com/gaxios/-/gaxios-8.3.1.tgz#0c0cd895326e927a868d4b0f226094082070052b"
+  integrity sha512-h4/R7ay7JFXU5kmAkp/Y4Y4Vmm7m83tD579GUgfQQsRRGQ4TzSedyHla6XgTWohQuVffT3ldN4FF6uCqlRGaEA==
   dependencies:
     extend "^3.0.2"
     https-proxy-agent "^7.0.1"
@@ -1739,14 +1748,14 @@ glob@^13.0.0, glob@^13.0.6:
     minipass "^7.1.3"
     path-scurry "^2.0.2"
 
-google-auth-library@^11.2.0:
-  version "11.2.0"
-  resolved "https://registry.yarnpkg.com/google-auth-library/-/google-auth-library-11.2.0.tgz#a23f49458f6ea537ec3ca1e6675d17b5dfdfc4e6"
-  integrity sha512-R9/Dwc3swSur04RnizQ6EBUmmcno2cC5cAKtrG/C+pY+W7c5l6rSnFWgMkR7NSYj1n6XWmb/KhcjxGslWm4yIA==
+google-auth-library@^11.3.0:
+  version "11.3.1"
+  resolved "https://registry.yarnpkg.com/google-auth-library/-/google-auth-library-11.3.1.tgz#89820f220d11df0b3a9de1c3b02be15ca63fd565"
+  integrity sha512-mQS0R2Ev/DKkzuWSYtDeq15uhDeaWuT2qzLYqJ41LmooxVKHmn5ut3pc6dlHY6wfHW/D7FBmOYjAtkjaD1A7qA==
   dependencies:
     base64-js "^1.3.0"
     ecdsa-sig-formatter "^1.0.11"
-    gaxios "^7.1.4"
+    gaxios "^8.3.0"
     gcp-metadata "^9.0.0"
     google-logging-utils "^2.0.0"
     jws "^4.0.0"
