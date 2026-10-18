@@ -1,3 +1,17 @@
+## [0.13.8](https://github.com/zeshuaro/semantic-release-pub/compare/v0.13.7...v0.13.8) (2026-10-18)
+
+### Bug Fixes
+
+* **deps:** update dependency execa to ^10.1.1 ([#1138](https://github.com/zeshuaro/semantic-release-pub/issues/1138)) ([000feb2](https://github.com/zeshuaro/semantic-release-pub/commit/000feb226e278dacf6f67223e269f4027c5cbf04))
+* **deps:** update dependency google-auth-library to ^11.3.0 ([#1140](https://github.com/zeshuaro/semantic-release-pub/issues/1140)) ([21c30bd](https://github.com/zeshuaro/semantic-release-pub/commit/21c30bd8af9c54c1829a4cb60a14fb6cab3c5d92))
+* **deps:** update dependency zod to ^4.6.6 ([#1136](https://github.com/zeshuaro/semantic-release-pub/issues/1136)) ([eebd394](https://github.com/zeshuaro/semantic-release-pub/commit/eebd3944263a448189241a50c6e2c940fb4a3ecf))
+* **deps:** update dependency zod to ^4.6.7 ([#1139](https://github.com/zeshuaro/semantic-release-pub/issues/1139)) ([ed2a897](https://github.com/zeshuaro/semantic-release-pub/commit/ed2a897d04eb2d402278781ba7060f2020607c95))
+* **node:** update node.js to v24.22.0 ([#1137](https://github.com/zeshuaro/semantic-release-pub/issues/1137)) ([7fc05b8](https://github.com/zeshuaro/semantic-release-pub/commit/7fc05b813267eca30561ae7e42606ac1f29cf8d4))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#1135](https://github.com/zeshuaro/semantic-release-pub/issues/1135)) ([0fa7da9](https://github.com/zeshuaro/semantic-release-pub/commit/0fa7da95f9a95b60325fa5fe08cc9ed22c6959cc))
+
 ## [0.13.7](https://github.com/zeshuaro/semantic-release-pub/compare/v0.13.6...v0.13.7) (2026-10-11)
 
 ### Bug Fixes
