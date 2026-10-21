@@ -1514,7 +1514,7 @@ estree-walker@^3.0.3:
   dependencies:
     "@types/estree" "^1.0.0"
 
-execa@^10.0.0, execa@^10.1.1:
+execa@^10.0.0, execa@^10.2.0:
   version "10.2.0"
   resolved "https://registry.yarnpkg.com/execa/-/execa-10.2.0.tgz#0703134024f091c2887e39b7526fe11194d74bb6"
   integrity sha512-j1pFOVxaybMVCTNHSBuISL2KQcDS3KIE1wBmUp4n2X+1FgaQI2ZDJVy9TYxDyMCzYojRIMh9O8X/UoWZtxTJdw==
