@@ -1,3 +1,17 @@
+## [0.13.9](https://github.com/zeshuaro/semantic-release-pub/compare/v0.13.8...v0.13.9) (2026-10-25)
+
+### Bug Fixes
+
+* **deps:** update dependency execa to ^10.2.0 ([#1144](https://github.com/zeshuaro/semantic-release-pub/issues/1144)) ([465c45b](https://github.com/zeshuaro/semantic-release-pub/commit/465c45b8a063a07ba68d733c6e8c947d03357dd9))
+* **deps:** update dependency google-auth-library to ^11.3.1 ([#1143](https://github.com/zeshuaro/semantic-release-pub/issues/1143)) ([56f495c](https://github.com/zeshuaro/semantic-release-pub/commit/56f495c014f77f15e1b84aa4a77637155ae73d0d))
+* **node:** update node.js to v24.22.1 ([#1145](https://github.com/zeshuaro/semantic-release-pub/issues/1145)) ([8aad89d](https://github.com/zeshuaro/semantic-release-pub/commit/8aad89dfb993ef8f06b83d8d368ba2dea8147f54))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#1141](https://github.com/zeshuaro/semantic-release-pub/issues/1141)) ([2f4640a](https://github.com/zeshuaro/semantic-release-pub/commit/2f4640a95105f99930fdc31f6713e90fc33d234f))
+* **deps:** update dependency @biomejs/biome to v2.6.2 ([#1146](https://github.com/zeshuaro/semantic-release-pub/issues/1146)) ([a9176fc](https://github.com/zeshuaro/semantic-release-pub/commit/a9176fc530fa738195359869393155d7f53df5b6))
+* **deps:** update vitest monorepo to v4.1.12 ([#1142](https://github.com/zeshuaro/semantic-release-pub/issues/1142)) ([e8a6360](https://github.com/zeshuaro/semantic-release-pub/commit/e8a636042da45fc6497b50265154a9d3d68cb7cb))
+
 ## [0.13.8](https://github.com/zeshuaro/semantic-release-pub/compare/v0.13.7...v0.13.8) (2026-10-18)
 
 ### Bug Fixes
