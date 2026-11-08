@@ -1,3 +1,19 @@
+## [0.13.11](https://github.com/zeshuaro/semantic-release-pub/compare/v0.13.10...v0.13.11) (2026-11-08)
+
+### Bug Fixes
+
+* **deps:** update dependency google-auth-library to ^11.3.3 ([#1157](https://github.com/zeshuaro/semantic-release-pub/issues/1157)) ([43b7436](https://github.com/zeshuaro/semantic-release-pub/commit/43b7436fbc38273d6d8e387c84b4acfa0d896d16))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#1154](https://github.com/zeshuaro/semantic-release-pub/issues/1154)) ([dc3be58](https://github.com/zeshuaro/semantic-release-pub/commit/dc3be58f922ab2fd1c37ef2265914b301aebbe4b))
+* **deps:** update dependency @biomejs/biome to v2.6.5 ([#1158](https://github.com/zeshuaro/semantic-release-pub/issues/1158)) ([6c04460](https://github.com/zeshuaro/semantic-release-pub/commit/6c044605cf53e2fe3e9561807a095026dd2378d7))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 384e354 ([#1155](https://github.com/zeshuaro/semantic-release-pub/issues/1155)) ([fda11a2](https://github.com/zeshuaro/semantic-release-pub/commit/fda11a2406ee8105df31462293d92e871151ec9e))
+* **deps:** update zeshuaro/github-actions-workflows digest to d00d728 ([#1156](https://github.com/zeshuaro/semantic-release-pub/issues/1156)) ([f32bf16](https://github.com/zeshuaro/semantic-release-pub/commit/f32bf160407642f8c6396fef5217c7da2d5da68c))
+
 ## [0.13.10](https://github.com/zeshuaro/semantic-release-pub/compare/v0.13.9...v0.13.10) (2026-11-01)
 
 ### Bug Fixes
