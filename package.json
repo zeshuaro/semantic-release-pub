@@ -56,6 +56,6 @@
     "semantic-release": "25.0.9",
     "typescript": "7.0.2",
     "vitest": "4.1.12",
-    "vitest-mock-extended": "5.1.1"
+    "vitest-mock-extended": "6.0.0"
   }
 }
