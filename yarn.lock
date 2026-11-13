@@ -3820,10 +3820,10 @@ validate-npm-package-name@^7.0.0, validate-npm-package-name@^7.0.2:
   optionalDependencies:
     fsevents "~2.3.3"
 
-vitest-mock-extended@5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/vitest-mock-extended/-/vitest-mock-extended-5.1.1.tgz#41062473ebb30d7876ffb8a446c8ab410a94c89b"
-  integrity sha512-k5Ji2+t4+nsdepXeakCkilyKydtgaULtP0HsjwQGIZsYr5hDTqrwCtC0+Sh0YBKUS7cY/Wxplf7SVjcZstTIMQ==
+vitest-mock-extended@6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/vitest-mock-extended/-/vitest-mock-extended-6.0.0.tgz#45a920b096b7d387be83627ee840c53aa91fbd4b"
+  integrity sha512-hVdWq7UDWTTfhcgQIrzZ2V8P3JkWugTAO3qHhC8wZYDXFEZHlrvDdew4gkPCbRV2rdEjhwqvKcNx6gZRTLpjXg==
   dependencies:
     ts-essentials "^10.2.1"
 
