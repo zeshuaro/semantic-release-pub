@@ -722,10 +722,10 @@
   resolved "https://registry.yarnpkg.com/@standard-schema/spec/-/spec-1.1.0.tgz#a79b55dbaf8604812f52d140b2c9ab41bc150bb8"
   integrity sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==
 
-"@tsconfig/node-ts@^23.6.4":
-  version "23.6.4"
-  resolved "https://registry.yarnpkg.com/@tsconfig/node-ts/-/node-ts-23.6.4.tgz#40eeb4cc6bb70b6b8bec675a9307e4516af8e321"
-  integrity sha512-37BMJvNQZ+vTgd1xG2TGBkJ6ENeT4eO4Wh2CHrnn0IwH7ybLFCzh4Uc//kc7UIvqiRac4uGdIc1meKOjMSlKzw==
+"@tsconfig/node-ts@^23.6.5":
+  version "23.6.5"
+  resolved "https://registry.yarnpkg.com/@tsconfig/node-ts/-/node-ts-23.6.5.tgz#6b5f6ae8cb330aa46d90f3d608969a08c7b76296"
+  integrity sha512-Wi2qMgKqBddhC/rN1CfYAB+Ayk5KxR8i8bVOQGPI26+2URbY435D9f28pRKmplWOIR0Ii/MmyWPDH12P38pRXw==
 
 "@tsconfig/node24@^24.0.5":
   version "24.0.5"
