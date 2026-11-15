@@ -732,10 +732,10 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/node24/-/node24-24.0.6.tgz#b68a561876df9bfabdeb9474855bcd80d8c9a226"
   integrity sha512-/SK4JuydRQLGSCq7+hbiQ8fdAVR4Suv5EcBvkIAG3zo3GbXQvGoSclz4olL12Ar4OpH8gwGYJ67P4wwQqBRxKw==
 
-"@tsconfig/recommended@^1.0.13":
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/@tsconfig/recommended/-/recommended-1.0.13.tgz#269fce3ad04ca70b93269ff44cca81b950f542da"
-  integrity sha512-sySRuBfMKyKO/j2ZAhR8kSembhjuPEV4Ra3AHtmWLq51+iGaudr45crPSzNC5b7/Ctrh9dfUpBuTlYrH6rM58Q==
+"@tsconfig/recommended@^1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@tsconfig/recommended/-/recommended-1.0.14.tgz#2b55d61ded2441cb1c882d6f73f05d59b8d8033c"
+  integrity sha512-iYgWhyVNgsxXiflM97anZ6sVmKTmcMSCL9x7RutV7owLOb8b+hmLPtmd6wqeKvvkaWa4Zx4eOWfn56Fc2KMHrA==
 
 "@tsconfig/strictest@^2.0.9":
   version "2.0.9"
